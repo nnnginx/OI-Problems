@@ -1,0 +1,121 @@
+## 题目背景
+
+译自 [9th Romanian Master of Informatics, RMI 2021](https://rmi.lbi.ro/rmi_2021/) D2T3。$\texttt{1s,0.5G}$。
+
+提交时，需要在文件头添加
+
+```cpp
+void initialise(int N, int Q, int h[]);
+void cut(int l, int r, int k);
+void magic(int i, int x);
+long long int inspect(int l, int r);
+```
+
+请使用 C++17 或更高版本提交。
+
+## 题目描述
+
+**这是一道（函数式）交互题。**
+
+你需要维护一个长度为 $N$ 的非负整数序列 $h_1,h_2,\cdots,h_N$。有三种操作，一共 $Q$ 次：
+
+- 操作 1（砍树）。给定 $l,r,k$。执行 $k$ 次以下操作：
+	- 若区间 $[l,r]$ 的最大值为 $0$，无事发生；
+    - 否则，将最大值减去 $1$（如果存在多个，取下标最小的一个）。
+    
+    形式化地：
+    - 若 $\displaystyle \max_{i\in [l,r]} \{h_i\}=0$，无事发生。
+    - 否则，记 $\displaystyle x=\min\argmax_{i\in [l,r]}\{h_i\}$（换句话说，满足 $x\in [l,r],h_x=\max_{i\in [l,r]}\{h_i\}$ 的最小的 $x$）。令 $h_x\gets h_x-1$。
+- 操作 2（施法）。给定 $x,v$，令 $h_x\gets v$。
+- 操作 3（查询）。给定 $l,r$，求 $\displaystyle \sum_{i\in [l,r]} h_i$。
+
+
+### 实现细节
+
+你不需要，也不应该实现 `main` 函数。你应当实现以下函数：
+
+```cpp
+void initialise(int N, int Q, int h[]);
+void cut(int l, int r, int k);
+void magic(int i, int x);
+long long int inspect(int l, int r);
+```
+
+- `initialise` 函数：
+    - 将在最开始被调用恰好一次。
+    - `N`：数组长度。
+    - `Q`：询问次数。
+    - `h[]`：长度为 $(N+1)$ 的数组，`h[i]`（$1\le i\le N$）表示数列中的第 $i$ 个数。
+- `cut` 函数：
+    - 见操作 1。
+- `magic` 函数：
+    - 见操作 2。
+- `inspect` 函数：
+    - 见操作 3。
+    - 返回一个整数表示答案。
+
+你可以自由使用全局变量，STL 库等。
+
+为了方便选手本地测试，我们在附件中提供了 $\texttt{grader.cpp}$。下面的输入输出格式均表示 sample grader 的输入输出格式。
+
+
+## 输入格式
+
+第一行，两个正整数 $N,Q$;
+
+第二行，$N$ 个整数 $h_1,\cdots,h_N$；
+
+接下来 $Q$ 行，每行若干个整数：第一个整数表示操作类型，接下来若干个数表示参数。
+
+## 输出格式
+
+对于每个操作 3，输出一行表示答案。
+
+```input1
+6 10
+1 2 3 1 2 3
+1 1 6 3
+3 1 6
+1 1 3 3
+3 1 6
+1 1 3 1000
+3 1 6
+2 1 1000
+3 1 6
+1 1 3 999
+3 1 5
+```
+
+```output1
+9
+6
+5
+1005
+4
+```
+
+## 提示
+
+
+对于 $100\%$ 的数据，保证：
+- $1\le N, Q\le 3\times 10^5$；
+- $1\le i\le N$；
+- $1\le l\le r\le N$；
+- $0\le x,k,h_i\le 10^9$。
+
+
+| 子任务编号 | $N,Q\le  $ | 特殊性质 |得分 |  
+| :--: | :--: |  :--: | :--: |
+| $ 1 $    | $ 10^3 $  | A | $5$ |
+| $ 2 $    | $ 8\times 10^4 $  | A | $8$ |
+| $ 3 $    | $ 10^3 $ | B | $8$ |
+| $ 4 $    | $ 3\times 10^5 $  | B | $19$ |
+| $ 5 $    | $ 3\times 10^5 $  | C | $10$ |
+| $ 6 $    | $ 8\times 10^4 $ |  | $21$ |
+| $ 7 $    | $ 3\times 10^5 $ |  | $29$ |
+
+- 特殊性质 A：$k=1$。
+- 特殊性质 B：没有操作 2。
+- 特殊性质 C：$l=1,r=N$（这对操作 $1,3$ 都有效）。
+
+

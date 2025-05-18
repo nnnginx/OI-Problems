@@ -1,0 +1,79 @@
+## 题目描述
+Farmer John has received an order for exactly $M$ units of milk ($1 \leq M \leq 200$) that he needs to fill right away.  Unfortunately, his fancy milking machine has just become broken, and all he has are two milk pails of integer sizes $X$ and $Y$ ($1 \leq X, Y \leq 100$) with which he can measure milk.  Both pails are initially empty.  Using these two pails, he can perform up to $K$ of the following types of operations ($1 \leq K \leq 100$):
+
+- He can fill either pail completely to the top.
+
+- He can empty either pail.
+
+- He can pour the contents of one pail into the other, stopping when the former becomes empty or the latter becomes full (whichever of these happens first).
+
+Although FJ realizes he may not be able to end up with exactly $M$ total units of milk in the two pails, please help him compute the minimum amount of error between $M$ and the total amount of milk in the two pails.  That is, please compute the minimum value of $|M-M'|$ such that FJ can construct $M'$ units of milk collectively between the two pails.
+
+## 输入格式
+The first, and only line of input, contains $X$, $Y$, $K$, and $M$.
+
+
+## 输出格式
+Output the smallest distance from $M$ to an amount of milk FJ can produce.
+
+
+## 题目大意
+### 题目描述
+
+Farmer John 接到了一份需要立即完成的订单，要求他提供恰好 $M$ 单位的牛奶（$1 \leq M \leq 200$）。不幸的是，他先进的挤奶机刚刚坏了，现在他只有两个容量为整数 $X$ 和 $Y$（$1 \leq X, Y \leq 100$）的牛奶桶可以用来量取牛奶。两个桶最初都是空的。使用这两个桶，他可以执行最多 $K$ 次以下类型的操作（$1 \leq K \leq 100$）：
+
+- 他可以将任意一个桶完全装满。
+
+- 他可以将任意一个桶完全倒空。
+
+- 他可以将一个桶中的牛奶倒入另一个桶，直到前者被倒空或后者被装满（以先发生的情况为准）。
+
+尽管 FJ 意识到他可能无法最终在两个桶中得到恰好 $M$ 单位的牛奶，但请帮助他计算 $M$ 与两个桶中牛奶总量之间的最小误差。也就是说，请计算 $|M-M'|$ 的最小值，其中 $M'$ 是 FJ 可以在两个桶中共同构造的牛奶量。
+
+### 输入格式
+
+输入的第一行也是唯一一行包含 $X$、$Y$、$K$ 和 $M$。
+
+### 输出格式
+
+输出 $M$ 与 FJ 可以生产的牛奶量之间的最小误差。
+
+### 说明/提示
+
+在两步操作中，FJ 可以在他的桶中留下以下数量的牛奶：
+
+```
+(0, 0) = 0 单位  
+(14, 0) = 14 单位  
+(0, 50) = 50 单位  
+(0, 14) = 14 单位  
+(14, 36) = 50 单位  
+(14, 50) = 64 单位  
+```
+
+最接近 32 单位的是 14 单位，误差为 18。注意，要倒空第一个桶以得到 (0, 36) 需要额外的步骤。
+
+```input1
+14 50 2 32
+```
+
+```output1
+18
+```
+
+## 提示
+In two steps FJ can be left with the following quanities in his pails
+
+
+```cpp
+(0, 0) = 0 units
+(14, 0) = 14 units
+(0, 50) = 50 units
+(0, 14) = 14 units
+(14, 36) = 50 units
+(14, 50) = 64 units
+```
+
+The closest we can come to 32 units is 14 for a difference of 18.  Note that it would require an extra step to pour out the first pail to end up with (0, 36).
+
+

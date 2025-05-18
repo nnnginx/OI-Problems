@@ -1,0 +1,50 @@
+## 题目背景
+本题译自 [Canadian Computing Competition](https://cemc.uwaterloo.ca/sites/default/files/documents/2020/2020CCCSrProblemSet.html) [2020 Senior](https://cemc.uwaterloo.ca/sites/default/files/documents/2020/seniorEF.pdf) T1 Surmising a Sprinter's Speed。
+
+## 题目描述
+Trick E. Dingo 正在捕捉 Street Sprinter，他正在收集数据，进一步了解 Street Sprinter 的速度。
+
+Trick E. Dingo 正在一条笔直的东西向的道路上抓捕 Street Sprinter，这条路上有一块特别著名的石头，亲切地被称为“原点”。这条路上的位置是根据与原点的距离用数字来测量的：原点以西的位置使用负数表示，以东的位置使用正数表示。
+
+Trick E. Dingo 的观察记录每次包含两个数字：一个时间和在该时间 Street Sprinter 在路上的位置值。根据这些信息，Street Sprinter 至少能达到了什么速度呢？
+
+## 输入格式
+第一行一个整数 $n(2\le n \le 10^5)$，表示观察次数。
+
+接下来 $n$ 行，每行两个整数 $t(0 \le t \le 10^9)$ 和 $x(-10^9 \le x \le 10^9)$，分别表示当前这次测量的时间与测量到的位置。
+
+## 输出格式
+输出一行一个数字 $X$，表示 Street Sprinter 在某个时刻的速度达到了 $X$ 米每秒，并且其尽可能大。如果正确答案是 $Y$，当认为 $X$ 是正确的时，当且仅当 $\frac{|X-Y|}{\max(1,Y)}\le 10^{-5}$。
+
+```input1
+3
+0 100
+20 50
+10 120
+```
+
+```output1
+7.0
+```
+
+```input2
+5
+20 -5
+0 -17
+10 31
+5 -3
+30 11
+```
+
+```output2
+6.8
+```
+
+## 提示
+#### 【样例解释】
+对于第一组样例，为了在 $10$ 秒内从位置 $120$ 移动到位置 $50$，速度必须至少为 $7$。
+#### 【数据范围】
+**本题采用捆绑测试**。
+
+对于 $50\%$ 的数据，$0 \le n \le 1000$。
+

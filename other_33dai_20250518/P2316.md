@@ -1,0 +1,35 @@
+## 题目描述
+![](https://cdn.luogu.com.cn/upload/pic/1357.png)
+
+
+## 输入格式
+![](https://cdn.luogu.com.cn/upload/pic/1358.png)
+
+
+## 输出格式
+![](https://cdn.luogu.com.cn/upload/pic/1359.png)
+
+
+```input1
+1 3 3
+50000
+0 0 0 0
+150000 0 1 1
+0 150000 1 1
+3 5.497787 	  2 2.356194
+3 1.570796 	  2 0.0
+3 0.0         2 1.570796
+
+```
+
+```output1
+175000
+150000
+200000
+
+```
+
+## 提示
+![](https://cdn.luogu.com.cn/upload/pic/1360.png)
+
+

@@ -1,0 +1,32 @@
+## 题目描述
+小 A 有一个整数 $x$，他想找到最小的正整数 $y$ 使得下式成立：
+
+$$(x \ \operatorname{and} \ y) + (x \ \operatorname{or} \ y) = 2025$$
+
+其中 $\operatorname{and}$ 表示二进制按位与运算，$\operatorname{or}$ 表示二进制按位或运算。如果不存在满足条件的 $y$，则输出 $-1$。
+
+
+## 输入格式
+一行，一个整数 $x$。
+
+## 输出格式
+一行，一个整数，若满足条件的 $y$ 存在则输出 $y$，否则输出 $-1$。
+
+```input1
+1025
+```
+
+```output1
+1000
+```
+
+## 提示
+对于所有测试点，保证 $0 \leq x < 2025$。
+
+$$(x \ \operatorname{and} \ y) + (x \ \operatorname{or} \ y) = 2025$$
+
+其中：
+
+- $\operatorname{and}$ 表示按位与运算，运算符为 $\&$。
+- $\operatorname{or}$ 表示按位或运算，运算符为 $|$。
+

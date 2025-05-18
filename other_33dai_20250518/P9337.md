@@ -1,0 +1,73 @@
+## 题目背景
+&emsp;冷たい部屋の隅に 射し込んできた夕陽だったら   
+&emsp;冰冷房间的角落 洒满夕阳的光辉   
+&emsp;近づいてみても感情は無くて 裏切りも無い   
+&emsp;再怎么接近也没有感情 没有变化   
+
+&emsp;今日も明日も一人で きっとそれが普通のことで   
+&emsp;就算今后都是一个人 也只是很平常的事   
+&emsp;交わす言葉も無く 一日を終える時   
+&emsp;交谈也无法改变 这一天的终结   
+
+&emsp;例えば 優しさはどれくらいの   
+&emsp;例如 温柔究竟是怎样的   
+&emsp;ぬくもりかも知らないで   
+&emsp;连获取温暖都不知道   
+&emsp;そんなにそんなに簡単じゃない   
+&emsp;那么那样不是很简单吗   
+&emsp;心の距離   
+&emsp;心的距离   
+
+&emsp;冷たい部屋の隅に 小さくなったまま   
+&emsp;冰冷房间的角落 就这样变小吧   
+![](https://cdn.luogu.com.cn/upload/image_hosting/6uukzjeq.png)
+
+## 题目描述
+给定 $n,m$，以及序列 $a_1,a_2,\dots,a_n$ 和 $1,2,\dots,n$ 的排列 $y_1,y_2,\dots,y_n$，你需要回答 $m$ 个询问。
+
+对每个询问，给定 $l,r$，查询：
+
+$\sum\limits_{i=1}^n\sum\limits_{j=i+1}^n [a_i=a_j]\cdot\prod_{k=i}^j [l\le y_k\le r]$；
+
+其中 $[\mathrm{cond}]$ 在条件 $\mathrm{cond}$ 为真时值为 $1$，否则值为 $0$。
+
+## 输入格式
+第一行两个数 $n,m$；
+
+第二行 $n$ 个整数 $a_1,\dots,a_n$；
+
+第三行 $n$ 个整数 $y_1,\dots,y_n$；
+
+接下来 $m$ 行，每行两个数 $l,r$ 表示一个询问。
+
+## 输出格式
+$m$ 行，每行一个整数，表示相应的答案。
+
+```input1
+3 4
+1 1 3
+2 3 1
+1 2
+1 3
+2 3
+1 1
+```
+
+```output1
+0
+1
+1
+0
+```
+
+## 提示
+Idea：Ynoi&nzhtl1477，Solution：Ynoi&ccz181078，Code：ccz181078，Data：ccz181078&Terry2022
+
+对于 $100\%$ 的数据，满足 $1\le n,m\le 5\times 10^5$；$1\le a_i\le n$；$1\le y_i\le n$，$y_i$ 互不相同；对每个询问，$1\le l\le r\le n$。
+
+对于 $20\%$ 的数据，满足 $n,m\le 100$。
+
+对于 $40\%$ 的数据，$n,m\le 5000$
+
+对于 $60\%$ 的数据，$n,m\le 2\times 10^5$
+

@@ -1,0 +1,30 @@
+## 题目描述
+![](https://cdn.luogu.com.cn/upload/pic/1685.png) 
+
+![](https://cdn.luogu.com.cn/upload/pic/1686.png)
+
+
+## 输入格式
+一行，一个正整数 $n$，$n \leq 20$ 。
+
+
+## 输出格式
+以一行的形式输出问题的解 $s$ (解的位数不超过 $200$ 位)。
+
+
+```input1
+1
+```
+
+```output1
+2
+```
+
+```input2
+2
+```
+
+```output2
+4
+```
+

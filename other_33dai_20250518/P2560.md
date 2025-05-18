@@ -1,0 +1,24 @@
+## 题目描述
+ ![](https://cdn.luogu.com.cn/upload/pic/1682.png) 
+
+![](https://cdn.luogu.com.cn/upload/pic/1683.png)
+
+
+## 输入格式
+![](https://cdn.luogu.com.cn/upload/pic/1684.png)
+
+
+## 输出格式
+以一行的形式输出评价效果最好的突变方案的评价指标。
+
+
+```input1
+3 2
+11000101
+10 10 5 6 3 2 1 2
+```
+
+```output1
+9
+```
+

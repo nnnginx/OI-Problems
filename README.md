@@ -21,4 +21,5 @@ yundouxuanyuan - https://www.yundouxueyuan.com/
 gdsyzx - http://cplusoj.com/
 gztyzx - https://oiclass.com/
 shaoniangong - http://temege.com/
+33dai - https://oj.33dai.cn/
 ```

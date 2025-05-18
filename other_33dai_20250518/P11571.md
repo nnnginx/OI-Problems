@@ -1,0 +1,54 @@
+## 题目背景
+![](https://cdn.luogu.com.cn/upload/image_hosting/w6fq1o22.png)
+
+## 题目描述
+给定 $r,m,s$，问有多少个正整数对 $(fi,sh)$，满足：
+
++ $ 0 \le fi \le sh \le r$。
+
++ $\operatorname{popcount}(fi \oplus sh) = m$。
+
++ $\operatorname{popcount}(fi + sh) = s$。
+
+其中，$\operatorname{popcount}(x)$ 表示 $x$ 的二进制表示中 $1$ 的个数，$\oplus$ 表示异或运算。
+
+为了方便，$r$ 以二进制形式给出。
+
+保证给出的任何数字不含有前导 $0$。
+
+答案对 $998244353$ 取模。
+
+## 输入格式
+一行三个整数 $r,m,s$。
+
+## 输出格式
+一行一个整数，表示答案对 $998244353$ 取模的结果。
+
+```input1
+111 1 2 
+```
+
+```output1
+6
+```
+
+## 提示
+### 样例解释：
+
+下文数字为十进制。
+
+$r=7$，有 $(1,5),(2,3),(3,7),(4,5),(4,6),(5,7)$ 六种。
+
+### 数据范围：
+
+记 $n$ 为给出的 $r$ 的长度。 
+
+对于 $100\%$ 的数据，$1 \le n,m,s \le 200$。
+
+**本题采用捆绑测试。**
+
+- Subtask 1(15pts)：$n \le 12$。
+- Subtask 2(25pts)：$m,s \le 30$。
+- Subtask 3(25pts)：$r=2^n-1$。
+- Subtask 4(35pts)：无特殊限制。
+

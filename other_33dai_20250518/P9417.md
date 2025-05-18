@@ -1,0 +1,111 @@
+## 题目背景
+译自 [XXIX Olimpiada Informatyczna – I etap](https://sio2.mimuw.edu.pl/c/oi29-1/dashboard/) [Druk](https://sio2.mimuw.edu.pl/c/oi29-1/p/dru/)。
+
+## 题目描述
+给你一个 $n\times m$ 的字符矩形，只含小写英文字母。
+
+你需要制作两块模板，一个是横的（一行 $l$ 列），一个是竖的（$l$ 行一列），$l$ 称为模板长度，上面有完全相同的字符串（从左到右，从上到下，不可翻转）。你需要保证你可以用这两块模板不重不漏地印刷这个字符矩形。
+
+模板的制作方案可能有很多，你只需要输出所有的可行的模板长度即可。
+
+## 输入格式
+第一行两个正整数 $n,m$，表示矩形大小。
+
+接下来是一个 $n$ 行 $m$ 列的字符矩形，只含小写英文字母。
+
+## 输出格式
+第一行一个整数，表示你找到的可行长度的个数。
+
+第二行若干个整数，你找到的所有可行长度。
+
+```input1
+5 8
+aabaaaaa
+babaabbb
+aabaaaaa
+aabaaaaa
+abaaabaa
+
+```
+
+```output1
+1
+4
+
+```
+
+```input2
+1 1000
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+```
+
+```output2
+16
+1 2 4 5 8 10 20 25 40 50 100 125 200 250 500 1000
+
+```
+
+```input3
+3 1000
+abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
+
+```
+
+```output3
+12
+2 4 8 10 20 40 50 100 200 250 500 1000
+
+```
+
+```input4
+4 9
+aabaaabaa
+babababab
+aabaaabaa
+abaabaaba
+
+```
+
+```output4
+1
+3
+
+```
+
+```input5
+见附件
+```
+
+```output5
+0
+
+
+```
+
+```input6
+见附件
+```
+
+```output6
+1
+4
+
+```
+
+## 提示
+样例一解释：![图挂了](https://cdn.luogu.com.cn/upload/image_hosting/2zs08vop.png)
+
+样例四解释：![图挂了](https://cdn.luogu.com.cn/upload/image_hosting/p1zo7v6x.png)
+
+对于所有数据，$1\leq n,m\leq 1000$。
+
+| 子任务编号 | 附加限制 | 分数 |
+| :----------: | :----------: | :----------: |
+| 1 | $n=1,m\leq 1000$ | 10 |
+| 2 | $n\leq 3,m\leq 1000$ | 25 |
+| 3 | $n,m\leq 20$ | 20 |
+| 4 |  | 45 |
+
