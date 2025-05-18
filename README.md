@@ -19,7 +19,9 @@ Because some questions refer to images from the original website and can't load 
 ```text
 yundouxuanyuan - https://www.yundouxueyuan.com/
 gdsyzx - http://cplusoj.com/
+gdsyzxPreliminary - http://cplusoj.com/d/preliminary/
 gztyzx - https://oiclass.com/
 shaoniangong - http://temege.com/
 33dai - https://oj.33dai.cn/
+33daiUOJ - https://oj.33dai.cn/d/unioj/
 ```
