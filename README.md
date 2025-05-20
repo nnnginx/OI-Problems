@@ -24,4 +24,6 @@ gztyzx - https://oiclass.com/
 shaoniangong - http://temege.com/
 33dai - https://oj.33dai.cn/
 33daiUOJ - https://oj.33dai.cn/d/unioj/
+hydroSRQC - https://hydro.ac/d/srqc/
+hydroUSACO - https://hydro.ac/d/USACO/
 ```
