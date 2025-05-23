@@ -29,4 +29,5 @@ hydroUSACO - https://hydro.ac/d/USACO/
 hydroPOJ - https://hydro.ac/d/poj/
 hydroYBTBAS - https://hydro.ac/d/ybtbas/
 hydroYBTTK - https://hydro.ac/d/ybttk/
+vijos - https://vijos.org/
 ```
