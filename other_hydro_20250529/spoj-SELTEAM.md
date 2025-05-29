@@ -1,0 +1,9 @@
+<p>There are n players out of which atmost k players are chosen to form the team squad. Out of those players, some subset of them are selected to form a team, and a player of the selected team is appointed as the captain of the team. Given n and k, determine how many possible configurations exist. Two configurations differ if either the players in the team squad differ, or if the number of players in the team differ, or the players in the team differ, or if the captain differs.<br><br>For example,the possible configurations for n = 2 and k = 2 are :<br>1) Team squad : {1}, Team : {1}, Captain : 1<br>2) Team squad : {2}, Team : {2}, Captain : 2<br>3) Team squad : {1,2}, Team : {1}, Captain : 1<br>4) Team squad : {1,2}, Team : {2}, Captain : 2<br>5) Team squad : {1,2}, Team : {1,2}, Captain : 1<br>6) Team squad : {1,2}, Team : {1,2}, Captain : 2<br><br></p>
+<p style="text-align: center;"><strong>Input</strong></p>
+<p><br>The first line contains T the number of test cases. Each of the next T lines contain 2 integers : n,k</p>
+<p style="text-align: center;"><br><strong>Output</strong></p>
+<p>Output T lines, one for each test case, containing the required total number of configurations. Since the answers can get very big, output the answer modulo 8388608.</p>
+<p style="text-align: center;"><strong>Example</strong></p>
+<p style="text-align: left;"><br>Sample Input :<br>3<br>2 2<br>7 1<br>5 3<br><br>Sample Output :<br>6<br>7<br>165</p>
+<p style="text-align: center;"><br><strong>Constraints</strong></p>
+<p style="text-align: left;">1 &lt;= T &lt;= 10000<br>1 &lt;= k &lt;= n &lt;= 100000</p>

@@ -1,0 +1,12 @@
+<p><span style="font-size: small;">As you might be knowing, Blackhood, Kira and BaZ are very good friends. They are gonna meet after a long time (not that long though :p).They live in a country consisting of N cities . Each city has a GDP (not necessary distinct). The roads of the country are such that there is only one road connecting any two cities in the country. Kira and Blackhood decide to meet anywhere in the unique path between their cities (including their cities too). But BaZ is not ready to meet anywhere, since he likes numbers having at least K distinct prime factors, he agrees to meet only in those cities whose GDP is a number he likes. Given Blackhood's and Kira's home cities, you need to find the number of cities where they can meet. i.e. you need to tell the number of cities between Blackhood's and Kira's home city which have their GDP a number BaZ likes.&nbsp; </span></p>
+<h3><span style="font-size: medium;">Input</span></h3>
+<p><span style="font-size: small;">First line of the input contains three integers N, representing the number of cities in the country, K (as explained above) and Q, the number of queries which are to be answered). (1&lt;=N,Q&lt;=200000, 0&lt;=K&lt;=100)</span><span style="font-size: small;">. Next line contains N integers, where the ith integer represents the GDP of the ith country (1&lt;=GDP[i]&lt;=1000000). The next N-1 lines contain two integers u and v, representing a road between city u and city v (1&lt;=u,v&lt;=N). Then the Q following lines contain two integers u and v, representing Blackhood's and Kira's home cities.<br></span></p>
+<h3><span style="font-size: medium;">Output</span></h3>
+<p><span style="font-size: small;">For each query, ouptut an integer representing the number of cities where the three can meet.</span></p>
+<p><span style="font-size: small;"><strong>Note:-Large input data, use FAST I/O. Be careful with certain languages too.</strong><br></span></p>
+<h3><span style="font-size: small;">Example</span></h3>
+<pre><span style="font-size: small;"><strong>Input:</strong></span>
+<span style="font-size: small;">5 2 5 <br>10 1 6 9 14 <br>1 2 <br>2 4 <br>1 3 <br>3 5 <br>1 2 <br>4 5 <br>2 3 <br>2 5 <br>3 5</span> 
+
+<span style="font-size: small;"><strong>Output:</strong></span>
+<span style="font-size: small;">1<br>3<br>2<br>3<br>2</span> <br></pre>

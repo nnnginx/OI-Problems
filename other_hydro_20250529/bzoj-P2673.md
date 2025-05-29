@@ -1,0 +1,56 @@
+
+
+
+## 题目描述
+有一个芯片，芯片上有N*N（1≤N≤40）个插槽，可以在里面装零件。
+有些插槽不能装零件，有些插槽必须装零件，剩下的插槽随意。
+要求装好之后满足如下两条要求：
+1、第 i 行和第 i 列的零件数目必须一样多（1≤i≤N）。
+2、第 i 行的零件数目不能超过总的零件数目的 A/B（1≤i≤N，0≤A≤B≤1000，B≠0）。
+求最多可以另外放多少个零件（就是除掉必须放的）。如果无解输出impossible。
+## 输入格式
+The input consists of several test cases. Each case starts with a line containing three integers: The size of the chip N (1<=N<=40), and A and B (1<=A<=1000, 0<=A<=B) as described above. Each of the following N lines contains N characters describing the slots, one of `.', `/' or `C', as described above.
+The last test case is followed by a line containing three zeros.
+## 输出格式
+For each test case, display a single line beginning with the case number. If there is a solution, display the maximum number of widgets that can be added to the chip. Display ``impossible" if there is no solution.
+Follow the format of the sample output.
+
+```input1
+2 1 1
+/.
+//
+2 50 100
+/.
+C/
+2 100 100
+./
+C.
+5 3 10
+CC/..
+././/
+..C.C
+/.C..
+/./C/
+5 2 10
+CC/..
+././/
+..C.C
+/.C..
+/./C/
+0 0 0
+
+```
+```output1
+Case 1: 0
+Case 2: 1         
+Case 3: impossible
+Case 4: 7         
+Case 5: impossible
+```
+
+## 提示
+没有写明提示
+## 题目来源
+没有写明来源
+
+

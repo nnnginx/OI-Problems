@@ -1,0 +1,7 @@
+<p>One day Mirko, while he was walking through the high grass, stumbled upon a sequence of N colored marbles. Soon he noticed that if he touches K or more consecutive marbles of the same color, they start to twinkle and then he could wish them to magically vanish, although he doesn't have to do that immediately (see 2. sample). Fortunately, Mirko brought an inexhaustible supply of marbles from home, so he can insert a marble of any color<br>anywhere in the array (at the beginning, between any two existing marbles, or at the end). Help Mirko find the smallest number of marbles he must insert into the sequence before he could make all of the marbles vanish</p>
+<h3>Input</h3>
+<p>The first line of input contains two integers N (1 ¡Ü N ¡Ü 100) and K (2 ¡Ü K ¡Ü5) - the number of marbles in the initial sequence and the minimal number of consecutive marbles of the same color he could wish to vanish. The next line contains exactly N integers between 1 and 100 (inclusive),separated by one space. Those numbers represent colors of marbles in the sequence Mirko found.</p>
+<h3>Output</h3>
+<p>The output should contain only one line with a single integer number - the minimal number of marbles Mirko has to insert to achive the desired effect.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>2 5<br>1 1<br><strong>Output:</strong><br>3<strong><br><br>Input<br></strong>10 4<br>3 3 3 3 2 3 1 1 1 3<strong><br><br>Output:</strong><br>4</pre>

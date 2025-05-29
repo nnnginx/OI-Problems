@@ -1,0 +1,7 @@
+<p>You are given a cyclic array A having N numbers. In an XOR round, each element of the array A is replaced by the bitwise XOR (Exclusive OR) of itself, the previous element, and the next element in the array. All operations take place simultaneously. Can you calculate A after K such XOR rounds ?</p>
+<p style="text-align: center;">&nbsp;<br><strong>Input</strong></p>
+<p><br>The first line contains the number of test cases T (T &lt;= 50). <br>There follow 2T lines, 2 per test case. The first line contains two space seperated integers N (3 &lt;= N &lt;= 500) and K (1 &lt;= K &lt;= 1000000000). The next line contains N space seperated integers Ai (0 &lt;= Ai &lt;= 1000000000), which are the initial values of the elements in array A. &nbsp;<br>&nbsp;<br></p>
+<p style="text-align: center;"><strong>Output </strong></p>
+<p><br>Output T lines, one per test case. For each test case, output a space seperated list of N integers, specifying the contents of array A after K XOR rounds.</p>
+<p style="text-align: center;"><strong>Example</strong></p>
+<p><br>Sample Input : <br>2 <br>3 1 <br>1 2 3 <br>5 100 <br>1 11 111 1111 11111 <br>&nbsp;<br>Sample Output : <br>0 0 0 <br>11117 101 1075 12127 12081</p>

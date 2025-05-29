@@ -1,0 +1,9 @@
+<p>Square boards (as the chessboard) are really common among games and luckily, they are easy<br>to draw with the help of a ruler. However, there exist other games that requiere hexagonal<br>boards, that are much harder to draw by hand.<br>The Institute for Client Permanent Comfort (ICPC) of a famous board game factory has decided<br>to provide their customers with an automated program to build hexagonal boards for several<br>games. The size of an hexagonal board is determined by a single integer N that indicates how<br>many cells there are in each of the 6 sides of the board. For example, a board of size N = 2<br>should look as follows when drawn by the program.<br>&nbsp; &nbsp; &nbsp; <span style="font-family: courier new,courier;">_<br>&nbsp;_/ \_<br>/ \_/ \<br>\_/ \_/<br>/ \_/ \<br>\_/ \_/<br>&nbsp; \_/</span><br>Your task is to help ICPC in making the program.</p>
+<h3>Input</h3>
+<p>The input contains several test cases. Each test case is described in a single line that contains<br>an integer N representing the size of the board (1 ≤ N ≤ 20). The last line of the input<br>contains a single −1 and should not be processed as a test case.</p>
+<h3>Output</h3>
+<p>For each test case output the hexagonal board of the required size, and a line with exactly<br>three asterisks. You have to follow the sample input and output, as well as the example given<br>above. Use only regular spaces, underscores (“ ”), slashes (“/”) and backslashes (“\”). There<br>must be no trailing spaces at the end of printed lines, neither empty lines.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+1<br>3<br>-1<br><br><strong>Output:</strong>
+<span style="font-family: courier new,courier;"> _<br>/ \<br>\_/<br>***<br>     _<br>   _/ \_<br> _/ \_/ \_<br>/ \_/ \_/ \<br>\_/ \_/ \_/<br>/ \_/ \_/ \<br>\_/ \_/ \_/<br>/ \_/ \_/ \<br>\_/ \_/ \_/<br>  \_/ \_/<br>    \_/<br>***</span></pre>

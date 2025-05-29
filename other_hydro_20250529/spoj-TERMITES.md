@@ -1,0 +1,10 @@
+<p>Princess Bala and Z founded a new colony where ants are free to express their own beliefs. The new colony, however, now faces a serious threat to its survival. Acid-shooting termites have become stronger and are willing to attack the nest.</p>
+<p>Z needs to develop a defense strategy for the colony. Queen Ant, Princess Bala's mother, tells him that at least twelve ants are needed to successfully kill a single termite. Unfortunately, the number of soldiers has had a significant decrease since the new freedom ideals were spread out. Thus, he decides that no more ants than needed will participate in the battle.</p>
+<p>In order to create a safety perimeter, soldiers need to be set in concentric rings around the colony's nest. The number of warriors of the innermost ring must be a multiple of four. Besides, to coordinate the defense each ring must have exactly 8 ants more than the ring it surrounds. Taking into account these constraints, the number of rings must be as large as possible.</p>
+<p>Z's friend, Weaver, has been sent to the enemy's territory to spy them and gather vital information about their plans. Being successful, he will inform Z the exact number of warriors they are going to send. Given this information Ant Z needs all the help you can provide him to determine the best deployment for his troops.</p>
+<h3>Input</h3>
+<p>The input consists of several test cases, each one in a single line. Each test case consists of the number of termites <em>n</em> (1 &lt;= <em>n</em> &lt; 2<sup>32</sup>) willing to attack the nest. The input terminates when <em>n</em> = 0.</p>
+<h3>Output</h3>
+<p>For each test case, indicate the number of soldiers needed on the outmost defense ring.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>1<br>2<br>33<br>0<br><br><strong>Output:</strong><br>12<br>16<br>76<br><br></pre>

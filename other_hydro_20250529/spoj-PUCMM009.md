@@ -1,0 +1,32 @@
+<p><span id="docs-internal-guid-2388649c-63a0-0eb5-77e7-829e8ebbc59f"> </span></p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">You are walking by an empty corridor at PUCMM. All around you are arithmetic expressions written on the walls and on the floor. You find it odd and quickly realize all these expressions seem to be failed attempts to solve a problem. As you read by, you hear a voice coming from one of the classrooms that is whispering ¡°I do not see it! I do not see it!¡± You walk to the classroom and find David rolling on the floor in frustration.</span></p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"><br></span></p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">¡°What¡¯s going on, David? you ask.</span></p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">¡°The answer.. I do not see! Do you see?¡± replies David back.</span></p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr">&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">¡°What answer?¡± you ask him.</span></p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">¡°Professor Olson gave me this problem and ¡­ I do not see.¡±</span></p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr">&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">¡°Ok. What about you stand up and describe the problem to me?¡± you ask again.</span></p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">¡°Well, OK. You are pretty smart yourself. Imagine ten slips of paper bearing the numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 are put into a hat. </span><span style="font-size: 15px; font-family: Arial; background-color: transparent; font-style: italic; vertical-align: baseline; white-space: pre-wrap;">5</span><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"> slips are drawn at random and laid out in a row in the order in which they were drawn.¡± He sighs deeply. ¡°What is the probability that the 5-digit number so formed is divisible by 495?¡±</span></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">On your backpack there is a laptop. Help him. Write an algorithm that solves the problem.</span></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Input</span></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">There is no input for this problem.</span></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Output</span></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Print in a single line the answer as a fraction expressed in its lowest terms.</span></p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Sample cases</span></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">There are no sample cases for this problem.</span></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt;" dir="ltr"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Notes</span></p>
+<p><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">In case you need this, the greatest common divisor of (a, b) is defined recursively as follows: </span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"> gcd(a,b) = b if a == 0, otherwise gcd = gcd(b <strong>mod</strong> a, a).</span></p>
+<p>&nbsp;</p>

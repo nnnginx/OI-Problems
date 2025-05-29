@@ -1,0 +1,1 @@
+<p>Click <a href="../../../content/john_jones:mahjong.pdf">here</a> to get the PDF version of this problem. It seems that the style of this problem is the same as problem TRACTOR added by me about 2 years ago, but this one is far easier than that one. This problem is solved by a team at 286 minutes after the real-time contest start.</p>

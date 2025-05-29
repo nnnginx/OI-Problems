@@ -1,0 +1,1 @@
+<p>Please click <a href="http://www.spoj.com/content/john_jones:hangzhou2008.pdf">here</a> to download a PDF version of the contest problems. The problem is problem E in the PDF. Remember that you must use stdin/stdout at SPOJ.</p>

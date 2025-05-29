@@ -1,0 +1,140 @@
+## 题目背景
+原题链接：<https://oier.team/problems/J8D>。
+
+---
+
+[《2048》](https://2048game.com/)是一款非常好玩，火爆全球的小游戏。
+
+## 题目描述
+现在，小 Y 把《2048》稍做修改，得到如下的一维变种（其中部分规则可能与你对《2048》的印象相悖，请以下文为准）：
+
+- 游戏在一行 $n$ 个格子组成的网格中进行。每个格子要么为空，要么包含一个带有正整数权值的方块。
+- 游戏开始时，会在一个任意的格子上生成一个权值为 $2$ 的方块，其他格子为空。
+- 玩家通过向左（或右，下同）滑动进行操作。每次操作：
+  1. 所有方块将全部靠左（或右）堆叠放置，彼此紧贴，不留空位。
+  2. 如果堆叠完毕后，存在相邻的两个方块权值相等，设其权值均为 $k$，则消除这两个方块，并在原先其中一个方块的位置生成一个权值为 $2k$ 的方块（这称作一次合并）（**可以证明，在该游戏过程中不会存在连续 $\bm 3$ 个相邻方块权值相等，因此不需要考虑合并顺序的问题**），随后所有方块继续向左（或右）堆叠，直到不存在能合并的情况为止。
+  3. 最后，在最右（或左）端，即滑动方向的相反方向，生成一个权值为 $2$ 的新方块。
+
+下图展示了一次向左滑动操作的示例。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/d7qp6f1i.png)
+
+- 如下定义一个方块的**出现时间**：
+  - 设它被生成时，游戏进行的轮数（即玩家进行滑动操作的次数）为 $i$（包括当前操作）。
+  - 如果该方块是被合并生成的，令它的出现时间为 $2 i$；
+  - 否则该方块是新生成的，令它的出现时间为 $2 i + 1$；
+  - 如果该方块是游戏最开始时生成的权值为 $2$ 的方块，令它的出现时间为 $1$。
+  - 可以证明，按如上定义的出现时间满足：在游戏进行的任意时刻下，任意两个不同方块的出现时间均不同。
+- 游戏的目标是生成 $2^x$，因此在游戏的任何过程中，一旦出现了 $2^x$，游戏立刻结束，且游戏胜利。
+- 如果一次滑动操作的步骤 2 结束时，所有 $n$ 个格子全都包含方块（事实上，这次滑动操作是滑不动的，但仍然认为是一次滑动操作），则步骤 3 中无法正常生成新方块，不会进行步骤 3，且游戏失败。
+
+小 Y 正在研究这个新 2048 游戏的所有失败状态的个数。具体地，在游戏失败时，两个失败状态 A 和 
+B 被认为**本质相同**，当且仅当以下条件同时成立：
+
+- 对每个 $1 \leq i \leq n$，A 中方块 $i$ 和 B 中方块 $i$ 的权值均相同；
+- 对每对 $1 \le i < j \le n$，A 中的方块 $i$ 与方块 $j$ 的出现时间的大小关系，与 B 中的方块 $i$ 与方块 $j$ 的出现时间的大小关系相同。
+
+小 Y 想要知道，总共有多少种**本质不同**的失败状态。答案对给定模数 $p$ 取模（$p$ 未必为素数）。
+
+## 输入格式
+**本题有多组测试数据。**
+
+第一行，两个正整数 $T, p$，分别表示数据组数和模数。对于每组数据：
+
+- 仅一行，两个整数 $n, x$。
+
+## 输出格式
+对于每组数据：
+
+- 仅一行一个正整数，表示本质不同的失败状态数，答案对 $p$ 取模。
+
+```input1
+5 71
+3 4
+4 3
+4 4
+4 5
+5 6
+
+```
+
+```output1
+8
+0
+12
+34
+20
+
+```
+
+## 提示
+**【样例解释 \#1】**
+
+对于第一组数据，$n = 3$，$x = 4$：
+- 仅从网格状态上看，共有 $6$ 种失败的可能性：$[8, 4, 2], [2, 4, 8], [2, 8, 4], [4, 8, 2], [2, 8, 2],[2, 4, 2]$。
+  - 但考虑 $[2, 8, 2]$，其可以对应两种本质不同的失败状态：
+    - 中间的 $8$ 先被生成，随后左边的 $2$ 生成，随后右边的 $2$ 生成；
+    - 中间的 $8$ 先被生成，随后右边的 $2$ 生成，随后左边的 $2$ 生成。
+  - 对于 $[2, 4, 2]$ 也是同理。
+- 对于其它的可能性，可以证明其只能对应一种本质不同的失败状态。
+- 所以，答案为 $1 + 1 + 1 + 1 + 2 + 2 = 8$，在模 $71$ 意义下为 $8$。
+
+对于第二组数据，$n = 4$，$x = 3$：
+- 可以证明，无论如何，游戏都将胜利，因此不存在任何失败状态，答案为 $0$。
+
+对于第三组数据，$n = 4$，$x = 4$：
+- 仅从网格状态上看，共有 $4$ 种失败的可能性：$[2, 8, 4, 2], [2, 4, 8, 2], [4, 8, 4, 2],[2, 4, 8, 4]$。
+- 其中，$[2, 8, 4, 2]$ 和 $[2, 4, 8, 2]$ 分别对应 $4$ 种本质不同的失败情况，$[4, 8, 4, 2]$ 和 $[2, 4, 8, 4]$ 分别对应 $2$ 种本质不同的失败情况。
+  - 以 $[2, 8, 4, 2]$ 为例，下面列举该局面对应的 $4$ 种本质不同的失败情况（操作方式不唯一，数字上面的小数字表示出现时间）：
+    $$ \begin{aligned} & [\overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}1\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}] & & [\overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}1\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}] & & [\overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}1\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}] & & [\overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}1\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}] \\ \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}1\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}3\hspace{3.84625mu}}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}1\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}3\hspace{3.84625mu}}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}1\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}3\hspace{3.84625mu}}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}1\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}3\hspace{3.84625mu}}{2}] \\ \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}4\hspace{3.84625mu}}{4}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}4\hspace{3.84625mu}}{4}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}4\hspace{3.84625mu}}{4}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}] & \stackrel{\text{R}}\to& [\overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}4\hspace{3.84625mu}}{4}] \\ \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}4\hspace{3.84625mu}}{4}, \overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}7\hspace{3.84625mu}}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}4\hspace{3.84625mu}}{4}, \overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}7\hspace{3.84625mu}}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}4\hspace{3.84625mu}}{4}, \overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}7\hspace{3.84625mu}}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}, \overset{\hspace{3.84625mu}4\hspace{3.84625mu}}{4}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}7\hspace{3.84625mu}}{2}] \\ \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}9\hspace{3.84625mu}}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}9\hspace{3.84625mu}}{2}] & \stackrel{\text{R}}\to& [\overset{\hspace{3.84625mu}9\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}, \overset{\hspace{3.84625mu}4\hspace{3.84625mu}}{4}, \overset{\hspace{3.84625mu}7\hspace{3.84625mu}}{2}, \overset{\hspace{3.84625mu}9\hspace{3.84625mu}}{2}] \\ \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{\hspace{3.84625mu}9\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{11}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{\hspace{3.84625mu}9\hspace{3.84625mu}}{2}, \overset{\hspace{15.385mu}}{}, \overset{11}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}9\hspace{3.84625mu}}{2}, \overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{\hspace{15.385mu}}{}, \overset{11}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}, \overset{10}{8}, \overset{\hspace{15.385mu}}{}, \overset{11}{2}] \\ \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{12}{4}, \overset{\hspace{15.385mu}}{}, \overset{13}{2}] & \stackrel{\text{R}}\to& [\overset{13}{2}, \overset{\hspace{15.385mu}}{}, \overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{12}{4}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}9\hspace{3.84625mu}}{2}, \overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{11}{2}, \overset{13}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}, \overset{10}{8}, \overset{11}{2}, \overset{13}{2}] \\ \stackrel{\text{R}}\to& [\overset{15}{2}, \overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{12}{4}, \overset{13}{2}] & \stackrel{\text{L}}\to& [\overset{13}{2}, \overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{12}{4}, \overset{15}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}9\hspace{3.84625mu}}{2}, \overset{\hspace{3.84625mu}8\hspace{3.84625mu}}{8}, \overset{14}{4}, \overset{15}{2}] & \stackrel{\text{L}}\to& [\overset{\hspace{3.84625mu}5\hspace{3.84625mu}}{2}, \overset{10}{8}, \overset{14}{4}, \overset{15}{2}] \end{aligned} $$
+    对这 $4$ 种情况，出现时间的大小关系（离散化后）分别为 $[4, 1, 2, 3]$、$[3, 1, 2, 4]$、$[2, 1, 3, 4]$、$[1, 2, 3, 4]$。
+- 所以，答案为 $4 + 4 + 2 + 2 = 12$，在模 $71$ 意义下为 $12$。
+
+对于第四组数据，$n = 4$，$x = 5$：
+- 可以证明答案为 $34$，在模 $71$ 意义下为 $34$。
+
+对于第五组数据，$n = 5$，$x = 6$：
+- 可以证明答案为 $162$，在模 $71$ 意义下为 $20$。
+
+**【样例 \#2】**
+
+见附件中的 `game/game2.in` 与 `game/game2.ans`。
+
+该组样例满足测试点 $3 \sim 5$ 的约束条件。
+
+**【样例 \#3】**
+
+见附件中的 `game/game3.in` 与 `game/game3.ans`。
+
+该组样例满足测试点 $6 \sim 10$ 的约束条件。
+
+**【样例 \#4】**
+
+见附件中的 `game/game4.in` 与 `game/game4.ans`。
+
+该组样例满足测试点 $14 \sim 17$ 的约束条件。
+
+**【样例 \#5】**
+
+见附件中的 `game/game5.in` 与 `game/game5.ans`。
+
+该组样例满足测试点 $22 \sim 25$ 的约束条件。
+
+**【数据范围】**
+
+本题共 $25$ 个测试点，每个 $4$ 分。
+
+|测试点编号|$T \le$|$n,x \le$|特殊性质|
+| :-----------: | :-------------:|:-----------:|:-----------: |
+|$1\sim2$|$10$|$4$|无
+|$3\sim5$|$10$|$10$|无
+|$6\sim10$|$10$|$22$|无
+|$11\sim13$|$1$|$80$|无
+|$14\sim17$|$1000$|$80$|无
+|$18\sim20$|$1$|$300$|无
+|$21$|$10^5$|$300$| $p = 2$ |
+|$22\sim25$|$10^5$|$300$|无
+
+
+对于全部数据，保证：$1\le T\le 10^5$，$1\le n,x\le 300$，$2\le p\le10^9$。
+

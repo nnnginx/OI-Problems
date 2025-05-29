@@ -1,0 +1,96 @@
+## 题目描述
+Pavementland is a rectangle-shaped city, which can be modelled as a $h \times w$ grid of cells. The rows of the grid are numbered $1$ to $h$ from north to south, and the columns of the grid are numbered $1$ to $w$ from west to east. We refer to the cell located at row $r$ and column $c$ of the grid as cell $(r, c)$.
+
+In the grid, each cell is either empty or contains a building. At least one cell is empty.
+
+Due to a monsoon surge, flash floods are occurring throughout Pavementland. Initially, one empty cell becomes flooded with water by the rain. Then, the water flows according to the following rules:
+
+- If an empty cell is adjacent to at least one flooded cell, it becomes flooded.
+- If a cell containing a building is adjacent to at least two flooded cells, the building collapses and the cell becomes flooded.
+
+Note that a cell is adjacent to another cell if they share an edge. A cell is adjacent to at most four other cells. Further note that water may not flow outside the grid. Let $f((r, c))$ be the number of cells that would be flooded after the process if the cell $(r, c)$ were initially flooded.
+
+City officials are seeking to forecast the extent of flash floods in all possible scenarios. Help them determine the sum of $f((r, c))$ over all empty cells $(r, c)$.
+
+
+## 输入格式
+Your program must read from standard input.
+
+The first line of input contains two space-separated integers $h$ and $w$.
+
+The next $h$ lines of input each contain a binary string of length $w$. If the $c$-th character of the $r$-th line is $0$, then the cell $(r, c)$ is empty. If the $c$-th character of the $r$-th line is $1$, then the cell $(r, c)$ contains a building.
+
+
+## 输出格式
+Your program must print to standard output.
+
+Output a single integer, the sum of $f((r, c))$ over all empty cells $(r, c)$.
+
+
+```input1
+3 3
+000
+011
+010
+```
+
+```output1
+46
+```
+
+```input2
+5 5
+00101
+01011
+11010
+01101
+11000
+```
+
+```output2
+182
+```
+
+```input3
+1 10
+1101011100
+```
+
+```output3
+6
+```
+
+## 提示
+### Subtasks
+
+For all test cases, the input will satisfy the following bounds:
+
+- $1 \leq h, w \leq 5000$
+- There is at least one empty cell in the grid.
+
+Your program will be tested on input instances that satisfy the following restrictions:
+
+| Subtask | Marks | Additional Constraints |
+| :-: | :-: | :-: |
+| $0$ | $0$ | Sample test cases |
+| $1$ | $5$ | $h = 1$ |
+| $2$ | $7$ | $h, w \leq 80$ |
+| $3$ | $16$ | $h, w \leq 500$ |
+| $4$ | $32$ | $h, w \leq 2000$ |
+| $5$ | $40$ | No additional constraints |
+
+### Sample Test Case 1 Explanation
+
+This test case is valid for subtasks $2$ to $5$.
+
+If cells $(1, 1), (1, 2), (1, 3), (2, 1)$, or $(3, 1)$ were initially flooded, the entire grid would become flooded after the process. If cell $(3, 3)$ were initially flooded, only $1$ cell would become flooded after the process. Hence, the output is $9 + 9 + 9 + 9 + 9 + 1 = 46$.
+
+### Sample Test Case 2 Explanation
+
+This test case is valid for subtasks $2$ to $5$.
+
+### Sample Test Case 3 Explanation
+
+This test case is valid for all subtasks.
+
+

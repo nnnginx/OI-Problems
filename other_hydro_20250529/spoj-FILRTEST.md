@@ -1,0 +1,8 @@
+<p>In a recent programming contest appeared a problem named “File Recover”. In that<br>problem, repeated strings of a given text were to be counted. You are preparing test<br>cases for that problem, and in order to test for border cases you want to generate a text<br>with many repetitions of a particular string.<br>Of course, test cases cannot be arbitrarily long, so you decided to choose a length and a<br>string, and then fit in a text of that length as many repetitions as possible of the string.<br>For instance, if the length is 14 and the string is “abcab”, you may generate the text<br>“abcabcabcabcab” whose length is 14 and where the string “abcab” appears 4 times<br>(starting at positions 1, 4, 7 and 10).<br>You would like to know how good your idea is before implementing. Given a length and<br>a string, you must determine the maximum number of times the characters of the string<br>can appear consecutively in a text of that length.</p>
+<h3>Input</h3>
+<p>Each test case is described using a single line. The line contains an integer K (1 ≤ K ≤<br>10<sup>9</sup> ) and a non-empty string S of at most 10<sup>6</sup> lowercase letters. The end of input is<br>indicated with a line containing the number −1 and an asterisk (“*”).</p>
+<h3>Output</h3>
+<p>For each test case, output a single line with a single integer representing the maximum<br>number of times the characters of S can appear consecutively in a text of length K.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong> <br>14 abcab<br>1000 abcde<br>1000000000 z<br>1 zzzzz<br>-1 *
+<br><strong>Output:</strong> <br>4<br>200<br>1000000000<br>0</pre>

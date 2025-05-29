@@ -1,0 +1,10 @@
+<p>There are <strong>n</strong> sticks lying on the ground. The Ant can move only along the sticks. It can go from one stick to another only if the sticks intersect or touch each other. Help the Ant find out if it can  reach the stick <strong>y</strong> from the stick <strong>x</strong>.</p>
+<h3>Input</h3>
+<p>The first line of the input contains number <strong>t</strong> ¨C the amount of tests. Then <strong>t</strong> test descriptions follow.&nbsp;The first line of each test contains two  integers <strong>n</strong> and <strong>m</strong> - the number of stick and the number of queries. Next<strong> n</strong> lines contain four integers <strong>Ax</strong>,<strong> Ay</strong>, <strong>Bx</strong>, <strong>By</strong> - the coordinates of the endpoints of a stick. You may consider stick to be straight segment on a plane. The next <strong>m</strong> lines contain two integers each <strong>x</strong> and <strong>y</strong> which are the queries.</p>
+<h3>Constraints</h3>
+<p>1 &lt;= <strong>t</strong> &lt;= 100<br> 1 &lt;= <strong>n</strong>, <strong>m</strong> &lt;= 1000<br>-10000 &lt;= <strong>Ax</strong>, <strong>Ay</strong>, <strong>Bx</strong>, <strong>By</strong> &lt;= 10000<br>1 &lt;= <strong>x</strong>, <strong>y</strong> &lt;= <strong>n&nbsp;</strong></p>
+<h3>Output</h3>
+<p>For each query print "YES" if the Ant can reach the stick number <strong>y</strong> from the stick number <strong>x</strong>, otherwise print "NO".</p>
+<h3>Example</h3>
+<pre><strong>Input:<br><p><span style="font-weight: normal;">2<br>3 3<br>1 3 4 3<br>3 4 3 1<br>3 1 5 1<br>1 2<br>1 3<br>2 2<br>3 3<br>1 1 3 1<br>2 1 3 1<br>3 2 4 1<br>1 2<br>1 3<br>2 3</span></p></strong></pre>
+<pre><strong><br>Output:<p><span style="font-weight: normal;">YES<br>YES<br>YES<br>YES<br>NO<br>NO</span><span style="font-weight: normal;"><span style="font-weight: normal;">&nbsp;</span></span></p></strong></pre>

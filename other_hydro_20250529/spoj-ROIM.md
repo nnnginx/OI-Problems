@@ -1,0 +1,13 @@
+<p>Computer Engineering student Roim is getting ready for a trip to Mexico. For that, he has studied the airplane network, so he knows the details of all <strong>R</strong> regular flights currently in operation on all of the <strong>N</strong> available airports. Unfortunately, one of his school mates is very annoying and keeps saying the same stuff to him all the time.&nbsp;</p>
+<p>To solve that issue, he will organize two different flight plans: one for the team and one for the annoying guy. The condition is that the flight plans may not contain the same flight (note that it is possible for both to pass through the same airport, and that the same flight may not be used by both even if the times are different). As this may not be possible using only regular flights, he has also considered using some of the <strong>C</strong> flights chartered by travel agencies, but he'd like to keep those to a minimum as they usually suffer from large delays. Of course, as long as the least number of chartered flights is picked, Roim will pick the plans with the least total cost (defined as the sum of the costs of all flights used).</p>
+<h3>Input</h3>
+<p>The input consists of several test cases. On the first line of a test case are three integers <strong>N</strong> (2 ¡Ü N ¡Ü 225), <strong>R</strong> and <strong>C</strong> (0 ¡Ü R+C ¡Ü N(N-1)/2) separated by spaces. The starting airport is 0, and the destination is N-1.</p>
+<p>The next R lines contain integers <strong>a</strong>, <strong>b</strong> (0 ¡Ü a, b ¡Ü N-1), <strong>c </strong>(1 ¡Ü c ¡Ü 100), meaning that there exists a one-way regular flight between airports a and b, with cost c. The following C lines give details for chartered flights in the same manner. There is a blank line at the end of each test case. The last test case is followed by a line containing three zeros.</p>
+<p>You may assume that any pair of cities is only connected in at most a single direction by a single flight.</p>
+<h3>Output</h3>
+<p>If it is possible to make the plans, print two integers separated by spaces. The first should be the minimum amount of chartered flights used, and the second is the total cost of the solution.</p>
+<p>If it's impossible that both the team and the guy get to their destination, print "Boa viagem, Roim" instead.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+4 5 0<br>0 1 1<br>1 3 5<br>0 2 5<br>1 2 1<br>2 3 1<br><br>4 4 1<br>0 1 2<br>1 3 2<br>0 2 2<br>1 2 1<br>2 3 2<br><br>2 1 0<br>0 1 10<br><br>0 0 0<br><br><strong>Output:</strong>
+0 12<br>1 8<br>Boa viagem, Roim </pre>

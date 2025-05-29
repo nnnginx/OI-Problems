@@ -1,0 +1,19 @@
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #3e3f3a; font-family: 'PT Sans'; font-size: 14px; line-height: 20px;">Mahbub has&nbsp;<span style="box-sizing: border-box; font-weight: 700;">N-1</span>&nbsp;cousins. Mahbub is the oldest among them. Now they come to their uncle for "EID SALAMI" . But they decided that the older one will strictly get more money than the younger.But their uncle has another plan . He told them that he will give them an amount of money and they have to tell them how many ways they can collect money so that the elder gets more money than the younger and they have to take all the money.</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #3e3f3a; font-family: 'PT Sans'; font-size: 14px; line-height: 20px;">As they have to meet with their other relatives, so they come to you, as they know that you are a great programmer , and if you can solve their problem they will give you some SALAMI :)</p>
+<h3>Input</h3>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #3e3f3a; font-family: 'PT Sans'; font-size: 14px; line-height: 20px;">Input starts with an integer&nbsp;<span style="box-sizing: border-box; font-weight: 700;">T</span>, denoting the number of test cases.</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #3e3f3a; font-family: 'PT Sans'; font-size: 14px; line-height: 20px;">Each case starts with a line containing two integers&nbsp;<span style="box-sizing: border-box; font-weight: 700;">M &amp; N</span>.&nbsp;<span style="box-sizing: border-box; font-weight: 700;">M</span>&nbsp;denotes the amount of money their uncle wants to give them.&nbsp;<span style="box-sizing: border-box; font-weight: 700;">N</span>&nbsp;denotes the number of cousins of Mahbub (including himself).</p>
+<h3>Constraints</h3>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #3e3f3a; font-family: 'PT Sans'; font-size: 14px; line-height: 20px;">1&lt;=T&lt;=100</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #3e3f3a; font-family: 'PT Sans'; font-size: 14px; line-height: 20px;">1&lt;=M&lt;=1000000</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #3e3f3a; font-family: 'PT Sans'; font-size: 14px; line-height: 20px;">2&lt;=N&lt;=1000000</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #3e3f3a; font-family: 'PT Sans'; font-size: 14px; line-height: 20px;">M*N &lt;= 1000000</p>
+<h3><br>Output</h3>
+<p><span style="color: #3e3f3a; font-family: 'PT Sans'; font-size: 14px; line-height: 20px;">For each case, print the case number and the total number of ways. As the result can be very big, you need to output the answer module 10^9 + 7 (1000000007). See the samples for exact formatting.</span></p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+<span style="color: #3e3f3a; font-family: 'Ubuntu Mono'; font-size: 14px; line-height: 20px; white-space: pre;">2<br>40 3<br>12 3</span>
+
+<strong>Output:</strong>
+<span style="color: #3e3f3a; font-family: 'Ubuntu Mono'; font-size: 14px; line-height: 20px; white-space: pre;">Case 1: 114<br></span><span style="color: #3e3f3a; font-family: 'Ubuntu Mono'; font-size: 14px; line-height: 20px;">Case 2: 7</span></pre>
+<pre><span style="color: #4b4f56; font-family: helvetica, arial, sans-serif; font-size: 12px; line-height: 15.36px; white-space: pre-wrap; background-color: #fefefe;">Problem Setter: Raihat Zaman Neloy. <br></span><span style="color: #4b4f56; font-family: helvetica, arial, sans-serif; font-size: 12px; line-height: 15.36px; white-space: pre-wrap; background-color: #fefefe;">Used in Eid 2016 contest. <br></span><span style="color: #4b4f56; font-family: helvetica, arial, sans-serif; font-size: 12px; line-height: 15.36px; white-space: pre-wrap; background-color: #fefefe;">More about Eid 2016 contest: <a href="https://www.facebook.com/events/611018449074622/" target="_blank">Click Here</a></span></pre>

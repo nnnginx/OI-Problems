@@ -1,0 +1,8 @@
+<p>Sometimes it is hard to prepare tests for programming problems. Now Bob  is preparing tests to new problem about strings ¡ª input data to his  problem is one string. Bob has 3 wrong solutions to this problem. The  first gives the wrong answer if the input data contains the substring <span><em>s</em><sub>1</sub></span>, the second enters an infinite loop if the input data contains the substring <span><em>s</em><sub>2</sub></span>, and the third requires too much memory if the input data contains the substring <span><em>s</em><sub>3</sub></span>.  Bob wants these solutions to fail single test. What is the minimal  length of test, which couldn't be passed by all three Bob's solutions?</p>
+<h3>Input</h3>
+<p>There are several test cases. For each test case there are exactly 3 lines. The <span><em>i</em></span>-th line contains string <span><em>s</em><sub><em>i</em></sub></span>. All the strings are non-empty, consists of lowercase Latin letters, the length of each string doesn't exceed <span>10<sup>5</sup></span>.</p>
+<h3>Output</h3>
+<p>For each test case output one number ¡ª what is minimal length of the string, containing <span><em>s</em><sub>1</sub></span>, <span><em>s</em><sub>2</sub></span> and <span><em>s</em><sub>3</sub></span> as substrings.</p>
+<h3>Example</h3>
+<pre><strong>Input</strong>:<br>ab<br>bc<br>cd<br>abacaba<br>abaaba<br>x<strong><br><br>Output:</strong>
+4<br>11</pre>

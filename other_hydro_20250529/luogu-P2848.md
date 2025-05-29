@@ -1,0 +1,49 @@
+## 题目描述
+Every day, Farmer John walks through his pasture to check on the well-being ofeach of his cows. On his farm he has two breeds of cows, Holsteins and Guernseys. His $H$ Holsteins are conveniently numbered $1 \ldots H$, and his $G$ Guernseys are conveniently numbered $1 \ldots G$($1 \leq H \leq 1000, 1 \leq G \leq 1000$). Each cow is located at a point inthe 2D plane (not necessarily distinct).
+
+Farmer John starts his tour at Holstein 1, and ends at Holstein $H$.  He wantsto visit each cow along the way, and for convenience in maintaining hischecklist of cows visited so far, he wants to visit the Holsteins and Guernseysin the order in which they are numbered. In the sequence of all $H+G$ cows hevisits, the Holsteins numbered $1 \ldots H$ should appear as a (not necessarilycontiguous) subsequence, and likewise for the Guernseys. Otherwise stated, thesequence of all $H+G$ cows should be formed by  interleaving the list ofHolsteins numbered $1 \ldots H$ with the list of Guernseys numbered $1 \ldots G$.
+
+When FJ moves from one cow to another cow traveling a distance of $D$, heexpends $D^2$ energy.  Please help him determine the minimum amount of energyrequired to visit all his cows according to a tour as described above.
+
+## 输入格式
+The first line of input contains $H$ and $G$, separated by a space.
+
+The next $H$ lines contain the $x$ and $y$ coordinates of the $H$ Holsteins, and the next $G$ lines after that contain coordinates of the Guernseys. Each coordinate is an integer in the range $0 \ldots 1000$.
+
+
+## 输出格式
+Write a single line of output, giving the minimum energy required for FJ's tour of all the cows.
+
+
+## 题目大意
+### 题目描述
+
+每天，Farmer John 都会穿过他的牧场，检查每头奶牛的健康状况。他的农场里有两类奶牛：荷斯坦牛和根西牛。他的 $H$ 头荷斯坦牛被方便地编号为 $1 \ldots H$，而他的 $G$ 头根西牛被方便地编号为 $1 \ldots G$（$1 \leq H \leq 1000, 1 \leq G \leq 1000$）。每头奶牛都位于二维平面中的一个点（不一定不同）。
+
+Farmer John 从荷斯坦牛 1 开始他的巡视，并在荷斯坦牛 $H$ 结束。他希望沿途访问每头奶牛，并且为了方便维护他已经访问过的奶牛清单，他希望按照编号顺序访问荷斯坦牛和根西牛。在他访问的所有 $H+G$ 头奶牛的序列中，编号为 $1 \ldots H$ 的荷斯坦牛应作为一个（不一定连续的）子序列出现，同样地，编号为 $1 \ldots G$ 的根西牛也应如此。换句话说，所有 $H+G$ 头奶牛的序列应通过将编号为 $1 \ldots H$ 的荷斯坦牛列表与编号为 $1 \ldots G$ 的根西牛列表交错排列而成。
+
+当 Farmer John 从一头奶牛移动到另一头奶牛，移动距离为 $D$ 时，他会消耗 $D^2$ 的能量。请帮助他确定按照上述巡视方式访问所有奶牛所需的最小能量。
+
+### 输入格式
+
+输入的第一行包含用空格分隔的 $H$ 和 $G$。
+
+接下来的 $H$ 行包含 $H$ 头荷斯坦牛的 $x$ 和 $y$ 坐标，随后的 $G$ 行包含根西牛的坐标。每个坐标都是 $0 \ldots 1000$ 范围内的整数。
+
+### 输出格式
+
+输出一行，表示 Farmer John 巡视所有奶牛所需的最小能量。
+
+```input1
+3 2
+0 0
+1 0
+2 0
+0 3
+1 3
+```
+
+```output1
+20
+```
+

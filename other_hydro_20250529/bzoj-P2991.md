@@ -1,0 +1,41 @@
+
+
+
+## 题目描述
+Have you ever gambled? I wish you not. Being a professional gambler for three years, I learned every
+ trick they play. Gambling is has nothing to do with luck. It is all about cheating.One of the most 
+elementary tricks is "mercury dice". Instead of being solid, there is a hollow chamber, filled with 
+mercury, inside of the dice. This little modification makes the dice asymmetric, so that, the probab
+ility of each outcome is not equal. Imprecisely, which face is up, depends on the previous state.To 
+simplify the model, we use "mercury coin" here. As we mentioned, the state (head or tail) after toss
+ing depends on the state before. The probability of that the two states are same, is p. For example,
+ if the head side is up now, the probability that, the coin is still head up after tossing is p. And
+ the probability that the tail side come up is 1-p. If p=0.5, it is a common coin. When p≠ 0.5, thi
+s coin is mercury coin. Assume the coin is head up now. After we toss Ntimes, what is the probabilit
+y that, the number of heads is less than a certain number K?
+## 输入格式
+The test file contains multiple lines, and each line is a test case. 
+Each test cases consists of three numbers
+N K p
+N and K are integers, and p is a float number. 
+N ≤ 30000
+K ≤ N
+0 ≤ p ≤ 1
+## 输出格式
+For each test case, output the probability that, after tossing N times, the number of heads is less 
+than K. Rounded to the three digit after the decimal point.
+
+```input1
+171 88 0.107
+
+```
+```output1
+0.83785
+```
+
+## 提示
+没有写明提示
+## 题目来源
+没有写明来源
+
+

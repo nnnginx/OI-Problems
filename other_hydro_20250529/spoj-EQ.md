@@ -1,0 +1,8 @@
+<p>The train station has just used a new electronic queue system. Now passengers who want to buy tickets have to get the service ordering number and wait until it is his turn.</p>
+<p><br>In this station, there are N cashers; each can serve one passenger at a time. When it’s your turn, you will go to an assigned cashier to chose a ticket and pay for it. If you want to buy K tickets it will take you 5 minutes to chose the train, the time, the seats, etc and K more minutes for your tickets to be printed. If there are several available cashiers, a passenger would be assigned to the one with the lowest number.</p>
+<p><br>Given the arrival time of passengers at the station and the amount of tickets they want to buy, your task is to calculate the total time P passengers spend buying their tickets (waiting time and buying time).</p>
+<p><br>Input<br>The first line is C, the number of test cases.<br>For each test case:<br>• The first line is N – number of cashiers.<br>• The next line consists of P – the number of passengers.<br>• The next P lines contain a pair of integers: the arrival time and the number of tickets he<br>wants to buy.<br>• The arrival time of these P passengers will be distinct and will be sorted increasingly.</p>
+<p><br>Output<br>For each test case, print total time of P passengers spend buying their tickets.</p>
+<p><br>Limits<br>1 &lt;= C &lt;= 15<br>1 &lt;= N &lt;= 50<br>1 &lt;= P &lt;= 10000<br>All others numbers in the input are positive and less than 1000.</p>
+<p><br>Sample input<br>1<br>2<br>3<br>1 1<br>2 10<br>3 2</p>
+<p><br>Sample output<br>32</p>

@@ -1,0 +1,40 @@
+
+
+
+## 题目描述
+Teacher Mai has a board of n rows and m columns. There is a light in each cell.
+He can flip some lights: if this light is on, turn it off, else turn it on.
+He can choose a cell(i,j), and he has following two operations:
+1. Flip the light on the cells which share a common edge with cell(i,j).
+2. Flip the light on the cells which share a common edge with cell(i,j) and cell(i,j).
+  
+You are given the initial state of board. Output the minimum operations to turn off the all the lights.
+## 输入格式
+There are multiple test cases, terminated by a line "0 0".
+For each test case, the first line contains two integers n,m(1<=n,m<=10).
+In following n lines, each line contains a string consisting of m characters, representing the initial state(0 means off, 1 means on).
+## 输出格式
+For each case, output "Case #k: ans" first, where k is the case number counting from 1, ans is the minimum operations.
+
+```input13 3
+111
+111
+111
+3 3
+000
+010
+000
+0 0
+
+```
+
+```output1Case #1: 3
+Case #2: 2
+```
+
+## 提示
+没有写明提示
+## 题目来源
+By 镇海中学
+
+

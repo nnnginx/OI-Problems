@@ -1,0 +1,10 @@
+<p style="text-align: justify;">Little Aron has to visit the planets of one system. Imagine that the planets are ordered in line and labeled with the numbers <strong>1, ..., n</strong>.</p>
+<p style="text-align: justify;">Aron has <strong>n-1</strong> teleports labeled with <strong>1, 2, ..., n-1</strong>. The teleport labeled with <strong>t</strong> could transmit only once, one human from a planet labeled with <strong>m </strong>to the planets with label <strong>m+t</strong> or <strong>m-t</strong>, if such planet exists. Using a space-stop Aron could go to the planet labeled with <strong>k</strong>, i.e. he starts his journey from a planet with a label <strong>k</strong>. For the given <strong>n</strong> and <strong>k</strong> you have to find the best way Aron can use the teleports in order to visit as many different planets of the system, as possible.</p>
+<h3 style="text-align: justify;">Input</h3>
+<p style="text-align: justify;">First line containts two integers, <strong>n</strong> and <strong>k</strong> (1 &lt;= k &lt;= n &lt;= 1 000 000).</p>
+<h3 style="text-align: justify;">Output</h3>
+<p style="text-align: justify;">Output should contain indices <strong>t</strong>, of the teleports that Aron used, in the order in which he used them. Moreover you have to output <strong>t</strong> if he used the teleport to jump from a planet with the smaller number to a planet with a higher, and <strong>-t</strong> if he jumped from a planet with a higher number to a planet with a smaller number.</p>
+<p style="text-align: justify;">If there are several solutions with the same number of teleports, you can output any one of them.</p>
+<h3 style="text-align: justify;">Example</h3>
+<pre style="text-align: justify;"><strong>Input</strong>:<br><br>6 2<br><br><strong>Output:</strong><br><br>4 -5 3 -1 2<br><br>NOTE - A simpler version of this task appeared on ITI 2012, Shumen.
+</pre>

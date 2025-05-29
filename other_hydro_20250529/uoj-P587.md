@@ -1,0 +1,144 @@
+<p>Alice 和 Bob 在玩一个染色游戏。游戏在一张 $N$ 个点 $M(N − 1 \le M \le N)$ 条边的连通图上进行，Bob 想要围住 Alice，而 Alice 想要逃出 Bob 的包围。</p>
+<p>游戏开始时，Alice 将 $1$ 号点涂成了黑色表示占领了 $1$ 号点，Bob 将点集 $S$ 中的所有点涂成了白色表示占领了这 $|S|$ 个点，保证 $1$ 不在 $S$ 中。接下来两个人轮流进行操作，由 Alice 先手，每轮中轮到的玩家可以从一个被自己占领的点出发（对于 Alice 为黑色点对于 Bob 为白色点），选择一个相邻且未被染色的点，占领该点并染上自己的颜色。如果不存在可以染色的点，那么这位玩家必须跳过这个回合。当所有点都被染完色时，游戏结束。</p>
+<p>Alice 和 Bob 约定了一个图中的非空点集 $T$，如果游戏结束时 $T$ 中的点全都涂成白色，则代表 Bob 成功围住了Alice，Bob 获胜。反之一定存在一个 $T$ 中的点被涂成黑色，那么 Alice 获胜。注意这里的 $T$ 可能会包含 $S$ 中的点和 $1$ 号点。</p>
+<p>Alice 和 Bob 都会使用最优策略。Bob 注意到，在有些局面下，Alice 优势很大，如果能让 Alice 主动跳过 Alice 的一些行动回合来获得一个更加公平的局面，这个游戏会更有可玩性。Bob 想知道，如果 Alice 跳过前 $k$ 个回合之后自己能够获胜，那么这个 $k$ 的最小值是多少。</p>
+<p>Alice 只会跳过 Alice 的前 $k$ 个回合，并且在剩下的回合中采用最优策略，即你可以理解为 Bob 在 Alice 的第一回合行动之前额外行动了 $k$ 个回合。注意如果 Bob 在 Alice 跳过的一个回合中没有合法行动，那么 Bob 仍需按照规则跳过自己的回合。如果在原图上就是 Bob 获胜那么输出 $0$。如果 $k = 1000000$ 时 Bob 也不能取胜，则输出 $1000000$。</p>
+<p>由于这个图可能很大，我们用如下的方式生成。</p>
+<ul><li>首先生成一个含有标号为 $1$ 到 $n$ 一共 $n$ 个点的空图。</li>
+<li>接下来加入 $m$ 条链，第 $i$ 条链记作 $(u_i, v_i, l_i)$，其中 $1 \le u_i, v_i \le n$且 $u_i \neq v_i$。<ul><li>首先我们加入 $l_i$ 个点，记作 $x_1^i, x_2^i, \dots, x_{l_i}^i$。</li>
+<li>然后在之 $(u_i, x_1^i), (x_1^i, x_2^i), (x_2^i, x_3^i), \dots, (x_{l_i - 1}^i, x_{l_i}^i), (x_{l_i}^i, v_i)$ 间连上无向边。</li>
+<li>在这次操作之后，本轮中新加入的 $l_i$ 个点不会再与其他的点之间连边，即不同的链中的 $x_1^i \dots x_{l_i}^i$ 均为互不相同的点。特别地，如果 $l = 0$，那么就不添加新点，直接在 $(u_i, v_i)$ 之间连上无向边。</li>
+</ul></li>
+</ul><p>保证 $S$ 集合以及 $T$ 集合的点均为一开始生成的 $n$ 个点之一。</p>
+<h2>输入格式</h2>
+<p>第一行输入一个整数 $C$，表示数据组数。</p>
+<p>对于每组数据：</p>
+<ul><li>第一行输入四个整数 $n, m, |S|, |T|(1 \le |S| \le n − 1, 1 \le |T| \le n, n − 1 \le m \le n)$。</li>
+<li>接下来 $m$ 行每行输入 $3$ 个非负整数 $u_i, v_i, l_i(1 \le u_i, v_i \le n, 0 \le l_i \le 10^6)$，表示题面中的第 $i$ 条链。</li>
+<li>接下来一行输入 $|S|$ 个数 $s_1\dots s_{|S|}$ 表示 $S$ 集合中的所有元素（$2 \le s_i \le n$ 且不重复）。</li>
+<li>接下来一行输入 $|T|$ 个数 $t_1\dots t_{|T|}$ 表示 $T$ 集合中的所有元素（$1 \le t_i \le n$ 且不重复）。</li>
+</ul><p>即每组数据按照如下格式输入：
+$$
+\begin{aligned}&amp;n\ m\ |S|\ |T|\\&amp;u_1\ v_1\ l_1\\&amp;u_2\ v_2\ l_2\\&amp;\cdots \\&amp;u_m\ v_m\ l_m\\&amp;s_1\ s_2 \cdots s_{|S|}\\&amp;t_1\ t_2 \cdots t_{|T|}\\\end{aligned}
+$$</p>
+<p>保证 $u_i \neq v_i$（即没有自环），保证没有相同的 $(u_i, v_i)$ 对（即没有重边），保证给出的图是
+一个连通图。</p>
+<h2>输出格式</h2>
+<p>输出 $C$ 行，对于每组测试数据，输出为了让 Bob 取胜 Alice 至少要跳过的回合数 $k$。如果在原图上就是 Bob 获胜那么输出 $0$。如果 $k = 1000000$ 
+时 Bob 也不能取胜，则输出 $1000000$。</p>
+
+
+<pre><code class="language-input1">5
+6 5 2 2
+1 2 0
+2 3 0
+2 4 0
+3 5 0
+4 6 0
+5 6
+3 4
+6 5 2 2
+1 2 1
+2 3 0
+2 4 0
+3 5 0
+4 6 0
+5 6
+3 4
+5 4 2 2
+1 2 1
+1 3 1
+2 4 0
+3 5 0
+4 5
+2 3
+8 8 1 2
+1 2 2
+2 3 1
+3 4 0
+4 5 0
+5 6 0
+6 7 0
+7 2 1
+5 8 0
+8
+3 7
+8 8 1 2
+1 2 3
+2 3 0
+3 4 0
+4 5 0
+5 6 0
+6 7 0
+7 2 0
+5 8 0
+8
+3 7
+</code></pre>
+
+
+<pre><code class="language-output1">1
+0
+0
+0
+1
+</code></pre>
+
+<h2>样例二</h2>
+<p>见附加文件中 <code>ex_game2.in</code> 与 <code>ex_game2.ans</code>。</p>
+<h2>限制与约定</h2>
+<div class="table-responsive">
+<table class="table table-bordered table-text-center table-vertical-middle"><thead><tr><th style="text-align:center;">测试点</th>
+<th style="text-align:center;">$n$</th>
+<th style="text-align:center;">$m$</th>
+<th style="text-align:center;">其他约定</th>
+</tr></thead><tbody><tr><td style="text-align:center;">$1$</td>
+<td style="text-align:center;" rowspan="2">无</td>
+<td style="text-align:center;" rowspan="2">$=n-1$ </td>
+<td style="text-align:center;">图为一条链</td>
+</tr><tr><td style="text-align:center;">$2$</td>
+<td style="text-align:center;">无</td>
+</tr><tr><td style="text-align:center;">$3$</td>
+<td style="text-align:center;" rowspan="4">$\le 12$</td>
+<td style="text-align:center;" rowspan="4">$=n-1$ 或 $n$</td>
+<td style="text-align:center;" rowspan="2">$l_i=0$  </td>
+</tr><tr><td style="text-align:center;">$4$</td>
+</tr><tr><td style="text-align:center;">$5$</td>
+<td style="text-align:center;" rowspan="2">无 </td>
+</tr><tr><td style="text-align:center;">$6$</td>
+</tr><tr><td style="text-align:center;">$7$</td>
+<td style="text-align:center;">$=5$</td>
+<td style="text-align:center;" rowspan="8">$=n$</td>
+<td style="text-align:center;" rowspan="3">无</td>
+</tr><tr><td style="text-align:center;">$8$</td>
+<td style="text-align:center;">$=6$</td>
+</tr><tr><td style="text-align:center;">$9$</td>
+<td style="text-align:center;">$=8$</td>
+</tr><tr><td style="text-align:center;">$10$</td>
+<td style="text-align:center;" rowspan="11">无</td>
+<td style="text-align:center;">图为一个环</td>
+</tr><tr><td style="text-align:center;">$11$</td>
+<td style="text-align:center;">环上一定存在至少两个白色点即 $\vert S\vert$ 中的点</td>
+</tr><tr><td style="text-align:center;">$12$</td>
+<td style="text-align:center;">环上一定存在至少一个白色点即 $\vert S\vert$ 中的点</td>
+</tr><tr><td style="text-align:center;">$13$</td>
+<td style="text-align:center;">环上一定存在至少一个 $\vert T\vert$ 中的点</td>
+</tr><tr><td style="text-align:center;">$14$</td>
+<td style="text-align:center;">环上一定存在至少一个 $\vert T\vert$ 中的点</td>
+</tr><tr><td style="text-align:center;">$15$</td>
+<td style="text-align:center;" rowspan="6">$=n-1$ 或 $n$</td>
+<td style="text-align:center;">$\vert T\vert=1$</td>
+</tr><tr><td style="text-align:center;">$16$</td>
+<td style="text-align:center;" rowspan="2">$\vert S\vert=1$      </td>
+</tr><tr><td style="text-align:center;">$17$</td>
+</tr><tr><td style="text-align:center;">$18$</td>
+<td style="text-align:center;" rowspan="3">无</td>
+</tr><tr><td style="text-align:center;">$19$</td>
+</tr><tr><td style="text-align:center;">$20$</td>
+</tr></tbody></table></div>
+<p>对于 $100\%$ 的数据，$m = n$ 或 $n − 1$，$3 \le n \le 500$，$C = 10000$，$0 \le l_i \le 10^6$，$1 \le |S| \le
+n − 1, 1 \le |T| \le n$ 且保证图中不存在点数（只计算前 $n$ 个点的数量）大于 $100$ 的环，每个测试点中最多只有 $10$ 组数据满足 $n &gt; 50$，最多只有 $1000$ 组数据满足 $n &gt; 20$。</p>
+<p><strong>时间限制</strong>：$1\texttt{s}$</p>
+<p><strong>空间限制</strong>：$512\texttt{MB}$</p>
+<h2>下载</h2>
+<p><a href="./20991/file/attachment.zip">样例数据下载</a></p>

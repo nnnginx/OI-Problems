@@ -1,0 +1,103 @@
+## 题目描述
+$$
+2 ^ {2 ^ {2 ^ {2 ^ {2 ^ {2 ^ {2 ^ {2 ^ {2 ^ {2}}}}}}}}}
+$$
+
+SolarPea likes blowing up PolarSea's blog by sending power tower of $2$. As the tower is too high, the stack of the web page overflows. So the blog no longer works.
+
+Now SolarPea has $n$ powers of two $a_1, a_2, \ldots, a_n$, $x$ bitwise AND operators, $y$ bitwise OR operators and $z$ bitwise XOR operators. It is guaranteed that $n = x + y + z$.
+
+Solarpea wants to construct an arithmetic expression with these numbers and operators. Formally, define $x_0 = 0$ and $x_i = x_{i - 1}\ \mathrm{op}_i\ b_i$, where $b$ is a permutation of $a$, which means we can rearrange $a$ to get $b$, and $\mathrm{op}_i$ is one of the three types of bitwise operators above. Then $x_n$ is the result of the expresstion.
+
+The larger the expression, the more likely it is to make PolarSea's blog unable to work. SolarPea wants you to help him to find the largest $x_n$ and construct such an expression. If there are multiple solutions, output any of them.
+
+You need to process $T$ test cases independently.
+
+## 输入格式
+The first line contains a single integer $T$ ($1\leq T \leq 10 ^ 5$), denoting the number of test cases.
+
+For each test case, the first line contains four integers $n$, $x$, $y$ and $z$ ($0\leq x, y, z\leq n \leq 65\,536, n = x + y + z$). The next line contains $n$ integers $c_1, c_2, \ldots, c_n$ ($0\leq c_i < n$), where $a_i = 2 ^ {c_i}$.
+
+It is guaranteed that the sum of $n$ over all test cases is no more than $1\,048\,576$.
+
+## 输出格式
+For each test case, output three lines.
+
+The first line contains a $01$-string of length $n$, representing the binary form of the largest $x_n$.
+
+The next line contains a single $1$-indexed string $\mathrm{op}$ of length $n$, where $\mathrm{op}_i$ represents the $i$-th operator. Here, we denote AND as `&` (ASCII 38), OR as `|` (ASCII 124), and XOR as `^` (ASCII 94). You should guarantee that there is exactly $x$ AND operators, $y$ OR operators and $z$ XOR operators.
+
+The third line contains $n$ integers $d_1, d_2, \ldots, d_n$, the $i$-th of which representing the logarithm of $b_i$ with base $2$. That is, $d$ is a permutaion of $c$.
+
+If there are multiple solutions, output any of them.
+
+## 题目大意
+## 题目描述
+SolarPea 喜欢通过发送电力塔来炸毁 PolarSea 的博客 $2$。由于塔太高，网页的堆栈溢出。所以博客已经不能用了。  
+
+现在 SolarPea 拥有两个 $a_1、a_2、ldots、a_n$、$x$ 位 AND 运算符、$y$ 位 OR 运算符和 $z$ 位 XOR 运算符的 $n$ 次方。保证 $n = x + y + z$。  
+
+Solarpea 希望使用这些数字和运算符构造一个算术表达式。正式地定义 $x_0 = 0$ 和 $x_i = x_{i - 1}\ \mathrm{op}_i\ b_i$，其中 $b$ 是 $a$ 的排列，这意味着我们可以重新排列 $a$ 来得到 $b$，而 $\mathrm{op}_i$ 是上述三种类型的按位运算符之一。那么 $x_n$ 就是表达式的结果。
+
+表达式越大，就越有可能使 PolarSea 的博客无法工作。SolarPea 希望你帮他找到最大的 $x_n$ 并构造这样的表达式。如果有多个解决方案，则输出其中任何一个。
+
+您需要独立处理 $T$ 个测试用例。
+## 输入格式
+第一行包含一个整数 $T $ （$1\leq T \leq 10 ^ 5$），表示测试用例的数量。  
+
+对于每个测试用例，第一行包含四个整数 $n$， $x$， $y$ 和 $z$ （$0\leq x, y, z\leq n \leq 65\,536, n = x + y + z$）。下一行包含 $n$ 个整数 $c_1, c_2, \ldots, c_n$ ($0\leq c_i < n$)，其中 $a_i = 2 ^ {c_i}$。
+
+保证所有测试用例的 $n $ 之和不超过 $1\,048\,576$。  
+## 输出格式
+对于每个测试用例，输出 3 行。  
+
+第一行包含一个长度为 $n$ 的 $01$ 字符串，表示最大 $x_n$ 的二进制形式。  
+
+下一行包含一个长度为 $n$ 的 $1$ 索引字符串 $\mathrm{op}$，其中 $\mathrm{op}_i$表示第 $i$ 个运算符。在这里，我们将 AND 表示为 `&` （ASCII 38），OR 表示为 `|` （ASCII 124），将 XOR 表示为 `^` （ASCII 94）。您应该保证正好有 $x $ AND 运算符、$y$ OR 运算符和 $z$ XOR 运算符。
+
+第三行包含 $n$ 个整数 $d_1, d_2, \ldots, d_n$，其中第 $i$ 个代表 $b_i$ 的对数，以 $2$ 为底。也就是说，$d$ 是 $c$ 的排列。
+
+如果有多个解决方案，则输出其中任何一个。
+
+## 输入输出样例
+无
+## 提示
+**来源**：2022 ICPC 亚洲习安区域赛问题 H.  
+**作者**： Alex_Wei.
+
+```input1
+4
+4 3 0 1
+1 0 1 0
+4 1 0 3
+1 0 1 0
+8 0 2 6
+1 5 5 7 1 5 5 7
+8 0 0 8
+1 5 5 7 1 5 5 7
+
+```
+
+```output1
+0010
+&&^&
+0 0 1 1
+0011
+^^&^
+0 1 0 1
+10100000
+^^|^^^^|
+1 5 5 7 1 5 5 7
+00000000
+^^^^^^^^
+1 5 5 7 1 5 5 7
+
+```
+
+## 提示
+**Source**: The 2022 ICPC Asia Xi'an Regional Contest Problem H.
+
+**Author**: Alex_Wei.
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/g2frgx9s.png)
+

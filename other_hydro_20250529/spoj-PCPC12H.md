@@ -1,0 +1,29 @@
+<p><span style="font-size: small;">&nbsp;</span><span style="font-size: small;">Begging nowadays is an organized profession and team work is extremely important. Beggars target special occasions to maximize revenue, such as Muslim Friday prayers. They wait outside the mosque until the prayer ends and ask people for money as people leave the mosque. In this problem you are to help two beggars to maximize their revenue on Friday after the Friday prayers. These beggars are experienced and know everything they need, specifically they know exactly when each mosque ends the prayer and how much money they will gain if at least one of them stands in front of that mosque when the prayer ends (there is no use if both of them stand at the same mosque).</span></p>
+<p><span style="font-size: small;">&nbsp;</span></p>
+<p><span style="font-size: small;">In their town there are n mosques on a straight line and you will be given the x coordinate for each mosque. The time needed for a beggar to travel from one mosque a to another mosque b is |xa-xb| units of time. As you know, these baggers are professionals and take no time to collect the money from a mosque if they happen to be there when the prayer ends, and can immediately start moving to another mosque.</span></p>
+<p><span style="font-size: small;">&nbsp;</span></p>
+<p><span style="font-size: small;">Of course the beggars can choose to initially start from any mosque. Your task here is to compute the maximum amount of money they can collect together.</span></p>
+<p><span style="font-size: small;"><strong>Input Specification</strong></span></p>
+<p><span style="font-size: small;">Input contains multiple test cases. Each test case starts with number of mosques 1&lt;=n&lt;=100, followed by n lines. Each line consists of three 32-bits signed integers x, t, and m representing the x-coordinate of the mosque, the time when the prayer ends, and the amount of money that can be collected from this mosque. The input will be terminated when n equals 0 and should not be treated as a test case.</span></p>
+<p><span style="font-size: small;"><strong>Output Specification</strong></span></p>
+<p><span style="font-size: small;">For each test case you should print a single integer, the maximum amount of money that can be collected by the two beggars.</span></p>
+<p><span style="font-size: small;"><strong>Sample Input</strong></span></p>
+<p><span style="font-size: small;">3</span></p>
+<p><span style="font-size: small;">7 6 19</span></p>
+<p><span style="font-size: small;">2 3 18</span></p>
+<p><span style="font-size: small;">9 8 13</span></p>
+<p><span style="font-size: small;">4</span></p>
+<p><span style="font-size: small;">1 4 5</span></p>
+<p><span style="font-size: small;">3 4 5</span></p>
+<p><span style="font-size: small;">2 5 5</span></p>
+<p><span style="font-size: small;">4 5 5</span></p>
+<p><span style="font-size: small;">4</span></p>
+<p><span style="font-size: small;">1 4 5</span></p>
+<p><span style="font-size: small;">3 4 5</span></p>
+<p><span style="font-size: small;">2 5 5</span></p>
+<p><span style="font-size: small;">5 5 5</span></p>
+<p><span style="font-size: small;">0</span></p>
+<p><span style="font-size: small;"><strong>Sample Output</strong></span></p>
+<p><span style="font-size: small;">50</span></p>
+<p><span style="font-size: small;">20</span></p>
+<p><span style="font-size: small;">15</span></p>

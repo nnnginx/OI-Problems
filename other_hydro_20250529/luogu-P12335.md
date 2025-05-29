@@ -1,0 +1,138 @@
+## 题目背景
+[摇曳轻落](https://music.163.com/#/song?id=22699115)。
+
+这又何尝不是一种造计算机？
+
+## 题目描述
+你并不会伪伪随机，所以你要做一道简单题。
+
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int n;
+unsigned int a[6],b[6];
+char s[207];
+signed main(){
+	scanf("%s",s+1);
+	n=strlen(s+1);
+	a[1]=1;
+	for(int _=1;_<=n;_++){
+		char ch=s[_];
+		for(int i=1;i<=5;i++) b[i]=0; 
+		if(ch=='L'){
+			b[2]+=a[1];
+			b[2]+=a[3];
+			b[4]+=a[5];
+			b[2]+=a[4];
+			b[4]+=a[2];
+		}
+		if(ch=='R'){
+			b[1]+=a[2];
+			b[3]+=a[1];
+			b[3]+=a[5];
+			b[4]+=a[2];
+			b[4]+=a[3];
+			b[5]+=a[2];
+			b[5]+=a[4];
+		}
+		for(int i=1;i<=5;i++) a[i]=b[i];
+	}
+	printf("%u\n",a[1]);
+	return 0;
+}
+```
+
+如上是小 D 设计的，准备和你交互的程序。
+
+因为小 D 不会配置交互题，所以请你构造一种输入使得该程序的输出恰好为 $n$。
+
+## 输入格式
+输入一行，一个整数 $n$。
+
+## 输出格式
+输出一行，一个字符串，表示提供给小 D 的输入。
+
+**请保证此字符串非空，否则可能出现意料之外的结果。**
+
+此字符串长度不能超过 $200$，否则无法通过对应测试点。
+
+**你只需要输出任意一种满足条件的字符串即可获得分数。**
+
+如果无法表示出某个数，请仅输出一行 `-1`。
+
+
+```input1
+3
+```
+
+```output1
+RLRLLLRLLLLR
+```
+
+```input2
+3
+```
+
+```output2
+LLRLLRLLRLLR
+```
+
+```input3
+11776
+```
+
+```output3
+RLRLRLLLRLRRLRLRLRLRLRLRLRLRLRLR
+```
+
+```input4
+16
+```
+
+```output4
+LRLRLRLRRLLRLR
+```
+
+```input5
+47
+```
+
+```output5
+RLRRLLRLRRLLRLRLLRRRLRRRRLR
+```
+
+```input6
+720
+```
+
+```output6
+RLRRRLRRLRLRRRLRRLLLRLLLRLRLLLR
+```
+
+```input7
+176374
+```
+
+```output7
+RRLLRRLRRLLRLLRRLLRLLRRLRLRLRRLLRLLRLLLLRLRLLRLLRLLRLLRLRLLRLR
+```
+
+## 提示
+### 样例解释
+
+你可以直接把字符串输入进程序里。另外本题的程序不是瞎编的，具有一定实际意义，但是作为 J 组过于复杂所以无法告知你。
+
+### 数据范围
+
+本题共 $20$ 个测试点。
+
+对于前 $20\%$ 的数据有 $n\le 10$。
+
+对于前 $40\%$ 的数据有 $n\le 10^5$。
+
+对于前 $60\%$ 的数据，保证在对应范围内随机生成。
+
+对于所有数据，保证 $0 \le n\le 10^9$。你的字符串可以让小 D 的程序自然溢出。
+

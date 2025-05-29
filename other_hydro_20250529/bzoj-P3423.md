@@ -1,0 +1,28 @@
+
+
+
+## 题目描述
+Professor Byteoni is preparing Bit & Byte Theory exam. He has already prepared N questions. Each of these questions has been ranked with an expected difficulty coefficient by the professor. This coefficient is a natural number ranging from 1 toN. Each of the questions holds a different coefficient. 
+Now the professor is considering the exam questions sequence. Professor wishes to determine whether his students are able to judge the question difficulty by themselves. For this purpose he plans to line up his questions in such a way, that coefficients of subsequent questions differ at least by K . Help the professor to find such a sequence. 
+## 输入格式
+**The first and only input line contains two integers N and K （2<=N<=1000000,1<=K<=N）): the number of questions prepared by professor and the lower limit of the difficulty difference of subsequent exam questions. 
+** 
+## 输出格式
+**Your program should output one line containing sought question difficulty coefficients sequence, in other words a sequence of N pairwise distinct natural numbers ranging from 1 to N , where each two subsequent numbers differ at least by K . If there are numerous correct answers, your program should write any one of these. In case the sought sequence does not exist, your program should write only one word: NIE (Polish for no). 
+** 
+
+```input1
+5 2
+
+```
+
+```output1
+2 4 1 5 3
+```
+
+## 提示
+期待SPJ
+## 题目来源
+没有写明来源
+
+

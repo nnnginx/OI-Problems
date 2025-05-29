@@ -1,0 +1,10 @@
+<p><span style="font-size: small;">Since YoMamaSoFat was able to answer Blackhood's and Kira's question as in http://www.spoj.com/problems/TPGAME/ (though with a little help from your side), it was my turn to ask him a question. This would again be a coding question as you might be knowing he is a noob in coding. I gave him a permutation of N distinct integers from 1...N and asked him the rank of the permutation when all possible permutations of the integers are arranged lexicographically. eg for N=3, all possible permutations arranged lexicographically would be:-<br><br>1 2 3<br><br>1 3 2<br><br>2 1 3<br><br>2 3 1<br><br>3 1 2<br><br>3 2 1<br><br>From the above, rank of 1 2 3 would be 1, rank of 1 3 2 would be 2 and so on...<br><br><strong>HELP HIM!</strong><br><br><strong>NOTE:- You may assume it is the same permutation which Blackhood gave him in http://www.spoj.com/problems/TPGAME/ to tell the no. of inversions for each integer in it.<img title="Wink" src="../../../gfx/jscripts/tiny_mce/plugins/emotions/img/smiley-wink.gif" border="0" alt="Wink"></strong></span></p>
+<p>&nbsp;</p>
+<h3><span style="font-size: medium;">Input</span></h3>
+<p><span style="font-size: small;">First line of the input contains t, the no. of test cases. (1&lt;=t&lt;=10)<br><br>2*t lines follow, two for each test case.<br><br>Each test case begins with an integer N , the no of elements in the permutation.(1&lt;=N&lt;=200000)<br><br>The next line contains N space separated distinct integers from 1...N,&nbsp; representing the permutation.</span></p>
+<h3><span style="font-size: medium;">Output</span></h3>
+<p><span style="font-size: small;">For each test case, print the rank of permutation %1000000007 on a new line.</span></p>
+<h3><span style="font-size: medium;">Example</span></h3>
+<pre><span style="font-size: small;"><strong>Input:</strong></span><span style="font-size: small;"><br>3<br>1<br>1<br>3<br>3 2 1<br>4<br>2 1 4 3</span></pre>
+<pre><span style="font-size: small;"><strong>Output:</strong>
+</span><span style="font-size: small;">1<br>6<br>8</span></pre>

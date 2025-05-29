@@ -1,0 +1,30 @@
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Alice and Bob playing the following game. </span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">They choose two different positive integers K and L, and start the game with a tower of N coins. Alice always plays first, Bob ¨C second, after that ¨C Alice again, then Bob, and so on. They in turn can take 1, K or L coins from the tower.</span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">The winner is who takes the last coin (or coins).</span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">After a long, long playing, Alice realizes that there are cases in which he could win, no matter how Bob plays. And in all other cases Bob being careful can win, no matter how Alice plays.</span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Given N,K,L predict if Alice can win if both play optimally.</span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><strong>Constraints</strong> : </span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">1&lt;=K&lt;=20</span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">1&lt;=L&lt;=20</span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">1&lt;=N&lt;=1000000000</span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">T &lt;= 10^5<br></span></p>
+<h3>Input</h3>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">First line contains T- number of cases </span></p>
+<p><span style="font-size:15px;font-family:Arial;color:#000000;background-color:#ffffff;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Next T lines each contain 3 integer K,L,N </span></p>
+<h3>Output</h3>
+<p><span id="docs-internal-guid-75facd94-f4bc-542d-6250-bf6346096d17" style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">For each case print ¡°Alice¡± (without quotes) if alice can can otherwise print ¡°Bob¡± without quotes.<br></span></p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">5</span>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">5 4 8</span>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">1 3 9</span>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">4 3 10</span>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">1 1 5</span>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">1 5 6</span>
+
+<strong>Output:</strong><br><br><span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">Bob</span>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">Alice</span>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">Alice</span>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">Alice</span>
+<span style="font-size: 15px; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: normal; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline;">Bob</span>
+</pre>

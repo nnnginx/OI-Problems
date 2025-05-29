@@ -1,0 +1,48 @@
+<p><span style="font-family: Cambria; font-size: 24px; font-variant: small-caps; line-height: 1.15; background-color: transparent;">String Play</span></p>
+<p>&nbsp;</p>
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Milo has a string </span><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:italic;font-variant:normal;text-decoration:none;vertical-align:baseline;">S</span><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> of length </span><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:italic;font-variant:normal;text-decoration:none;vertical-align:baseline;">L</span><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">. Tutu picks a random prefix and Mota picks a random suffix of </span><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:italic;font-variant:normal;text-decoration:none;vertical-align:baseline;">S</span><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">.</span></p>
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Now, Chotku is given a task of concatenating the two strings that Tutu and Mota have chosen, in respective order. Chotku wonders, how many distinct prefix-suffix concatenation is possible out there of string </span><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:italic;font-variant:normal;text-decoration:none;vertical-align:baseline;">S</span><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">.</span></p>
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">So you know what to do.. Help Chotku! </span></p>
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Input</span></p>
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Input file contains several lines of text. Each line contains a string, S. End of file marks the end of input.</span></p>
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Output</span></p>
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Output one integer per string, denoting the number of distinct prefix-suffix concatenation of the string.</span></p>
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Constraints</span></p>
+<ol style="margin-top:0pt;margin-bottom:0pt;">
+<li style="list-style-type:lower-roman;font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;" dir="ltr">
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:0pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Strings consist of lower-case letters only.</span><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">&nbsp;</span></p>
+</li>
+<li style="list-style-type:lower-roman;font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;" dir="ltr">
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:0pt;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">1 ¡Ü L ¡Ü 10000006</span></p>
+</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="margin-left:-5.4pt;" dir="ltr">
+<table style="border:none;border-collapse:collapse" border="0">
+<colgroup><col width="319"><col width="319"></colgroup> 
+<tbody>
+<tr style="height: 33px;">
+<td style="border-left:solid #000000 1px;border-right:solid #000000 1px;border-bottom:solid #000000 1px;border-top:solid #000000 1px;vertical-align:top;background-color:#ffffff;padding:0px 7px 0px 7px">
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;text-align: center;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Sample Input</span></p>
+</td>
+<td style="border-left:solid #000000 1px;border-right:solid #000000 1px;border-bottom:solid #000000 1px;border-top:solid #000000 1px;vertical-align:top;background-color:#ffffff;padding:0px 7px 0px 7px">
+<p style="line-height:1.5;margin-top:0pt;margin-bottom:10pt;text-align: center;" dir="ltr"><span style="font-size:16px;font-family:Verdana;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Output for Sample Input</span></p>
+</td>
+</tr>
+<tr style="height: 48px;">
+<td style="border-left:solid #000000 1px;border-right:solid #000000 1px;border-bottom:solid #000000 1px;border-top:solid #000000 1px;vertical-align:top;background-color:#ffffff;padding:0px 7px 0px 7px">
+<p style="line-height:1.1500000000000001;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:19px;font-family:Consolas;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">abc</span><span style="font-size:19px;font-family:Consolas;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><br></span><span style="font-size:19px;font-family:Consolas;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">aab</span></p>
+</td>
+<td style="border-left:solid #000000 1px;border-right:solid #000000 1px;border-bottom:solid #000000 1px;border-top:solid #000000 1px;vertical-align:top;background-color:#ffffff;padding:0px 7px 0px 7px">
+<p style="line-height:1.1500000000000001;margin-top:0pt;margin-bottom:10pt;" dir="ltr"><span style="font-size:19px;font-family:Consolas;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">8</span><span style="font-size:19px;font-family:Consolas;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><br></span><span style="font-size:19px;font-family:Consolas;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">7</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;"><strong>Explanation:</strong></span></p>
+<p><span style="font-size: medium;">For sample #1, the 3 prefixes are ¡°a¡±, ¡°ab¡±, ¡°abc¡±</span></p>
+<p><span style="font-size: medium;">The 3 suffixes are ¡°c¡±, ¡°bc¡±, ¡°abc¡±</span></p>
+<p><span style="font-size: medium;">And the 8 distinct concatenations are, ¡°ac¡±, ¡°abc¡±, ¡°aabc¡±, ¡°abbc¡±, ¡°ababc¡±, ¡°abcc¡±, ¡°abcbc¡±, ¡°abcabc¡±.</span></p>

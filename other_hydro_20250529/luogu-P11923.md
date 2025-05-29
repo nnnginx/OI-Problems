@@ -1,0 +1,112 @@
+## 题目背景
+
+PA 2025 R4B.
+
+**警告：滥用本题评测一次即可封号。**
+
+## 题目描述
+
+有一个 $ n \times m $ 的矩形棋盘被划分为 $ n \times m $ 个正方形格子。有若干块立方体积木在棋盘上。积木的尺寸与格子相同，每块积木恰好占据一个格子。我们记第 $i$ 行第 $j$ 列的格子为 $(i,j)$。
+
+现在小女孩 Algosia 要收积木。一块积木可以被收走，当且仅当：
+
+- 这块积木的上面和下面没有相邻的积木；
+- **或者**这块积木的左边和右边没有相邻的积木。
+
+初始时棋盘上有 $k$ 块积木。$q$ 次操作，每次操作新增一个积木，或者移除一个积木（**这里的移除不受上述条件的限制**）。
+
+对于 $i=1,2,\ldots,q+1$，Algosia 想要知道：在进行前 $(i-1)$ 次操作后，她最多可以**逐个**收走多少个积木。
+
+注意，积木不会真的被收走。
+
+
+## 输入格式
+第一行，四个正整数 $n,m,k,q$。
+
+接下来 $k$ 行，每行两个正整数 $x_i,y_i$，表示初始时第 $i$ 块积木所在的格子是 $(i,j)$。保证这 $k$ 个格子两两不同。
+
+接下来 $q$ 行，每行两个正整数 $x,y$，描述一次操作：
+
+- 若 $(x,y)$ 上没有积木，在 $(x,y)$ 上放一个积木；
+- 否则移除 $(x,y)$ 上的积木。
+
+
+
+## 输出格式
+
+输出 $(q+1)$ 行，每行一个非负整数：
+
+- 第 $i$ 行的数表示，在进行前 $(i-1)$ 次操作后，Algosia 最多可以**逐个**收走多少个积木。
+
+
+```input1
+5 7 22 3
+1 1
+1 2
+1 3
+2 3
+3 3
+3 2
+2 1
+3 1
+4 1
+5 1
+1 5
+1 6
+1 7
+2 5
+2 7
+3 5
+3 6
+3 7
+4 5
+5 5
+4 7
+5 7
+2 2
+2 6
+5 1
+```
+
+```output1
+22
+14
+6
+5
+```
+
+## 提示
+
+### 样例解释
+
+初始时的棋盘如下左图所示。棋盘上有 $22$ 块积木。
+
+将一开始可以被收走的积木收走后，棋盘变成了下右图的样子。于是所有积木都可以被收走。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/o2zqsgkw.png?x-oss-process=image/resize,m_lfit,h_150)
+![](https://cdn.luogu.com.cn/upload/image_hosting/b39avzr2.png?x-oss-process=image/resize,m_lfit,h_150)
+
+第 $1$ 次操作中，放上了一块新的积木（以红色标识）。这 $3\times 3$ 块积木就没办法收走了，最后只能收走 $14$ 块积木。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/vuzf3mky.png?x-oss-process=image/resize,m_lfit,h_150)
+
+继续进行第二次操作后，棋盘变成了下图的形状。此时只能收走 $6$ 块积木。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/yfj4oie4.png?x-oss-process=image/resize,m_lfit,h_150)
+
+继续进行第三次操作后，棋盘变成了下图的形状。答案为 $5$。
+
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/fvbomqzj.png?x-oss-process=image/resize,m_lfit,h_150)
+
+### 子任务
+
+解决 $q=1$ 的子任务可以获得大于 $0$ 分的部分分。
+
+### 数据范围
+- $ 1 \leq n, m \leq 2\times 10^5$；
+- $1 \leq k, q \leq 75\, 000 $；
+- $1\le x_i,x\le n$，$1\le y_i,y\le m$；
+- $\forall 1\le i\lt j\le k$，$(x_i,y_i)\neq (x_j,y_j)$。
+
+

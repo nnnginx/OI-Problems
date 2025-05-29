@@ -1,0 +1,139 @@
+## 题目描述
+Bunnyland has large fields where the Bunnyland Dwarf (a native species of rabbit) roams freely. One such field can be modelled as a $10^9 \times 10^9$ grid of cells. The rows of the grid are numbered $1$ to $10^9$ from north to south, and the columns of the grid are numbered $1$ to $10^9$ from west to east. We refer to the cell located at row $r$ and column $c$ of the grid as cell $(r, c)$.
+
+In this field, there are $n$ rabbits numbered from $1$ to $n$. The $i$-th rabbit is initially located at cell $(r[i], c[i])$. **No two rabbits are initially located at the same cell**.
+
+Rabbits lift their hind legs and kick the ground when annoyed, an action known as thumping. These $n$ rabbits will execute a sequence of $m$ thumps. At the start of the $j$-th second, rabbit $t[j]$ will thump. When a rabbit thumps, all other rabbits will move away from the thumping rabbit.
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/1auwto2s.png)
+
+To be precise, when rabbit A thumps, rabbit B will move as follows:
+
+- If the number of rows between A and B is less than the number of columns between A and B, B will move two columns away from A.
+- If the number of rows between A and B is equal to the number of columns between A and B, B will move one column and one row away from A.
+- If the number of rows between A and B is more than the number of columns between A and B, B will move two rows away from A.
+
+It can be shown that the location of the rabbits will remain distinct after a thump has occurred.
+
+Benson the Rabbit has come to find his brethren after his retirement from investigating toxic bacteria, but all the thumping has caused the rabbits to scatter. Help Benson determine the final locations of the $n$ rabbits after all thumps have occurred!
+
+It is guaranteed that a rabbit will never leave the grid during the sequence of thumps. You may also assume that rabbits do not move in any other circumstances except thumping.
+
+
+## 输入格式
+Your program must read from standard input.
+
+The first line of input contains two space-separated integers $n$ and $m$.
+
+The following $n$ lines of input each contain two space-separated integers. The $i$-th of these lines contains $r[i]$ and $c[i]$.
+
+The last line of input contains $m$ space-separated integers $t[1], t[2], \ldots, t[m]$.
+
+
+## 输出格式
+Your program must print to standard output.
+
+The output should contain $n$ lines. The $i$-th of these lines should contain two space-separated integers, indicating the row and the column of rabbit $i$ after all thumps have occurred.
+
+
+```input1
+2 1
+1 1
+2 2
+1
+```
+
+```output1
+1 1
+3 3
+```
+
+```input2
+13 1
+7 7
+3 7
+4 4
+4 10
+5 6
+6 4
+6 8
+8 7
+8 10
+9 3
+9 5
+9 9
+10 6
+1
+```
+
+```output2
+7 7
+1 7
+3 3
+3 11
+3 6
+6 2
+5 9
+10 7
+8 12
+9 1
+10 4
+10 10
+12 6
+```
+
+```input3
+3 2
+1 10
+1 20
+1 30
+1 3
+```
+
+```output3
+1 8
+1 20
+1 32
+```
+
+## 提示
+### Subtasks
+
+For all test cases, the input will satisfy the following bounds:
+
+- $1 \leq n, m \leq 500\,000$
+- $1 \leq r[i], c[i] \leq 10^9$ for all $1 \leq i \leq n$
+- $1 \leq t[j] \leq n$ for all $1 \leq j \leq m$
+- $(r_i, c_i) \neq (r_j, c_j)$ for all $i \neq j$
+- It is guaranteed that a rabbit will never exit the grid during the sequence of thumps.
+
+Your program will be tested on input instances that satisfy the following restrictions:
+
+| Subtask | Marks | Additional constraints |
+| :-: | :-: | :-: |
+| $0$ | $0$ | Sample test cases |
+| $1$ | $18$ | $n, m \leq 2000$ |
+| $2$ | $21$ | $r[i] = 1$ |
+| $3$ | $32$ | $n \leq 2000$ |
+| $4$ | $13$ | $n \leq 100\,000$ |
+| $5$ | $16$ | No additional constraints |
+
+### Sample Test Case 1 Explanation
+
+This test case is valid for subtasks $1, 3, 4$, and $5$.
+
+Rabbit $1$ is at cell $(1, 1)$ and rabbit $2$ is at cell $(2, 2)$.
+
+Since the number of rows between rabbit $1$ and rabbit $2$ is equal to the number of columns between rabbit $1$ and rabbit $2$, when rabbit $1$ thumps, rabbit $2$ will move one column and one row away from rabbit $1$ in the southeast direction, landing at cell $(3, 3)$. The position of the thumping rabbit $1$ does not change.
+
+### Sample Test Case 2 Explanation
+
+This test case is valid for subtasks $1, 3, 4$, and $5$.
+
+The diagram in the statement corresponds to this test case. The blue arrows show how the other rabbits move when rabbit $1$ at cell $(7, 7)$ thumps.
+
+### Sample Test Case 3 Explanation
+
+This test case is valid for all subtasks.
+
+

@@ -1,0 +1,108 @@
+## 题目背景
+**请使用 C++17 或 C++20 提交**
+
+你需要在程序开头加入如下代码：
+
+```cpp
+#include<vector>
+int guess_palindromicity(int N);
+int count_pair(int x, int y, int z);
+int find_character(int x, std::vector<int> Y);
+```
+
+## 题目描述
+**题目译自 [2024년도 국제정보올림피아드 대표학생 선발고사 - 2차 선발고사](https://www.ioikorea.kr/archives/ioitst/2024/)  T3 「[팰린드롬 판별하기](https://assets.ioikorea.kr/ioitst/2024/2/palindrome/palindrome_statement.pdf)」**
+
+KOI 公司为了宣传算法比赛，推出了一个新活动！要参加这个活动，你需要判断 KOI 公司秘密序列 $S$ 是否是回文。
+
+当一个序列翻转后与原序列相同，这个序列就是回文。也就是说，长度为 $N$ 的序列 $S$ 是回文，当且仅当对于所有 $i$ $(0 \leq i \leq N-1)$，都有 $S[i] = S[N-1-i]$。例如，$[1,2,3,2,1]$ 和 $[1,2,2,1]$ 是回文，而 $[1,2,3,1]$ 和 $[1,2,2]$ 不是回文。
+
+你知道秘密序列 $S$ 的长度 $N$，并且 $S$ 是由 $1$ 到 $5000$ 之间的整数组成的。为了帮助活动参与者，KOI 公司提供了两种特殊的机器：
+
+- `count_pair` 机器需要输入三个不同的数 $x, y, z$。它会返回 $S[x], S[y], S[z]$ 中相同元素的对数。例如，如果 $S[x] = S[y] = S[z]$，机器会返回 `3`。
+- `find_character` 机器需要输入一个整数 $x$ 和一个整数列表 $Y$。如果 $S[x] = S[y]$ 且 $y$ 在列表 $Y$ 中，机器返回 `1`，否则返回 `0`。
+- 两种机器输入的所有数必须是 $0$ 到 $N-1$ 之间的整数。
+- `find_character` 机器输入的 $Y$ 的总大小不能超过 $N$。
+
+你需要尽可能少地使用机器来判断秘密序列 $S$ 是否是回文。
+
+你需要实现以下函数：
+
+```cpp
+int guess_palindromicity(int N);
+```
+
+- `N`：序列 $S$ 的长度。
+- 如果 $S$ 是回文，函数返回 `1`，否则返回 `0`。
+- 该函数在一个测试用例中可能被调用多次。
+
+程序可以调用以下函数：
+
+```cpp
+int count_pair(int x, int y, int z);
+```
+
+- $x, y, z$ 必须是 $0$ 到 $N-1$ 之间的不同整数。
+- 该函数返回 $S[x], S[y], S[z]$ 中相同元素的对数。
+- 在每次 `guess_palindromicity` 调用中，该函数的调用次数不能超过 $2N$ 次。
+
+```cpp
+int find_character(int x, vector<int> Y);
+```
+
+- $x$ 和 $Y$ 的所有元素必须是 $0$ 到 $N-1$ 之间的整数。
+- 如果 $S[x] = S[y]$ 且 $y \in Y$，函数返回 `1`，否则返回 `0`。
+- 在每次 `guess_palindromicity` 调用中，该函数的调用次数不能超过 $N$ 次。
+- 在每次 `guess_palindromicity` 调用中，调用该函数的 $Y$ 的总大小不能超过 $N$。
+
+
+## 输入格式
+示例评测程序按以下格式读取输入：
+
+- 第 $1$ 行：$N$
+- 第 $2$ 行：$S[0]\,S[1]\,\ldots\,S[N-1]$
+
+## 输出格式
+如果程序判定为 `Accepted`，示例评测程序输出 `Correct : A B`，其中 A 是 `count_pair` 的调用次数，$B$ 是 `find_character` 的调用次数。
+
+如果程序判定为 `Wrong Answer`，示例评测程序输出 `Wrong : MSG`，其中 `MSG` 为以下之一：
+
+- `Wrong Input`：输入格式错误。
+- `Invalid Query`：查询值错误。
+- `Wrong Guess`：$S$ 是回文但 `guess_palindromicity` 返回 `0`，或相反。
+
+```input1
+1
+6
+1 2 3 1 2 1
+```
+
+```output1
+Correct : 4 1
+```
+
+## 提示
+对于所有输入数据，满足：
+
+- $5 \leq N \leq 5000$
+- 对于所有 $i$ $(0 \leq i \leq N-1)$，$1 \leq S[i] \leq 5000$
+- 一个测试用例中给定的 $N$ 的总和为 $M$，满足 $5 \leq M \leq 5000$
+
+在这个问题中，评测程序是非自适应的（NOT adaptive）。这意味着 $S$ 在评测程序执行开始时固定，不会根据查询而改变。
+
+## 部分问题
+
+每次 `guess_palindromicity` 调用的评分如下。你的提交得分是所有测试用例中 `guess_palindromicity` 调用得分的最小值。
+
+每次 `guess_palindromicity` 调用中，`count_pair` 函数的调用次数为 $A$，`find_character` 函数的调用次数为 $B$。
+
+如果程序未正常结束，或 `guess_palindromicity` 返回错误值，得分为 $0$。若 `guess_palindromicity` 返回正确值，得分如下表所示：
+
+| 条件 | 得分 |
+| :---: | :---: |
+| $A \leq 2N, 2 \leq B \leq N$ | $15$ |
+| $N < A \leq 2N, B \leq 1$ | $50$ |
+| $\left\lfloor\frac{N}{2}\right\rfloor + 2 < A \leq N, B \leq 1$ | $70$ |
+| $A = \left\lfloor\frac{N}{2}\right\rfloor + 2, B \leq 1$ | $90$ |
+| $A \leq \left\lfloor\frac{N}{2}\right\rfloor + 1, B \leq 1$ | $100$ |
+

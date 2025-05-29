@@ -1,0 +1,45 @@
+## 题目描述
+构造一个长度为 $N$ 的整数序列 $A$，使得：
+
+1. $\forall i,1\leq A_i\leq 10^9$；
+2. $\forall i,\gcd(A_{X_i},A_{X_i+1},\cdots,A_{Y_i})=Z_i$。
+
+或者报告无解。
+
+## 输入格式
+第一行，$N,M$。
+
+接下来 $M$ 行，每行有 $X_i,Y_i,Z_i$，描述一个限制 2.
+
+## 输出格式
+一行，序列 $A$，或者 `Impossible`。
+
+```input1
+2 2
+1 2 2
+2 2 6
+
+```
+
+```output1
+4 6
+```
+
+```input2
+2 2
+1 2 2
+2 2 5
+
+```
+
+```output2
+Impossible
+```
+
+## 提示
+$$1\leq N\leq 150000,1\leq M\leq 150000,1\leq Z_i\leq 16$$
+
+译自 [CCC2021 S5](https://cemc.math.uwaterloo.ca/contests/computing/past_ccc_contests/2021/ccc/seniorEF.pdf)。
+
+spj 在附件里，发现锅了请联系[我](/user/90693)。
+

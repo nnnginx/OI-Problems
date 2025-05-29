@@ -1,0 +1,13 @@
+<p>Problem Statement:<br>&nbsp;&nbsp; &nbsp;King of DragonLand likes decorating towers , So one day he decided to decorate&nbsp; a tower with flowers.<br>&nbsp;&nbsp; &nbsp;Heighest floor of tower contains only one room and floor just below every floor except the base floor ,&nbsp; will have two of it's child buildings on which it is built,<br>&nbsp;&nbsp; &nbsp;Note that it's structure is like a binary tree .<br>&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;for height = 3 &nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; *&nbsp;&nbsp; *&nbsp;&nbsp; *&nbsp; *<br>&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;You are given the task of decorating it, But there is a constraint in decorating it , Sum of child floors of a floor will have be equal to no of flowers in parent building and&nbsp;your child floors will have as less difference between number of flowers in them as possible to look your tower beautiful.</p>
+<p>&nbsp;&nbsp; &nbsp;Given that top building contains N flowers and Height of tower H , find out no of ways of decorating it , As this value may be large , output it's modulo 10^ 9 + 7.<br>&nbsp;&nbsp; &nbsp;Two decorations are considered different if any floor in them contains different no of flowers<br>&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;Input : <br>&nbsp;&nbsp; &nbsp;T: no of test cases (&lt;= 10)<br>&nbsp;&nbsp; &nbsp;than next T line contain H , N<br>&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;Output : no of different decorations % (10 ^ 9 + 7)<br>&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;constraint : 1&lt;=H&lt;=50<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&lt;=N&lt;=50000<br>&nbsp;&nbsp; &nbsp;Example:<br>&nbsp;&nbsp; &nbsp;Input:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 1</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 1<br>&nbsp;&nbsp; &nbsp;Output:<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2</p>
+<p>&nbsp;</p>
+<p>Explanation:</p>
+<p>for 1 1 , it is obvious.</p>
+<p>for 2 1 ,</p>
+<p>There can be two ways:&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp;1</p>
+<p>1 &nbsp; &nbsp; &nbsp;0</p>
+<p>&nbsp; &nbsp; 1</p>
+<p>0 &nbsp; &nbsp; &nbsp; 1</p>

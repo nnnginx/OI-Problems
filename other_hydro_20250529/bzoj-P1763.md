@@ -1,0 +1,1 @@
+本题已重题，题目链接：[link](https://hydro.ac/d/bzoj/p/1360)

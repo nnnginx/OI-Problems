@@ -1,0 +1,43 @@
+<p><strong>[Due to SPOJ restrictions, this problem has been modified with respect to the original version used in the Argentinian Programming Tournament of 2015 in order to have multiple test cases per input file. The original version of this problem (in Spanish) can be found at&nbsp;</strong><strong><a href="http://torneoprogramacion.com.ar/wp-content/uploads/2015/09/pruebaTAP2015.pdf">http://torneoprogramacion.com.ar/wp-content/uploads/2015/09/pruebaTAP2015.pdf</a></strong><strong>&nbsp;]</strong></p>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">In a kingdom far, far away there are N cities numbered 1 through N, some pairs of cities being connected by roads. When two cities are directly connected by a road, we will say these cities are neighbors. As a result of the careful planning of its monarchs, the kingdom's road system has very special characteristics. We know there are no two cities connected by more than one road, and that all roads connect different cities. Another very peculiar property of the roads is that there is exactly one path between any two cities, consisting of a sequence of roads connecting neighboring cities from the initial to the final one.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">In this kingdom far, far away, the king wants to impose curling as the national sport. He therefore wants each city to have a favorite curling team, so that the feeling of belonging of its citizens is enhanced by all of them supporting the same team. There are some cities which already have a favorite team, and because curling is a deep passion these choices cannot be changed. However, other cities don't yet have a favorite curling team, so one will have to be assigned to them in order for it to become the city's favorite.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">The president of the Institute for the Competitive Practice of Curling (ICPC) has requested your help, because the king has entrusted it with assigning the favorite teams for the cities that don't yet have one. The problem is that there are too many cities in the kingdom, so the ICPC doesn't really know how to complete this task. We know there are E curling teams which have been numbered 1 through E, and there is no budget to create more. The ICPC has provided you with a riot index between teams for every pair of teams, i.e. an integer D[i, j] representing the degree of hostility between followers of teams i and j, for i, j = 1, 2, ..., E. Note that there even exists a riot index for a given team with itself, as it is possible that inhabitants of two neighboring cities with the same favorite team start to fight in order to see which one has the best following.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">The ICPC has asked you to assign a favorite team to every city in the kingdom not having one yet, in such a way that the riots between neighboring cities are minimized. In order to do this, you should minimize the national riot index, which is calculated by summing all the riot indices for teams assigned to neighboring cities. Can you help the ICPC determine the minimum possible value of the national riot index?</div>
+<p>In a kingdom far, far away there are <strong>N</strong> cities numbered <strong>1</strong> through <strong>N</strong>, some pairs of cities being connected by roads. When two cities are directly connected by a road, we will say these cities are neighbors. As a result of the careful planning of its monarchs, the kingdom's road system has very special characteristics. We know there are no two cities connected by more than one road, and that all roads connect different cities. Another very peculiar property of the roads is that there is exactly one path between any two cities, consisting of a sequence of roads connecting neighboring cities from the initial to the final one.</p>
+<p>In this kingdom far, far away, the king wants to impose curling as the national sport. He therefore wants each city to have a favorite curling team, so that the feeling of belonging of its citizens is enhanced by all of them supporting the same team. There are some cities which already have a favorite team, and because curling is a deep passion these choices cannot be changed. However, other cities don't yet have a favorite curling team, so one will have to be assigned to them in order for it to become the city's favorite.</p>
+<p>The president of the <em>Institute for the Competitive Practice of Curling</em> (ICPC) has requested your help, because the king has entrusted it with assigning the favorite teams for the cities that don't yet have one. The problem is that there are too many cities in the kingdom, so the ICPC doesn't really know how to complete this task. We know there are <strong>E</strong> curling teams which have been numbered <strong>1</strong> through <strong>E</strong>, and there is no budget to create more. The ICPC has provided you with a riot index between teams for every pair of teams, <em>i.e.</em> an integer <strong>D<sub>ij</sub></strong>&nbsp;representing the degree of hostility between followers of teams <strong>i</strong> and <strong>j</strong>, for <strong>i, j = 1, 2, ..., E</strong>. Note that there even exists a riot index for a given team with itself, as it is possible that inhabitants of two neighboring cities with the same favorite team start to fight in order to see which one has the best following.</p>
+<p>The ICPC has asked you to assign a favorite team to every city in the kingdom not having one yet, in such a way that the riots between neighboring cities are minimized. In order to do this, you should minimize the national riot index, which is calculated by summing all the riot indices for teams assigned to neighboring cities. Can you help the ICPC determine the minimum possible value of the national riot index?</p>
+<p>&nbsp;</p>
+<h3>Input</h3>
+<p>There are multiple test cases in the input file. For each test case, the first line contains two integers <strong>N</strong> and <strong>E</strong>, representing respectively the number of cities and the number of curling teams in the kingdom (<strong>2 ¡Ü N ¡Ü 5 * 10<sup>4</sup> </strong>and <strong>1 ¡Ü E ¡Ü 50</strong>). The following <strong>E</strong> lines describe the riot indices between the curling teams. Each of these lines contains <strong>E</strong> integers, the <strong>j</strong>-th integer of the <strong>i</strong>-th of these lines being <strong>D<sub>ij</sub></strong>, the riot index between teams <strong>i</strong> and <strong>j</strong> (<strong>0 ¡Ü D<sub>ij</sub> ¡Ü 1000</strong> with <strong>D<sub>ij</sub> = D<sub>ji</sub></strong>&nbsp;for <strong>i, j = 1, 2, ..., E</strong>).</p>
+<p>The following <strong>E</strong> lines describe the favorite teams of the cities which have already chosen one. The <strong>i</strong>-th of these lines starts with a non-negative integer <strong>K<sub>i</sub></strong>&nbsp;followed by a list of <strong>K<sub>i</sub></strong>&nbsp;cities whose favorite team is number <strong>i</strong> (<strong>0 ¡Ü K<sub>i</sub>&nbsp;¡Ü N</strong> for <strong>i = 1, 2, ..., E</strong>). No city has more than one favorite team, and there are no repeated cities in the lists.</p>
+<p>The last <strong>N-1</strong> lines describe the roads between the kingdom's cities. Each of them contains two integers <strong>A</strong> and <strong>B</strong>, indicating that there is a road between city <strong>A</strong> and city <strong>B</strong> (<strong>1 ¡Ü A, B ¡Ü N</strong> with <strong>A ¡Ù B</strong>). The roads are bidirectional and there are no repeated roads in the input. It is guaranteed that there is a unique path between every pair of cities, possibly going through other intermediate cities.</p>
+<p>&nbsp;</p>
+<h3>Output</h3>
+<p>For each test case, print one line containing an integer representing the minimum value of the national riot index that can be achieved by optimally assigning the favorite teams.</p>
+<p>&nbsp;</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+<span style="font-family: 'courier new', courier;">3 2
+2 1
+1 2
+0
+0
+1 2
+1 3
+6 3
+3 2 1
+2 3 4
+1 4 3
+2 1 3
+0
+0
+1 2
+1 3
+1 4
+3 5
+3 6</span>
+
+<strong>Output:</strong>
+<span style="font-family: 'courier new', courier;">2
+7</span></pre>

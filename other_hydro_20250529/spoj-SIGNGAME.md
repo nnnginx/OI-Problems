@@ -1,0 +1,9 @@
+<p>After the previous game ,each ball is either red or green in color. Dope tells you that he is changing the color of all balls in the range i to j (both inclusive),that is red balls to green and green balls to red.And then he asks you to tell the total extra mass of red balls over green balls for some range between i to j (inclusively). As you like red balls,you will try to maximize the total mass of red balls mass over the green balls. So He allows you to choose any range inside the range i, j inclusively which gives the maximum extra mass of red balls  over the green balls .When you choose a range, you have to take all the green and red balls that belong to the range.</p>
+<p>Convention:<br>(+) positive mass represents red ball mass<br>(-) negative mass represents green ball mass</p>
+<h3>Input</h3>
+<p>T number of test cases<br>next T test cases follow each contains:<br>N number of balls <br>next line contains N mass of ball ( positive or negative)<br>next line Q number of operation and query next Q lines contain<br>c a b<br>c =0 change the color of balls in range a, b inclusively<br>c =1 print the maximum extra mass of red bass over green in the range a,b inclusively</p>
+<h3>Output</h3>
+<p>each line for print query</p>
+<p>limit:<br>1&lt;=T&lt;10<br>1&lt;=N&lt;100000<br>1&lt;=Q&lt;100000<br>0&lt;=a&lt;=b&lt;N<br>c = 0 or 1<br>abs(individual mass )&lt;1000</p>
+<h3>Example</h3>
+<p><strong>Input:</strong><br>1<br>5<br>2 -3 4 5 -2<br>4<br>0 0 2<br>1 0 2<br>1 1 3<br>0 1 1<br><br><strong>Output:</strong><br>3<br>5<br><br>[you have to choose a range, if all balls are green in the range you have to print (-)ve answer]</p>

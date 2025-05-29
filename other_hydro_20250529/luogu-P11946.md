@@ -1,0 +1,187 @@
+## 题目背景
+版权信息：译自 [2025年度 国际情报 올림피아드 (Olympiad) 代表学生 选拔考试](https://www.ioikorea.or.kr/archives/ioitst/2025/) R2T1。[[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)]
+
+---
+你需要在文件头添加以下内容：
+
+```cpp
+int compare(int u, int v);
+```
+
+## 题目描述
+**这是一道交互题。交互库是非自适应（non-adaptive）的。**
+
+有一棵 $n$ 个节点的有根树，节点编号 $0\sim n-1$。根是点 $0$。
+
+点有点权。点 $i$ 的点权为 $p_i$。**$p_i$ 构成 $0\sim n-1$ 的排列。**
+
+$p_i$ 满足两点特殊性质：
+
+- **保证 $\textcolor{red}{\bf{p_0=0}}$；**
+- 若 $u$ 是 $v$ 的父亲，则 $p_u\lt p_v$。
+
+但是你不知道 $p_i$ 具体是多少，只知道树的形态。你可以多次询问：
+
+> **询问** 给定 $u,v$（$0\le u,v\lt n$，$u\neq v$）。
+>
+> - 若 $p_u\lt p_v$，回答为 $1$；
+> - 若 $p_u\gt p_v$，回答为 $0$。
+
+试利用询问找出点权。
+
+### 实现细节
+
+你不需要，也不应该实现 main 函数。
+
+你需要在文件头添加以下内容：
+
+```cpp
+int compare(int u, int v);
+```
+
+你可以调用以下的函数：
+
+```cpp
+int compare(int u, int v);
+```
+
+- 参数 $u,v$ 满足 $0\le u,v\lt n$，且 $u\neq v$。
+- 若 $p_u\lt p_v$，返回值为 $1$；否则返回值为 $0$。
+
+你应当实现以下的函数：
+
+```cpp
+std::vector<int> recover(int n, std::vector<int> U, std::vector<int> V);
+```
+
+`recover` 函数将被调用多次（多组数据）。
+
+- $n$：树的节点数量。
+- $U,V$：长度为 $(n-1)$ 的数组。$\forall 0\le i\lt n-1$，$U_i$ 是 $V_i$ 的父亲。
+- 返回一个长度为 $n$ 的排列 $p$，表示每个点的点权。
+
+
+
+
+
+## 输入格式
+
+**注意特殊的输入格式。**
+
+**本题单个测试点内有多组测试数据。**
+
+Sample Grader 输入格式如下：
+
+第一行，一个正整数 $T$，表示数据组数。
+
+接下来描述 $T$ 组数据。
+
+每组数据第一行，一个正整数 $n$。
+
+每组数据第二行，$(n-1)$ 个非负整数 $f_1,f_2,\ldots,f_{n-1}$。保证 $0\le f_i\lt i$。
+
+每组数据第三行，$n$ 个非负整数 $q_0,q_1,\ldots,q_{n-1}$。$q$ 是一个排列。$q_0=0$。
+
+**输入的含义为：$\forall 1\le i\lt n$，点 $q_{f_i}$ 是点 $q_i$ 的父亲。点 $q_i$ 的点权为 $i$。**
+
+## 输出格式
+
+Sample Grader 输出格式如下：
+
+对于每组数据，
+
+- 如果调用的 `compare(u,v)` 不满足 $0 \leq u, v \leq n - 1$，则输出一行 `Wrong Answer [1]`。
+- 如果调用的 `compare(u,v)` 不满足 $u \neq v$，则输出一行 `Wrong Answer [2]`。
+- 如果 `recover` 函数返回的数组大小不是 $n$，则输出一行 `Wrong Answer [3]`。
+- 否则，第一行输出 `compare` 函数的总调用次数 $C$，格式为 `C : 4`，然后在下一行按顺序输出 `recover` 函数返回的数组 $p$ 的元素。
+
+当输出 `Wrong Answer` 时，Sample Grader 将立刻终止。
+
+**注意，Sample Grader 不会验证答案。**
+
+答案正确，当且仅当 $\forall 0 \leq i \lt n$，都有 $q_{p_i}=i$。
+
+## 提示
+
+
+### 计分方式
+
+设有 $P$ 个对应的排列符合树形态的限制。$P$ 显然是正整数。
+
+令 $Z=\lceil \log_2 P\rceil$，$C$ 为单组数据内调用 `compare` 函数的次数。
+
+- 当 $Z\neq 0$ 时，定义 $K=C/Z$；
+- 当 $Z=0$ 时，若 $C=0$，规定 $K=0$；否则规定 $K=2\, 025$。
+
+单组数据的得分率如下所示：
+
+$$\mathrm{rate}=
+\begin{cases}
+0, & K\in (20,+\infty) \\
+0.01(5\cdot \frac{20-K}{12}+5), & K\in (8,20] \\
+0.01(50\cdot \frac{8-K}{5.5}+10), & K\in (2.5,8] \\
+0.01(20\cdot (2.5-K)+60), & K\in (1.5,2.5] \\
+0.01(10\cdot \frac{1.5-K}{0.1}+80), & K\in (1.4,1.5] \\ 
+1.00, & K\in [0,1.4]
+\end{cases}
+$$
+
+单组数据得分等于 $\mathrm{rate}$ 乘以子任务得分。
+
+单个测试点得分为每组数据得分的最小值，向下取整。
+
+子任务得分为测试点得分最小值。
+
+
+### 样例交互
+
+#### 样例交互 $1$
+
+$n=4$，$U=[0,0,0]$，$V=[1,2,3]$。树的形态如图所示。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/cn9ut4k4.png?x-oss-process=image/resize,m_lfit,h_150)
+
+交互库调用 
+
+```cpp
+recover(4, [0, 0, 0], [1, 2, 3]);
+```
+
+显然有 $6$ 个可能的排列 $p$：
+
+$$ [0, 1, 2, 3], [0, 1, 3, 2], [0, 2, 1, 3], [0, 2, 3, 1],[0, 3, 1, 2], [0, 3, 2, 1]$$
+
+所以，$P=6$，$Z=3$。
+
+随后进行了四次询问，结果如下：
+
+- 调用 `compare(1,2)`，结果为 $p_1 < p_2$，返回值为 $1$。
+- 调用 `compare(2,3)`，结果为 $p_2 > p_3$，返回值为 $0$。
+- 调用 `compare(1,3)`，结果为 $p_1 > p_3$，返回值为 $0$。
+- 调用 `compare(0,3)`，结果为 $p_0 < p_3$，返回值为 $1$。
+
+由询问的信息，可以确定排列 $p=[0,2,3,1]$。
+
+此时，$C=4$，$K=C/Z=4/3\le 1.4$，可以获得该测试点的满分。
+
+### 数据范围
+
+
+- $2\le n,\sum n\le 10^4$；
+- $0\le U_i\lt n$；$0\lt V_i\lt n$；$U_i\neq V_i$。
+- $p_0=0$。
+- 若 $u$ 是 $v$ 的父亲，则 $p_u\lt p_v$。
+
+### 子任务
+
+- $\text{Subtask 1 (1 pts)}$：
+    - **每个点度数至多为 $\textcolor{red}{\textbf{2}}$**；点 $0$ 度数为 $1$。
+- $\text{Subtask 2 (7 pts)}$：
+    - $\forall 0\le i\lt n-1,U_i=0$。
+- $\text{Subtask 3 (12 pts)}$：
+    - 树的形态是满二叉树（perfect binary tree）。
+- $\text{Subtask 4 (80 pts)}$：无额外约束。
+
+
+
+

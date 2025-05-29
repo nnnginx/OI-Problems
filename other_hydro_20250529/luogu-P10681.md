@@ -1,0 +1,67 @@
+## 题目背景
+译自 [Izborne Pripreme 2024 (Croatian IOI/CEOI Team Selection)](https://hsin.hr/pripreme2024/) D1T2。$\texttt{1s,1G}。$
+
+## 题目描述
+考虑只包含 $0$ 和 $1$ 的 $N\times M$ 矩阵 $A$。
+
+我们称满足以下条件的矩阵是好的：
+
+- $\forall 1\le i\le N$，$\displaystyle \sum_{j=1}^M A_{i,j}\in \{1,2\}$；
+- $\forall 1\le j\le M$，$\displaystyle \sum_{i=1}^N A_{i,j}\in \{1,2\}$。
+
+求出 $N$ 行 $M$ 列的好的矩阵的数量，对 $(10^9+7)$ 取模。
+
+
+
+## 输入格式
+输入共一行两个正整数，即 $N,M$。
+
+## 输出格式
+输出一行一个整数，表示答案对 $(10^9+7)$ 取模后的结果。
+
+
+```input1
+2 2
+```
+
+```output1
+7
+```
+
+```input2
+3 3
+```
+
+```output2
+102
+```
+
+```input3
+15 20
+```
+
+```output3
+415131258
+```
+
+## 提示
+
+#### 样例解释
+
+样例 $1$ 解释如图所示。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/xufx7ad6.png)
+
+#### 数据范围
+
+对于 $100\%$ 的数据，$1\le N,M\le 3\, 000$。
+
+| 子任务编号 | 分值 | 约束  |
+|:-----:|:------:|:-------:|
+| $1$  | $10$  | $N, M \leq 6$   |
+| $2$  | $18$  | $N, M \leq 50$  |
+| $3$  | $31$  | $N, M \leq 200$ |
+| $4$  | $41$  | 无额外约束 |
+
+
+

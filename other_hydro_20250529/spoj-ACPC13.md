@@ -1,0 +1,51 @@
+<pre><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">You are given a weighted directed graph of N nodes (the nodes are numbered from 1 to N ), where the</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">weights of the edges are distinct and positive. For each graph, you are also given a list of queries to answer.</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">Each query will be represented by 3 integers A B C , which means you need to find the shortest path</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">(the path with minimum sum of weights of its edges) which goes from node A to node B and uses at</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">most C edges, such that the weights of the edges in that path are in increasing order along the path,</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">which means the weight of each edge in that path should be greater than the weight of the edge before it</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">(unless it is the first edge in the path).</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">Your task is to write a program which answers these queries.</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">Input</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">Your program will be tested on one or more test cases. The first line of the input will be a single integer</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">T, the number of test cases (1 ¡Ü T ¡Ü 100). Followed by the test cases, the first line of each test case</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">contains 3 integers separated by a single space N M Q (2 ¡Ü N ¡Ü 150), (0 ¡Ü M ¡Ü 3,000) and (1 ¡Ü Q</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">¡Ü 1,000) representing the number of nodes, the number of edges and the number of queries, respectively.</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">Followed by M lines, each line contains 3 integers separated by a single space X Y Z (1 ¡Ü X , Y ¡Ü N )</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">(1 ¡Ü Z ¡Ü 3,000) which represent an edge going from the node X to the node Y with cost Z (X and Y</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">will be different). Followed by Q lines, each line contains 3 integers separated by a single space A B C</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">(1 ¡Ü A, B ¡Ü N ) (0 ¡Ü C ¡Ü M) which represent a query as described above (A and B will be different).</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">Note that there might multiple edges between the same pair of nodes.</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">Output</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">For each test case, print a single line for each query which contains a single integer, the minimum sum of</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">weights for a path between the given pair of nodes which satisfies the given constraints, or -1 if there is</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">no valid path between the given nodes which satisfies the given constraints. The output must not contain</div><span style="white-space: normal;">
+</span><div id="_mcePaste" style="white-space: normal; position: absolute; left: -10000px; top: 37px; width: 1px; height: 1px; overflow: hidden;">empty lines between the cases.</div><pre><span style="white-space: normal;">You are given a weighted directed graph of N nodes (the nodes are numbered from 1 to N ), where the&nbsp;</span><span style="white-space: normal;">weights of the edges are distinct and positive. For each graph, you are also given a list of queries to answer. </span><span style="white-space: normal;">Each query will be represented by 3 integers A B C , which means you need to find the shortest path&nbsp;</span><span style="white-space: normal;">(the path with minimum sum of weights of its edges) which goes from node A to node B and uses at &nbsp;</span><span style="white-space: normal;">most C edges, such that the weights of the edges in that path are in increasing order along the path,&nbsp;</span><span style="white-space: normal;">which means the weight of each edge in that path should be greater than the weight of the edge before it&nbsp;</span><span style="white-space: normal;">(unless it is the first edge in the path).</span></pre>
+<pre><span style="white-space: normal;">Your task is to write a program which answers these queries.</span></pre>
+<pre><span style="white-space: normal;"><strong><span style="font-size: large;">Input</span></strong></span></pre>
+<pre><span style="white-space: normal;">Your program will be tested on one or more test cases. The first line of the input will be a single integer&nbsp;</span><span style="white-space: normal;">T, the number of test cases (1 ¡Ü T ¡Ü 100). Followed by the test cases, the first line of each test case&nbsp;</span><span style="white-space: normal;">contains 3 integers separated by a single space N M Q (2 ¡Ü N ¡Ü 150), (0 ¡Ü M ¡Ü 3,000) and (1 ¡Ü Q&nbsp;</span><span style="white-space: normal;">¡Ü 1,000) representing the number of nodes, the number of edges and the number of queries, respectively.&nbsp;</span><span style="white-space: normal;">Followed by M lines, each line contains 3 integers separated by a single space X Y Z (1 ¡Ü X , Y ¡Ü N )&nbsp;</span><span style="white-space: normal;">(1 ¡Ü Z ¡Ü 3,000) which represent an edge going from the node X to the node Y with cost Z (X and Y&nbsp;</span><span style="white-space: normal;">will be different). Followed by Q lines, each line contains 3 integers separated by a single space A B C&nbsp;</span><span style="white-space: normal;">(1 ¡Ü A, B ¡Ü N ) (0 ¡Ü C ¡Ü M) which represent a query as described above (A and B will be different).</span></pre>
+<pre><span style="white-space: normal;"><strong>Note that there might multiple edges between the same pair of nodes.</strong></span></pre>
+<pre><span style="white-space: normal;"><strong><span style="font-size: large;">Output</span></strong></span></pre>
+<pre><span style="white-space: normal;">For each test case, print a single line for each query which contains a single integer, the minimum sum of&nbsp;</span><span style="white-space: normal;">weights for a path between the given pair of nodes which satisfies the given constraints, or -1 if there is &nbsp;</span><span style="white-space: normal;">no valid path between the given nodes which satisfies the given constraints. The output must not contain&nbsp;</span><span style="white-space: normal;">empty lines between the cases.</span></pre>
+<pre><span style="white-space: normal;"><span style="font-size: medium;"><strong>Sample Input:</strong></span></span></pre>
+<pre><span style="white-space: normal;"><span style="font-size: medium;"><span style="font-size: small;"><pre>1</pre>
+<pre>8 9 3</pre>
+<pre>1 2 1</pre>
+<pre>2 3 2</pre>
+<pre>3 4 3</pre>
+<pre>4 5 12</pre>
+<pre>5 8 7</pre>
+<pre>1 6 8</pre>
+<pre>6 4 9</pre>
+<pre>1 7 5</pre>
+<pre>7 4 4</pre>
+<pre>1 4 2</pre>
+<pre>1 4 3</pre>
+<pre>1 4 1</pre>
+<pre style="font-weight: bold;"><span style="font-size: medium;">Sample Output:</span></pre>
+<pre style="font-weight: bold;"><span style="font-size: medium;"><br></span></pre>
+<pre><span style="font-size: x-small;">17</span></pre>
+<pre><span style="font-size: x-small;">6</span></pre>
+<pre><span style="font-size: x-small;">-1</span></pre>
+</span></span></span></pre>
+</pre>

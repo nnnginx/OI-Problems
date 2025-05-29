@@ -1,0 +1,29 @@
+
+
+
+## 题目描述
+Teacher Mai has an integer x.
+He does the following operations k times. In the i-th operation, x becomes the least integer no less than x, which is the multiple of i.
+He wants to know what is the number x now.
+## 输入格式
+There are multiple test cases, terminated by a line "0 0".
+For each test case, the only one line contains two integers x,k(1<=x<=10^10, 1<=k<=10^10).
+## 输出格式
+For each test case, output one line "Case #k: x", where k is the case number counting from 1.
+
+```input12520 10
+2520 20
+0 0
+
+```
+
+```output1Case #1: 2520
+Case #2: 2600
+```
+
+## 提示
+没有写明提示
+## 题目来源
+By 镇海中学
+
+

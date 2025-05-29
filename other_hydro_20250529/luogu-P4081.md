@@ -1,0 +1,49 @@
+## 题目描述
+Just like humans, cows often appreciate feeling they are unique in some way. Since Farmer John's cows all come from the same breed and look quite similar, they want to measure uniqueness in their names.
+
+Each cow's name has some number of substrings. For example, "amy" has substrings {a, m, y, am, my, amy}, and "tommy" would have the following substrings: {t, o, m, y, to, om, mm, my, tom, omm, mmy, tomm, ommy, tommy}.
+
+A cow name has a "uniqueness factor" which is the number of substrings of that name not shared with any other cow. For example, If amy was in a herd by herself, her uniqueness factor would be 6. If tommy was in a herd by himself, his uniqueness factor would be 14. If they were in a herd together, however, amy's uniqueness factor would be 3 and tommy's would be 11.
+
+Given a herd of cows, please determine each cow's uniqueness factor.
+
+## 输入格式
+The first line of input will contain $N$ ($1 \le N \le 10^5$). The following $N$ lines will each contain the name of a cow in the herd. Each name will contain only lowercase characters a-z. The total length of all names will not exceed $10^5$.
+
+
+## 输出格式
+Output $N$ numbers, one per line, describing the uniqueness factor of each cow.
+
+
+## 题目大意
+### 题目描述
+
+就像人类一样，奶牛也常常希望在某些方面感到自己与众不同。由于 Farmer John 的奶牛都来自同一品种且外观非常相似，它们希望通过名字来衡量独特性。
+
+每头奶牛的名字都有一些子字符串。例如，"amy" 的子字符串为 {a, m, y, am, my, amy}，而 "tommy" 的子字符串为 {t, o, m, y, to, om, mm, my, tom, omm, mmy, tomm, ommy, tommy}。
+
+一头奶牛的名字有一个“独特性因子”，即该名字中不与任何其他奶牛共享的子字符串的数量。例如，如果 amy 独自在一个牛群中，她的独特性因子为 6。如果 tommy 独自在一个牛群中，他的独特性因子为 14。然而，如果它们在一个牛群中，amy 的独特性因子为 3，而 tommy 的独特性因子为 11。
+
+给定一个牛群，请计算每头奶牛的独特性因子。
+
+### 输入格式
+
+输入的第一行包含 $N$（$1 \le N \le 10^5$）。接下来的 $N$ 行每行包含牛群中一头奶牛的名字。每个名字仅包含小写字母 a-z。所有名字的总长度不超过 $10^5$。
+
+### 输出格式
+
+输出 $N$ 个数字，每行一个，表示每头奶牛的独特性因子。
+
+```input1
+3
+amy
+tommy
+bessie
+```
+
+```output1
+3
+11
+19
+```
+

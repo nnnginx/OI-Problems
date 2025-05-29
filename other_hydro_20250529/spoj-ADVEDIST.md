@@ -1,0 +1,9 @@
+<p>The edit distance of two strings S and T is the minimum number of edit operations that need to be done to transform S into T . The valid edit operations are:<br>• Insert a single character at any position.<br>• Modify an existing character.<br>• Remove an existing character.<br>For example, the edit distance of “pantera” and “aorta” is 5, because the following chain of<br>edits is valid (and there is no shorter chain):<br>“pantera” &gt;&gt;&gt; “antera” &gt;&gt;&gt; “aotera” &gt;&gt;&gt; “aoera” &gt;&gt;&gt; “aora” &gt;&gt;&gt; “aorta”.</p>
+<p>We define the advanced edit distance in a similar way, but adding the swap of two adjacent characters as an extra valid operation. With this setting, the advanced edit distance of “pantera” and “aorta” is 4:<br>“pantera” &gt;&gt;&gt; “antera” &gt;&gt;&gt; “antra” &gt;&gt;&gt; “aotra” &gt;&gt;&gt; “aorta”.</p>
+<p><br>You need to write a program that calculates the advanced edit distance of two given words.</p>
+<h3>Input</h3>
+<p>The input contains several test cases. Each test case is described in a single line that contains<br>two non-empty words, each of them of at most 1000 lowercase letters, separated by a single<br>space. The last line of the input contains two asterisks separated by a single space and should<br>not be processed as a test case.</p>
+<h3>Output</h3>
+<p>For each test case output a single line with an integer representing the advanced edit distance<br>of the two input words.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br><br>pantera aorta<br>zero zero<br>* *<br><br><strong>Output:</strong><br><br>4<br>0<br></pre>

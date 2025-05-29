@@ -1,0 +1,86 @@
+## 题目背景
+![](https://cdn.luogu.com.cn/upload/image_hosting/i5jfd236.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/cj0wmyop.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/knt5rz7r.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/6giiitr8.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/yz53kjnf.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/s6qt84ge.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/64az8652.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/bsjvay5c.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/ibn82c01.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/9xk8dkni.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/s0wpctx7.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/cmyruknd.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/ixol44hq.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/cdvn4w9h.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/7mlz6jor.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/6znb2lkj.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/bg20y5i0.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/vyaupwp4.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/fphm37p2.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/yqerkw37.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/bheyxgym.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/ttu7auvx.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/p6fpr8w8.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/fmmmvi3o.png)
+
+## 题目描述
+你需要维护两个初值为 $0$ 的序列 $a_1,\dots,a_n$ 和 $b_1,\dots,b_n$ ；
+
+共 $m$ 次操作，每次操作给出 $x,y$ ，将 $a_x$ 修改为 $y$ ，然后对 $i=1,\dots,n$ 将 $b_i$ 加上 $\max\limits_{j=1}^i a_j$ ，然后查询 $\sum\limits_{i=1}^x b_i$。
+
+## 输入格式
+第一行两个整数 $n,m$；
+
+接下来 $m$ 行，每行两个整数 $x,y$ 表示一次操作。
+
+## 输出格式
+共 $m$ 行，每行一个整数表示答案。
+
+```input1
+5 6
+3 4
+1 2
+2 4
+1 4
+3 5
+1 2
+```
+
+```output1
+4
+2
+10
+8
+47
+14
+```
+
+## 提示
+Idea：nzhtl1477，Solution：nzhtl1477，Code：ccz181078，Data：ccz181078
+
+对于 $100\%$ 的数据，满足 $1\le n,m\le 10^6$，$1\le x,y\le n$。
+

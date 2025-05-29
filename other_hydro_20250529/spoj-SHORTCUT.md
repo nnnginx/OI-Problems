@@ -1,0 +1,67 @@
+<p>
+	Mirek has a favourite way from home to the university that he traverses every 
+	working day. The route consists of sections and each section is a straight 
+	segment 10 meters long. Each section is either a straight ahead extension of 
+	the previous section or it is perpendicular to the previous section. After 
+	traversing each section Mirek takes a small break to admire the beauty of the 
+	nature. During his walk he never visits the same place twice.
+</p>
+<img alt="A sample map" src="/content/adrian:SHORTCUT.png">
+<p>
+	Yesterday Mirek stayed up long in the night at the party and today he got up 
+	late from bed. He knows that he will miss the first lecture unless he changes 
+	his usual route. He plans to make one shortcut but he wants the shortcut to be 
+	as short as possible (well, we can tell you in secret that he doesn't want to 
+	be on time, he just wants to calm his conscience). The shortcut must be either 
+	a horizontal or vertical segment connecting two break points of Mirek's route.
+</p>
+<p>Please help Mirek find the shortest shortcut.
+</p>
+<h3>Task</h3>
+<p>Write a program that:</p>
+<div align="justify">
+	<ul>
+		<li>
+		reads Mirek's route,
+		</li><li>
+		computes the shortest shortcut on the route,
+		</li><li>
+			writes the result.</li>
+	</ul>
+</div>
+<h3>Input</h3>
+<p>
+	The input begins with the integer t, the number of test cases. Then t test 
+	cases follow.
+</p>
+<p>
+	For each test case, the first line of the input contains one integer n (3 &lt;= 
+	n &lt;= 250 000) being the number of sections of the route. The second line of 
+	the input contains a sequence of n characters N, E, S or W with no spaces in 
+	between. Each character is a description of one section of the route. Character 
+	N, E, S or W means that Mirek walks 10 meters north, east, south or west 
+	respectively. You may assume that at least one shortcut exists for the given 
+	route.
+</p>
+<h3>Output</h3>
+<p>
+	The first and only line of the output contains integers l, b, e and character d 
+	separated by single spaces. Integer l is the length of the shortest shortcut 
+	(measured in 10 m segments). Integers b and e are the numbers of break points 
+	where the shortcut begins and ends respectively (we number break points with 
+	consecutive integers from 0 for Mirek's home to n for the university). 
+	Character d is the direction of the shortcut. If more than one shortcut of the 
+	minimal length exists you should output the one that begins earliest on the 
+	route. If more than one shortcut of the minimal length begins at the same break 
+	point you should output the one that ends furthest on the route.
+</p>
+<h3>Example</h3>
+<pre><b><tt>Sample input:</tt></b>
+1
+12 
+NNNENNWWWSSW 
+
+<b><tt>Sample output:</tt></b>
+2 3 11 W 
+</pre>
+<b>Warning: large Input/Output data, be careful with certain languages</b>

@@ -1,0 +1,8 @@
+<p>Given a point p and a line L on the plane, the reflection of p against L is a point q such that<br>the segment pq is perpendicular to L and its middle point is on L. If p is on L, then p = q.</p>
+<p>Given a set of points on the plane, an axis of symmetry is a line on the plane such that the<br>reflection of any point of the set against that line gives a point of the set.<br>In this problem you are given a set of points on the plane, and you must decide whether there<br>exists at least one axis of symmetry or not.</p>
+<h3>Input</h3>
+<p>The input contains several test cases, each one described in several lines. The first line of each<br>test case contains an integer N indicating the number of points in the set (3 ≤ N ≤ 1000).<br>Each of the next N lines describes a different point of the set using two integers X and Y<br>separated by a single space (−2000 ≤ X, Y ≤ 2000); these numbers represent the coordinates<br>of the point in the XY plane. You may assume that no two points of each test case have the<br>same location. The last line of the input contains a single −1 and should not be processed as<br>a test case.</p>
+<h3>Output</h3>
+<p>For each test case output a single line with an uppercase “Y” if there exists at least one axis of<br>symmetry for the provided set of points, or an uppercase “N” otherwise.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>4<br>-10 0<br>10 0<br>10 10<br>10 -10<br>4<br>-10 0<br>10 1<br>10 10<br>10 -10<br>6<br>-1000 30<br>-100 20<br>-10 10<br>1000 30<br>100 20<br>10 10<br>-1<br><br><strong>Output:</strong><br>Y<br>N<br>Y<br></pre>

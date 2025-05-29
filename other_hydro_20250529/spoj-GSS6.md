@@ -1,0 +1,7 @@
+<p>Given a sequence A of N <em>(N &lt;= 100000)</em> integers, you have to apply Q <em>(Q &lt;= 100000)</em> operations:<br><br>Insert, delete, replace an element, find the maximum contiguous(non empty) sum in a given interval.</p>
+<h3>Input</h3>
+<p>The first line of the input contains an integer N.<br>The following line contains N integers, representing the starting<br>sequence A1..AN, <em>(|Ai| &lt;= 10000)</em>.<br><br>The third line contains an integer Q. The next Q lines contains the operations in following form:<br><br><strong>I x y</strong>: insert element y at position x <em>(between x - 1 and x)</em>.<br><strong>D x</strong>&nbsp; : delete the element at position x.<br><strong>R x y</strong>: replace element at position x with y.<br><strong>Q x y</strong>: print max{Ai + Ai+1 + .. + Aj | x &lt;= i &lt;= j &lt;= y}.<br><br>All given positions are valid, and given values are between -10000 and +10000.<br><br>The sequence will never be empty.</p>
+<h3>Output</h3>
+<p>For each <strong>"Q"</strong> operation, print an integer(one per line) as described above.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>5<br>3 -4 3 -1 6<br>10<br>I 6 2<br>Q 3 5<br>R 5 -4<br>Q 3 5<br>D 2<br>Q 1 5<br>I 2 -10<br>Q 1 6<br>R 2 -1<br>Q 1 6<br><br><strong>Output:</strong><br>8<br>3<br>6<br>3<br>5<br></pre>

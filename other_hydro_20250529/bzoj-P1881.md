@@ -1,0 +1,39 @@
+
+
+
+## 题目描述
+给出一张N个点M条边的无向简单图，其中N≤100000，M≤100000。定义一个有效的“行程”为一个点数为奇数的简单圈，即所有点在圈上只能出现一次。如果一个点至少处于一个“行程”中，那么它被称为“幸运的”，要求求出图中幸运点的数目。
+## 输入格式
+The first line of input contains a single integer T – a number of 
+test cases. Every test case starts with a line containing two integers 
+separated by a single space –  N and  M. Each of the next  M lines will 
+contain two integers ai and bi separated by a single space – the labels 
+of cities that i-th road connects. 
+## 输出格式
+Output should contain T lines – answers for each of the test cases. 
+
+```input1
+1 ≤ T ≤ 77, 
+0 ≤ N, M ≤ 100000 (105
+), 
+1 ≤ ai < bi ≤ N. 
+
+```
+```output1
+1 
+7 7 
+1 5 
+3 5 
+3 7 
+1 7 
+6 7 
+4 7 
+4 6 
+```
+
+## 提示
+3
+## 题目来源
+没有写明来源
+
+

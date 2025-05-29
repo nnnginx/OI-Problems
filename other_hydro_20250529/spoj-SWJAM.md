@@ -1,0 +1,18 @@
+<p>Despite urging requests of the townspeople, the municipal oﬃce cannot aﬀord to improve many of the apparently deﬁcient city amenities under this recession. The city swimming pool is one of the typical examples. It has only two swimming lanes. The Municipal Fitness Agency, under this circumstances, settled usage rules so that the limited facilities can be utilized fully. <br>Two lanes are to be used for one-way swimming of diﬀerent directions. Swimmers are requested to start swimming in one of the lanes, from its one end to the other, and then change the lane to swim his/her way back. When he or she reaches the original starting end, he/she should return to his/her initial lane and starts swimming again.</p>
+<p><br>Each swimmer has his/her own natural constant pace. Swimmers, however, are not permitted to pass other swimmers except at the ends of the pool; as the lanes are not wide enough, that might cause accidents. If a swimmer is blocked by a slower swimmer, he/she has to follow the slower swimmer at the slower pace until the end of the lane is reached. Note that the blocking swimmer’s natural pace may be faster than the blocked swimmer; the blocking swimmer might also be blocked by another swimmer ahead, whose natural pace is slower than the blocked swimmer. Blocking would have taken place whether or not a faster swimmer was between them.</p>
+<p>Swimmers can change their order if they reach the end of the lane simultaneously. They change their order so that ones with faster natural pace swim in front. When a group of two or more swimmers formed by a congestion reaches the end of the lane, they are considered to reach there simultaneously, and thus change their order there. The number of swimmers, their natural paces in times to swim from one end to the other, and the numbers of laps they plan to swim are given. Note that here one “lap” means swimming from one end to the other and then swimming back to the original end. Your task is to calculate <br>the time required for all the swimmers to ﬁnish their plans. All the swimmers start from the same end of the pool at the same time, the faster swimmers in front. In solving this problem, you can ignore the sizes of swimmers’ bodies, and also ignore the time required to change the lanes and the order in a group of swimmers at an end of the lanes.</p>
+<h3>Input</h3>
+<p>The input is a sequence of datasets. Each dataset is formatted as follows.</p>
+<p><em>n <br>t<sub>1</sub> c<sub>1</sub> <br>. . . <br>t<sub>n</sub> c<sub>n</sub> </em></p>
+<p><br><em>n</em> is an integer (1 ≤ <em>n</em> ≤ 50) that represents the number of swimmers. <em>t<sub>i</sub></em> and <em>c<sub>i</sub></em> are integers (1 ≤ <em>t<sub>i</sub></em> ≤ 300, 1 ≤ <em>c<sub>i</sub></em> ≤ 250) that represent the natural pace in times to swim from one end to the other and the number of planned laps for the i-th swimmer, respectively. <em>t<sub>i</sub></em> and <em>c<sub>i</sub></em> are separated by a space.</p>
+<p>The end of the input is indicated by a line containing one zero.</p>
+<h3>Output</h3>
+<p>For each dataset, output the time required for all the swimmers to ﬁnish their plans in a line.</p>
+<p>No extra characters should occur in the output.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+2 <br>10 30 <br>15 20 <br>2 <br>10 240 <br>15 160 <br>3 <br>2 6 <br>7 2 <br>8 2 <br>4 <br>2 4 <br>7 2 <br>8 2 <br>18 1 <br>0
+
+<strong>Output:</strong>
+600 <br>4800 <br>36 <br>40
+</pre>

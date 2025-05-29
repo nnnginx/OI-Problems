@@ -1,0 +1,38 @@
+## 题目背景
+本题译自 [Canadian Computing Competition](https://cemc.uwaterloo.ca/resources/past-contests?contest_category=29) [2020 Senior](https://cemc.uwaterloo.ca/sites/default/files/documents/2020/2020CCCSrProblemSet.html) T3 Searching for Strings。
+
+## 题目描述
+计算字符串 $n$ 的不同排列中，作为 $h$ 的子字符串的数量。
+
+## 输入格式
+第一行一个字符串 $n(1 \le |n| \le 2\times10^5)$。
+
+第二行一个字符串 $h(1 \le |h| \le 2\times10^5)$。
+
+## 输出格式
+输出由一个整数构成，即题目所求。
+
+```input1
+aab
+abacabaa
+```
+
+```output1
+2
+```
+
+## 提示
+**本题采用捆绑测试**。
+#### 【样例解析】
+仅有排列 `aba` 和 `baa` 作为子字符串出现在了 $h$ 中。
+#### 【数据范围】
+设 $n$ 长度为 $x$，$h$ 长度为 $y$。
+| Subtask | 特殊性质 | 分值 |
+| :----------: | :----------: | :----------: |
+| 1 | $x\le 8,y\le 200$ | 20 |
+| 2 | $x\le 200,y\le 200$ | 14 |
+| 3 | $x\le 2000,y\le 2000$ | 14 |
+| 4 | 无 | 52 |
+
+注：原题满分为 15 分，其中 Sub1 有 $3$ 分，Sub2 和 Sub3 有 $2$ 分，而 Sub4 有 $8$ 分。本题分数为取近似后得到的结果。
+

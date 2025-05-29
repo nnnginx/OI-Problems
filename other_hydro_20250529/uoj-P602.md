@@ -1,0 +1,126 @@
+<p>定义二元操作符 <code>&lt;</code>：对于两个长度都为 $n$ 的数组 $A, B$（下标从 $1$ 到 $n$），$A$<code>&lt;</code>$B$ 的结果也是一个长度为 $n$ 的数组，记为 $C$。则有 $C[i] = \min(A[i], B[i])$（$1 \le i \le n$）。</p>
+<p>定义二元操作符 <code>&gt;</code>：对于两个长度都为 $n$ 的数组 $A, B$（下标从 $1$ 到 $n$），$A$<code>&gt;</code>$B$ 的结果也是一个长度为 $n$ 的数组，记为 $C$。则有 $C[i] = \max(A[i], B[i])$（$1 \le i \le n$）。</p>
+<p>现在有 $m$（$1 \le m \le 10$）个长度均为 $n$ 的整数数组 $A_0, A_1, \ldots , A_{m-1}$。给定一个待计算的表达式 $E$，其满足 $E$ 中出现的每个操作数都是 $A_0, A_1, \ldots , A_{m-1}$ 其中之一，且 $E$ 中只包含 <code>&lt;</code> 和 <code>&gt;</code> 两种操作符（<code>&lt;</code> 和 <code>&gt;</code> 的运算优先级相同），因此该表达式的结果值也将是一个长度为 $n$ 的数组。</p>
+<p>特殊地，表达式 $E$ 中还可能出现操作符 <code>?</code>，它表示该运算符可能是 <code>&lt;</code> 也可能是 <code>&gt;</code>。因此若表达式中有 $t$ 个 <code>?</code>，则该表达式可生成 $2^t$ 个可求确定值的表达式，从而可以得到 $2^t$ 个结果值，你的任务就是求出这 $2^t$ 个结果值（每个结果都是一个数组）中所有的元素的和。你只需要给出所有元素之和对 ${10}^9 + 7$ 取模后的值。</p>
+<p>我们定义表达式如下：</p>
+<ol>
+<li><p>一个长度为 $n$ 的数组 <code>A</code> 是表达式。</p>
+</li>
+<li><p>如果 <code>A</code> 是表达式，那么 <code>(A)</code> 也是表达式。</p>
+</li>
+<li><p>如果 <code>A</code> 是表达式，<code>B</code> 是一个长度为 $n$ 的数组，那么 <code>A?B</code>,<code>A&lt;B</code>,<code>A&gt;B</code> 也是表达式。</p>
+</li>
+<li><p>如果 <code>A</code> 和 <code>B</code> 是表达式，那么 <code>A?(B)</code>, <code>A&lt;(B)</code>, <code>A&gt;(B)</code> 也是表达式。</p>
+</li>
+</ol>
+<h2>输入格式</h2>
+<p>第一行两个整数 $n, m$，分别表示数组长度与数组个数。</p>
+<p>第 $2 \sim m + 1$ 行每行 $n$ 个用空格分隔的整数，第 $i$ 行第 $j$ 个元素代表 $A_{i-2}[j]$（$2 \le i \le m + 1$，$1 \le j \le n$）。</p>
+<p>最后一行一个字符串 $S$，表示表达式 $E$。$S$ 中只包含字符 <code>0</code> 到 <code>9</code>、<code>(</code>、<code>)</code>、<code>&lt;</code>、<code>&gt;</code>、<code>?</code>，数字字符表示操作数的下标，例如字符 <code>2</code> 表示表达式中的操作数为 $A_2$。</p>
+<h2>输出格式</h2>
+<p>仅一行一个整数，表示所有 $2^t$ 个表达式的结果，它们的元素之和模 ${10}^9 + 7$ 的值。</p>
+
+
+<pre><code class="language-input1">2 3
+3 1
+2 2
+2 3
+1&gt;2?0
+</code></pre>
+
+
+<pre><code class="language-output1">9
+</code></pre>
+
+
+<p>表达式 $E$ 生成的算式有：</p>
+<ol>
+<li>$A_1$<code>&gt;</code>$A_2$<code>&lt;</code>$A_0$，其结果为 $[2, 1]$。</li>
+<li>$A_1$<code>&gt;</code>$A_2$<code>&gt;</code>$A_0$，其结果为 $[3, 3]$。</li>
+</ol>
+<p>答案为 $2 + 1 + 3 + 3 = 9$。</p>
+
+
+<pre><code class="language-input2">3 3
+4 3 2
+2 3 1
+2 3 3
+1?0&gt;2?0
+</code></pre>
+
+
+<pre><code class="language-output2">36
+</code></pre>
+
+
+
+<pre><code class="language-input3">5 3
+354 321 414 205 257
+458 996 554 635 730
+681 374 903 966 349
+2&lt;0&gt;2&lt;0&gt;(1&gt;2)&gt;(0&lt;0)
+</code></pre>
+
+
+<pre><code class="language-output3">4276
+</code></pre>
+
+<h2>样例四</h2>
+<p>见附加文件中 <code>ex_expr4.in</code> 与 <code>ex_expr4.ans</code>。</p>
+<h2>限制与约定</h2>
+<p>对于所有测试点：$1 \le n \le 5 \times {10}^4$，$1 \le m \le 10$，$|S| \le 5 \times {10}^4$，$1 \le A_i[j] \le {10}^9$。</p>
+<p>每个测试点的具体限制见下表：</p>
+<div class="table-responsive">
+<table class="table table-bordered table-text-center table-vertical-middle">
+<thead>
+<tr>
+<th style="text-align:center;">测试点编号</th>
+<th style="text-align:center;">$n \le$</th>
+<th style="text-align:center;">$\vert E \vert \le$</th>
+<th style="text-align:center;">特殊限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">$1 \sim 4$</td>
+<td style="text-align:center;">$5$</td>
+<td style="text-align:center;">$10$</td>
+<td style="text-align:center;">$S$ 中不包含左右括号和问号</td>
+</tr>
+<tr>
+<td style="text-align:center;">$5 \sim 7$</td>
+<td style="text-align:center;">$10$</td>
+<td style="text-align:center;">$100$</td>
+<td style="text-align:center;">$S$ 中不包含问号</td>
+</tr>
+<tr>
+<td style="text-align:center;">$8 \sim 9$</td>
+<td style="text-align:center;" rowspan="2">$2$</td>
+<td style="text-align:center;" rowspan="3">$5000$</td>
+<td style="text-align:center;">$S$ 中不包含左右括号</td>
+</tr>
+<tr>
+<td style="text-align:center;">$10 \sim 11$</td>
+<td style="text-align:center;">无</td>
+</tr>
+<tr>
+<td style="text-align:center;">$12 \sim 14$</td>
+<td style="text-align:center;">$5000$</td>
+<td style="text-align:center;" rowspan="2">$S$ 中不包含问号</td>
+</tr>
+<tr>
+<td style="text-align:center;">$15 \sim 17$</td>
+<td style="text-align:center;" rowspan="2">$5 \times {10}^4$</td>
+<td style="text-align:center;" rowspan="2">$5 \times {10}^4$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$18 \sim 20$</td>
+<td style="text-align:center;">无</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>时间限制</strong>：$1\texttt{s}$</p>
+<p><strong>空间限制</strong>：$512\texttt{MB}$</p>
+<h2>下载</h2>
+<p><a href="./21006/file/attachment.zip">样例数据下载</a></p>

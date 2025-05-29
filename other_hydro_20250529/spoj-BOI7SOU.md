@@ -1,0 +1,8 @@
+<p>In digital recording, sound is described by a sequence of numbers representing the air pressure, measured at a rapid rate with a fixed time interval between successive measurements. Each value in the sequence is called a sample. An important step in many voice-processing tasks is breaking the recorded sound into chunks of non-silence separated by silence. To avoid accidentally breaking the recording into too few or too many pieces, the silence is often defined as a sequence of m samples where the difference between the lowest and the highest value does not exceed a certain treshold c. Write a program to detect silence in a given recording of n samples according to the given parameter values m and c.</p>
+<h3>Input</h3>
+<p>The first line of the file contains three integers: n (1 ≤ n ≤ 1,000,000), the number of samples in the recording; m (1 ≤ m ≤ 10,000), the required length of the silence; and c (0 ≤ c ≤ 10,000), the maximal noise level allowed within silence. The second line of the file contains n integers ai (0 ≤ ai ≤ 1,000,000 for 1 ≤ i ≤ n), separated by single spaces: the samples in the recording.</p>
+<h3>Output</h3>
+<p>The file should list all values of i such that max(a[i . . . i + m − 1]) − min(a[i . . . i + m − 1]) ≤ c. The values should be listed in increasing order, each on a separate line. If there is no silence in the input file, write NONE on the first and only line of the output file.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>7 2 0<br>0 1 1 2 3 2 2<br><strong>Output:</strong>
+2<br>6</pre>

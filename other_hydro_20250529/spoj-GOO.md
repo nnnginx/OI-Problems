@@ -1,0 +1,9 @@
+<p>Haba and Goba are brothers, they love binary numbers very much. Today is Haba¡¯s birthday so, his uncle gifted him a 3 bit binary string.&nbsp; Getting the present, both of them are very happy. Now, Goba asked Haba that using 3 bits how many different binary numbers he can write, whose 1<sup>st</sup> bit is 1 and total how many 1 will be needed to write those numbers. Haba answered he can write 4 different numbers using 3 bits whose first bit is 1 and those numbers are 4(100), 5(101), 6(110) and 7(111) and to write these 4 numbers in binary he will need 8 ¡®1¡¯. Now Goba told Haba that he will tell Haba the length of a binary string n and Haba will have to answer that &nbsp;using n bits how many different binary numbers he can write, whose 1<sup>st</sup> bit is 1 and total how many 1 will be needed to write those numbers. If Haba can answer correctly he will get more binary strings as present. Haba wants to get more binary string as present but, he doesn¡¯t know the answer of the question of Goba for bigger value of n, so now he wants your help. Help him to find the answer.</p>
+<h3>Input</h3>
+<p>The first line contains a positive integer number, t (1¡Üt¡Ü50) indicating the number of test cases. Each test case contains a positive integer number, n (1¡Ün¡Ü50) indicating the number of bits.</p>
+<h3>Output</h3>
+<p>For each test case you have to output two numbers, whose first and second number indicates the answer of Goba¡¯s first and second question respectively.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+<p>2<br>2<br>3</p><strong>Output:</strong>
+<p>2 3<br>4 8</p></pre>

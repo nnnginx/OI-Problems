@@ -1,0 +1,5 @@
+<p>Your task is to work as a cryptographer for some time, the reason is ...</p>
+<p>Blue Mary has set a problem using English. Since the problem is too easy and it will be boring when solving it, she has deleted all the whitespaces and punctuations in the original problem description, and lowercased all the capital latin letters. Then, she randomly chose a permutation of the English lowercase letter alphabet, and then used the corresponding letters in place of the letters in the original text.</p>
+<p>The encrypted text can be downloaded <a href="http://www.spoj.com/content/john_jones:crypto.txt">here</a>.</p>
+<p>There is no example for this problem.</p>
+<p>Some tricky test cases were added on Nov. 25th, 2007 and the time limit has been changed. Programs have been rejudged and some "accepted" solutions got Wrong Answer. However, this problem can still be solved by quite clean code with length less than 1KB.</p>

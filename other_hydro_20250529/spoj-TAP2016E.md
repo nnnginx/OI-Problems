@@ -1,0 +1,35 @@
+<p><span style="font-weight: bold;">[Due to SPOJ restrictions, this problem has been modified with respect to the original version used in the Argentinian Programming Tournament of 2016 in order to have multiple test cases per input file. The original version of this problem (in Spanish) can be found at </span><a style="font-weight: bold;" href="http://torneoprogramacion.com.ar/wp-content/uploads/2016/09/tap2016.pdf">http://torneoprogramacion.com.ar/wp-content/uploads/2016/09/tap2016.pdf</a><span style="font-weight: bold;"> ]</span></p>
+<p>Winters in Nlogonia are very hard, so uncle Ernie decided to buy a heater to keep himself warm this year. Although it was terribly difficult, he managed to follow his friends' advice and buy an intelligent heater, which can be controlled from his smartphone. However, uncle Ernie doesn't fully understand his smartphone, so he has trouble finding the app which is used to set the heater's temperature.</p>
+<p>Uncle Ernie has installed on his smartphone <strong>N</strong>&nbsp;apps numbered from <strong>1</strong>&nbsp;to <strong>N</strong>, corresponding number <strong>1</strong>&nbsp;to the app controlling the heater. His smartphone has <strong>M</strong>&nbsp;buttons numbered from <strong>1</strong>&nbsp;to <strong>M</strong>, which are used to switch from one app to another. More specifically, if the smartphone has currently app number <strong>i</strong>&nbsp;opened and uncle Ernie presses button number <strong>j</strong>, then app <strong>i</strong>&nbsp;is closed and app <strong>T<sub>i,j</sub></strong>&nbsp;is then opened. The problem is uncle Ernie cannot distinguish one app from the other, so he never knows if he has opened the correct app.</p>
+<p>Uncle Ernie is very grumpy, so you have decided to help him in order to avoid having to listen to his complaints every time the heater's temperature is not quite right for him. Your task is to provide him with a list of buttons which he can use as instructions, such that if he presses the buttons in the list in the order in which they appear there, his phone will have opened the app controlling the heater. Because you don't want to provide him with more than one list, you should create one that works as explained above independently of which app is opened at the time when uncle Ernie begins executing its instructions.</p>
+<p>Take for example the case where the phone has <strong>N = 3</strong>&nbsp;apps and <strong>M = 2</strong>&nbsp;buttons, being <strong>T<sub>1,1</sub>&nbsp;= T<sub>2,1</sub>&nbsp;= 3</strong>, <strong>T<sub>3,1</sub>&nbsp;= T<sub>1,2</sub>&nbsp;= 2</strong>&nbsp;and <strong>T<sub>2,2</sub>&nbsp;= T<sub>3,2</sub>&nbsp;= 1</strong>. In this case, a sequence of buttons that could be provided to uncle Ernie would be <strong>{1,2}</strong>, because one of the following situations would take place:</p>
+<ul>
+<li>If uncle Ernie starts with app <strong>1</strong>&nbsp;being open, pressing button <strong>1</strong>&nbsp;will leave him with app <strong>3</strong>&nbsp;being open; then pressing button <strong>2</strong>&nbsp;would result in a final state where app <strong>1</strong>&nbsp;is again opened.</li>
+<li>On the other hand, if uncle Ernie starts with app <strong>2</strong>&nbsp;being open, pressing button <strong>1</strong>&nbsp;will leave him with app <strong>3</strong>&nbsp;being open; then pressing button <strong>2</strong>&nbsp;would result in a final state where app <strong>1</strong>&nbsp;is open.</li>
+<li>Finally, if he starts with app <strong>3</strong>&nbsp;being open, pressing button <strong>1</strong>&nbsp;will leave him with app <strong>2</strong>&nbsp;being open; then pressing button <strong>2</strong>&nbsp;would reslut in a final state where app <strong>1</strong>&nbsp;is open.</li>
+</ul>
+<p>Therefore, independently of which app was open at the beginning of the sequence of button presses, uncle Ernie will always reach app <strong>1</strong>&nbsp;by the end of the sequence.</p>
+<p>Now again, there are times when it is impossible to find a sequence of buttons that can be pressed by uncle Ernie such that the app being open when he finishes to do so is always app number <strong>1</strong>. For example, in the case with <strong>N = 3</strong>&nbsp;and <strong>M = 2</strong>&nbsp;if we have <strong>T<sub>1,1</sub>&nbsp;= T<sub>1,2</sub>&nbsp;= 2</strong>, <strong>T<sub>2,1</sub>&nbsp;= T<sub>2,2</sub>&nbsp;= 3</strong>&nbsp;and <strong>T<sub>3,1</sub>&nbsp;= T<sub>3,2</sub>&nbsp;= 1</strong>&nbsp;the application opened at the end of any sequence of button presses always depends on which application was open at the time the sequence was started. Therefore, in this case it is impossible to find a sequence that will always leave uncle Ernie's phone with app number <strong>1</strong>&nbsp;opened.</p>
+<p>In order not to waste time looking for sequences of button presses that do not exist, you would like to first find out if it is possible to satisfy uncle Ernie by finding a sequence as described above. If so, uncle Ernie will be happy knowing that he can turn the heater on at level 2, his favorite, &nbsp;whenever he wants... and will thus be eternally grateful.</p>
+<p>&nbsp;</p>
+<h3>Input</h3>
+<p>There are multiple test cases in the input file. The first line contains two integer numbers <strong>N</strong>&nbsp;and <strong>M</strong>, representing the number of applications and the number of buttons in uncle Ernie's smartphone, respectively (<strong>1&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;N,M ¡Ü&nbsp;1000</strong>&nbsp;with <strong>1&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;N ¡Á&nbsp;M&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;10<sup>4</sup></strong>). Each of the following <strong>N</strong>&nbsp;lines contains <strong>M</strong>&nbsp;integer numbers, being the <strong>j</strong>-th number in the <strong>i</strong>-th line <strong>T<sub>i,j</sub></strong>, representing the app which is opened when button <strong>j</strong>&nbsp;is pressed while app number <strong>i</strong>&nbsp;was open (<strong>1&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;T<sub>i,j</sub>&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;N</strong>&nbsp;for <strong>i = 1, 2, ..., N</strong>&nbsp;and <strong>j = 1, 2, ..., M</strong>).</p>
+<p>&nbsp;</p>
+<h3>Output</h3>
+<p>For each test case, print a single line containing a character, representing if it is possible to find a sequence of buttons as described in the problem statement. The character should be an <strong>'<span style="font-family: &quot;courier new&quot;, courier;">S</span>'</strong> if the sequence can be found, and an <strong>'<span style="font-family: &quot;courier new&quot;, courier;">N</span>'</strong> otherwise.</p>
+<p>&nbsp;</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+<span style="font-family: &quot;courier new&quot;, courier;">3 2
+3 2
+3 1
+2 1
+3 2
+2 2
+3 3
+1 1</span>
+
+<strong>Output:</strong>
+<span style="font-family: &quot;courier new&quot;, courier;">S
+N</span><span style="white-space: normal;">
+</span></pre>

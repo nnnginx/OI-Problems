@@ -1,0 +1,16 @@
+<p>A flock of chickens are running east along a straight, narrow road. Each one is running with its own constant speed. Whenever a chick catches up to the one in front of it, it has to slow down and follow at the speed of the other chick. You are in a mobile crane behind the flock, chasing the chicks towards the barn at the end of the road. The arm of the crane allows you to pick up any chick momentarily, let the chick behind it pass underneath and place the picked up chick back down. This operation takes no time and can only be performed on a pair of chicks that are immediately next to each other, even if 3 or more chicks are in a row, one after the other.</p>
+<p>Given the initial locations (<strong>X<sub>i</sub></strong>) at time 0 and natural speeds (<strong>V<sub>i</sub></strong>) of the chicks, as well as the location of the barn (<strong>B</strong>), what is the minimum number of swaps you need to perform with your crane in order to have at least&nbsp;<strong>K</strong>&nbsp;of the&nbsp;<strong>N</strong>&nbsp;chicks arrive at the barn no later than time&nbsp;<strong>T</strong>?</p>
+<p>You may think of the chicks as points moving along a line. Even if 3 or more chicks are at the same location, next to each other, picking up one of them will only let one of the other two pass through. Any swap is instantaneous, which means that you may perform multiple swaps at the same time, but each one will count as a separate swap.</p>
+<h3>Input</h3>
+<p>The first line of the input gives the number of test cases,&nbsp;<strong>C</strong>.&nbsp;<strong>C</strong>&nbsp;test cases follow. Each test case starts with 4 integers on a line --&nbsp;<strong>N</strong>,&nbsp;<strong>K</strong>,&nbsp;<strong>B</strong>&nbsp;and&nbsp;<strong>T</strong>. The next line contains the&nbsp;<strong>N</strong>different integers&nbsp;<strong>X<sub>i</sub></strong>, in increasing order. The line after that contains the&nbsp;<strong>N</strong>&nbsp;integers&nbsp;<strong>V<sub>i</sub></strong>. All distances are in meters; all speeds are in meters per second; all times are in seconds.</p>
+<h3>Output</h3>
+<p>For each test case, output one line containing "Case #x:&nbsp;<strong>S</strong>", where x is the case number (starting from 1) and&nbsp;<strong>S</strong>&nbsp;is the smallest number of required swaps, or the word "IMPOSSIBLE".</p>
+<h3 style="font-size: 1.17em;">Limits</h3>
+<p>1 ¡Ü&nbsp;<strong>C</strong>&nbsp;¡Ü 100;<br>1 ¡Ü&nbsp;<strong>B</strong>&nbsp;¡Ü 1,000,000,000;<br>1 ¡Ü&nbsp;<strong>T</strong>&nbsp;¡Ü 1,000;<br>0 ¡Ü&nbsp;<strong>X<sub>i</sub></strong>&nbsp;&lt;&nbsp;<strong>B</strong>;<br>1 ¡Ü&nbsp;<strong>V<sub>i</sub></strong>&nbsp;¡Ü 100;<br>1 ¡Ü&nbsp;<strong>N</strong>&nbsp;¡Ü 50;<br>0 ¡Ü&nbsp;<strong>K</strong>&nbsp;¡Ü&nbsp;<strong>N</strong>;</p>
+<p>All the&nbsp;<strong>X<sub>i</sub></strong>'s will be distinct and in increasing order.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+3<br>5 3 10 5<br>0 2 5 6 7<br>1 1 1 1 4<br>5 3 10 5<br>0 2 3 5 7<br>2 1 1 1 4<br>5 3 10 5<br>0 2 3 4 7<br>2 1 1 1 4
+
+<strong>Output:</strong>
+Case #1: 0<br>Case #2: 2<br>Case #3: IMPOSSIBLE</pre>

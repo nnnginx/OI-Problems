@@ -1,0 +1,108 @@
+<p>“跳找”搜索引擎的开发过程涉及到大量数据包的传输，为了保证传输过程稳定，你选择了用下面的方式算出一个校验码：</p>
+<p>定义函数 $q(n,c)$ ，满足下列性质：</p>
+<ul>
+<li><p>对所有质数 $p$ 和非负整数 $k$，有 $q\left(p^k,c\right)=p^{c\lfloor k/2\rfloor}\,$；</p>
+</li>
+<li><p>对所有互质的正整数 $n,m$ 有 $q(nm,c)=q(n,c)q(m,c)$。（即在第一维上满足积性）</p>
+</li>
+</ul>
+<p>不难发现，当 $c$ 确定后，可以根据上述性质唯一确定每个 $q(n,c)$ 的值。</p>
+<p>我们可以把数据包认为是由若干个非负整数对 $(u_i,v_i)$ 组成的序列。这样我们先通过上面的算法计算出 $q(u_i\cdot v_i,c)$ 作为该整数对的校验码，然后将所有整数对的校验码求和再对 $2^{32}$ 取余后，就可以得到数据包的校验和。</p>
+<p>现在你有一个非常大的数据包，其大小为 $n\times m$，且对于所有满足 $1 \le i \le n,1 \le j \le m$ 的 $(i,j)$，数据包中包含恰好一个整数对 $(i,j)$。请你计算出该数据包的校验和。</p>
+<p>也就是说，对于给定的正整数 $n,m,c$，你需要求出下列式子对 $2^{32}$ 取模的值：</p>
+<p>$$\sum\limits_{i=1}^n\sum\limits_{j=1}^mq(ij,c).$$</p>
+<h2>输入格式</h2>
+<p><strong>本题有多组测试数据。</strong></p>
+<p>第一行一个正整数 $T$，表示数据组数。</p>
+<p>下面 $T$ 行，每行三个整数 : $n,m,c$，意义如题目所述。</p>
+<h2>输出格式</h2>
+<p>对于每组测试数据，输出一行一个整数，表示答案对 $2^{32}$ 取模的结果。</p>
+
+
+<pre><code class="language-input1">3
+10 100 1
+998 244 353
+1911 1949 1978
+</code></pre>
+
+
+<pre><code class="language-output1">3733
+3704996707
+981669122
+</code></pre>
+
+
+
+<pre><code class="language-input2">3
+1 9078917 1
+1 99989717 22
+92734 3529465017 68175
+</code></pre>
+
+
+<pre><code class="language-output2">49378630
+1117102208
+1722526387
+</code></pre>
+
+<h2>限制与约定</h2>
+<p>对于所有数据, $1\leq n\leq 5\times 10^5,\ 1\leq m \leq 1.2\times 10^{11}\ ,1\leq c\leq 10^5 ,1\leq T\leq 3$。</p>
+<div class="table-responsive">
+<table class="table table-bordered table-text-center table-vertical-middle">
+<thead>
+<tr>
+<th style="text-align:center;">子任务编号</th>
+<th style="text-align:center;">$n\leq$</th>
+<th style="text-align:center;">$m\leq $</th>
+<th style="text-align:center;">分值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">$1$</td>
+<td style="text-align:center;">$2000$</td>
+<td style="text-align:center;">$2000$</td>
+<td style="text-align:center;">$10$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$2$</td>
+<td style="text-align:center;">$5\times10^5$</td>
+<td style="text-align:center;">$5\times10^5$</td>
+<td style="text-align:center;">$15$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$3$</td>
+<td style="text-align:center;" rowspan="2">$1$</td>
+<td style="text-align:center;">$5\times 10^{9}$</td>
+<td style="text-align:center;">$15$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$4$</td>
+<td style="text-align:center;">$1.2\times 10^{11}$</td>
+<td style="text-align:center;">$10$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$5$</td>
+<td style="text-align:center;">$10^4$</td>
+<td style="text-align:center;">$10^9$</td>
+<td style="text-align:center;">$15$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$6$</td>
+<td style="text-align:center;">$10^5$</td>
+<td style="text-align:center;">$10^{10}$</td>
+<td style="text-align:center;">$15$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$7$</td>
+<td style="text-align:center;">$5\times 10^5$</td>
+<td style="text-align:center;">$1.2\times 10^{11}$</td>
+<td style="text-align:center;">$20$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>时间限制</strong>：$5\texttt{s}$</p>
+<p><strong>空间限制</strong>：$512\texttt{MB}$</p>
+<h2>下载</h2>
+<p><a href="./20982/file/attachment.zip">样例数据下载</a></p>

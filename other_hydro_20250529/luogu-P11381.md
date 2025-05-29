@@ -1,0 +1,101 @@
+## 题目背景
+题目译自 [POI 2024/2025 R1 Bitada](https://sio2.mimuw.edu.pl/c/oi32-1/p/bit/)。
+
+## 题目描述
+Bajtocki 考古研究所的顶级研究员 Lara Joft 和 Indiana Krones 发现了古代城市 Bitada 的完整地图。这个城市由 $n$ 栋房屋组成，编号从 $1$ 到 $n$，通过 $n-1$ 条双向道路连接。可以保证从任意两个房屋之间有且仅有一条路径可以不经过其他房屋到达。
+
+研究人员知道，Bajtocji 的现任首都 Bajtogród 是在 Bitada 的废墟上建立的。Bajtogród 目前有 $m \geq n$ 座大楼，编号从 $1$ 到 $m$，通过 $m-1$ 条道路连接。保证从任意两个大楼之间有且仅有一条简单路径。已知 $m$ 座大楼中有 $n$ 座建立在 Bitada 废墟之上。不幸的是，Bitada 中房屋的编号与 Bajtogród 中大楼的编号没有直接对应关系。只知道所有 Bitada 的道路都被 Bajtogród 的道路覆盖。换句话说，如果在房屋 $a$ 的废墟上建立了大楼 $x$，在房屋 $b$ 的废墟上建立了大楼 $y$，并且 Bitada 中存在连接房屋 $a$ 和 $b$ 的道路，那么 Bajtogród 中存在连接大楼 $x$ 和 $y$ 的道路。
+
+此外，已知 Bitada 中每栋房屋最多直接连接三栋其他房屋。同样，Bajtogród 中每座大楼最多直接连接三栋其他大楼。
+
+可能的 Bitada 重建定义为将每栋房屋分配到某座大楼的过程，该过程满足两个条件。首先，每座大楼最多分配一栋房屋。其次，若房屋 $a$ 和 $b$ 之间存在道路，则分配给房屋 $a$ 的大楼和分配给房屋 $b$ 的大楼之间存在道路。
+
+Lara Joft 和 Indiana Krones 想要分析所有可能的 Bitada 重建计划，并担心这会占用太多时间。为了得出结论，他们给你一个正整数 $k$，并询问所有可能重建方案的数量对 $k$ 取模的结果。
+
+## 输入格式
+输入的第一行包含三个整数 $n, m, k (1 \leq n \leq m \leq 3000, 1 \leq k \leq 10^9)$，分别表示 Bitada 中的房屋数量，Bajtogród 中的大楼数量以及计算结果的模数。
+
+接下来的 $n-1$ 行描述 Bitada 的道路。每行包含两个整数 $x$ 和 $y (1 \leq x, y \leq n)$，表示 Bitada 中存在连接房屋 $x$ 和 $y$ 的道路。
+
+接下来的 $m-1$ 行描述 Bajtogród 的道路。每行包含两个整数 $x$ 和 $y (1 \leq x, y \leq m)$，表示 Bajtogród 中存在连接大楼 $x$ 和 $y$ 的道路。
+
+输入数据满足题目描述的条件，即任意两个房屋之间存在唯一一条不经过其他房屋的路径，任意两栋大楼之间存在唯一一条不经过其他大楼的路径。
+
+## 输出格式
+输出一行，表示包含所有可能重建方案数量对 $k$ 取模的结果。
+
+```input1
+3 5 100
+1 2
+2 3
+1 2
+1 3
+3 4
+3 5
+```
+
+```output1
+8
+```
+
+```input2
+见下发 bit1ocen.in
+```
+
+```output2
+见下发 bit1ocen.out
+```
+
+```input3
+见下发 bit2ocen.in
+```
+
+```output3
+见下发 bit2ocen.out
+```
+
+```input4
+见下发 bit3ocen.in
+```
+
+```output4
+见下发 bit3ocen.out
+```
+
+```input5
+见下发 bit4ocen.in
+```
+
+```output5
+见下发 bit4ocen.out
+```
+
+## 提示
+对于样例一，可能的重建方案包括：
+
+1. $1 \rightarrow 2, 2 \rightarrow 1, 3 \rightarrow 3$；
+2. $1 \rightarrow 3, 2 \rightarrow 1, 3 \rightarrow 2$；
+3. $1 \rightarrow 1, 2 \rightarrow 3, 3 \rightarrow 4$；
+4. $1 \rightarrow 1, 2 \rightarrow 3, 3 \rightarrow 5$；
+5. $1 \rightarrow 4, 2 \rightarrow 3, 3 \rightarrow 1$；
+6. $1 \rightarrow 4, 2 \rightarrow 3, 3 \rightarrow 5$；
+7. $1 \rightarrow 5, 2 \rightarrow 3, 3 \rightarrow 1$；
+8. $1 \rightarrow 5, 2 \rightarrow 3, 3 \rightarrow 4$。
+
+对于样例二，该样例满足 $n=5, m=5, k=100$。Bitada 和 Bajtogród 具有相同的道路。答案是 $2$。
+
+对于样例三，该样例满足 $n=7, m=15, k=10^9$。Bitada 和 Bajtogród 是满二叉树。答案是 $24$。
+
+对于样例四，该样例满足 $n=3, m=3000, k=121$。Bajtogród 中正好有一半的大楼形成了一条路径。路径上的每栋大楼都与一栋不在路径上的大楼相连。答案是 $38$。
+
+对于样例五，该样例满足 $n=100, m=3000, k=27$。Bitada 和 Bajtogród 都是一条链。具体来说，对于每个 $1 \leq i < n$，存在连接房屋 $i$ 和 $i+1$ 的道路。同样，对于每个 $1 \leq i < m$，存在连接大楼 $i$ 和 $i+1$ 的道路。答案是 $24$。
+
+| 子任务编号 | 特殊性质 | 分值 |
+| :-----------: | :----------- | :----------- |
+| $1$ | $n,m \leq 10$ | $8$ |
+| $2$ | $n,m \leq 30$ | $11$ |
+| $3$ | $n \leq 3$ | $7$ |
+| $4$ | $n \leq 30$ | $25$ |
+| $5$ | 无特殊性质 | $49$ |
+
+

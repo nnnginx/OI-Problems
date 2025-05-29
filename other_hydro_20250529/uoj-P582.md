@@ -1,0 +1,148 @@
+<p>小 C 正在玩一个移球游戏，他面前有 $n + 1$ 根柱子，柱子从 $1 \sim n + 1$ 编号，其中 $1$ 号柱子、$2$ 号柱子、……、$n$ 号柱子上各有 $m$ 个球，它们自底向上放置在柱子上，$n + 1$ 号柱子上初始时没有球。这 $n \times m$ 个球共有 $n$ 种颜色，颜色编号为 $1$ 到 $n$， 每种颜色的球各 $m$ 个。</p>
+<p>初始时一根柱子上的球可能是五颜六色的，而小 C 的任务是将所有同种颜色的球移到同一根柱子上，这是唯一的目标，而每种颜色的球最后放置在哪根柱子则没有限制。</p>
+<p>小 C 可以通过若干次操作完成这个目标，一次操作能将一个球从一根柱子移到另一根柱子上。更具体地，将 $x$ 号柱子上的球移动到 $y$ 号柱子上的要求为：</p>
+<ol>
+<li>$x$ 号柱子上至少有一个球；</li>
+<li>$y$ 号柱子上至多有 $m - 1$ 个球；</li>
+<li>只能将 $x$ 号柱子最上方的球移到 $y$ 号柱子的最上方。</li>
+</ol>
+<p>小 C 的目标并不难完成，因此他决定给自己加加难度：在完成目标的基础上，使用的操作次数不能超过 $820000$。换句话说，小 C 需要使用至多 $820000$ 次操作完成目标。</p>
+<p>小 C 被难住了，但他相信难不倒你，请你给出一个操作方案完成小 C 的目标。合法的方案可能有多种，你只需要给出任意一种，题目保证一定存在一个合法方案。</p>
+<h2>输入格式</h2>
+<p>第一行两个用空格分隔的整数 $n, m$。分别表示球的颜色数、每种颜色球的个数。  </p>
+<p>接下来 $n$ 行每行 $m$ 个用单个空格分隔的整数，第 $i$ 行的整数按自底向上的顺序依次给出了 $i$ 号柱子上的球的颜色</p>
+<h2>输出格式</h2>
+<p>本题采用自定义校验器（special judge）评测。  </p>
+<p>你的输出的第一行应该仅包含单个整数 $k$，表示你的方案的操作次数。你应保证 $0 \le k \le 820000$。  </p>
+<p>接下来 $k$ 行每行你应输出两个用单个空格分隔的正整数 $x, y$，表示这次操作将 $x$ 号柱子最上方的球移动到 $y$ 号柱子最上方。你应保证 $1 \le x, y \le n + 1$ 且 $x \ne y$。</p>
+
+
+<pre><code class="language-input1">2 3
+1 1 2
+2 1 2
+</code></pre>
+
+
+<pre><code class="language-output1">6
+1 3
+2 3
+2 3
+3 1
+3 2
+3 2
+</code></pre>
+
+<h2>样例解释一</h2>
+<p>柱子中的内容为：按自底向上的顺序依次给出柱子上每个球的颜色。</p>
+<div class="table-responsive">
+<table class="table table-bordered table-text-center table-vertical-middle">
+<thead>
+<tr>
+<th style="text-align:center;">操作</th>
+<th style="text-align:center;">$1$ 号柱子</th>
+<th style="text-align:center;">$2$ 号柱子</th>
+<th style="text-align:center;">$3$ 号柱子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">初始</td>
+<td style="text-align:center;">$1\ 1\ 2$</td>
+<td style="text-align:center;">$2\ 1\ 2$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$1\ 3$</td>
+<td style="text-align:center;">$1\ 1$</td>
+<td style="text-align:center;">$2\ 1\ 2$</td>
+<td style="text-align:center;">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$2\ 3$</td>
+<td style="text-align:center;">$1\ 1$</td>
+<td style="text-align:center;">$2\ 1$</td>
+<td style="text-align:center;">$2\ 2$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$2\ 3$</td>
+<td style="text-align:center;">$1\ 1$</td>
+<td style="text-align:center;">$2$</td>
+<td style="text-align:center;">$2\ 2\ 1$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$3\ 1$</td>
+<td style="text-align:center;">$1\ 1\ 1$</td>
+<td style="text-align:center;">$2$</td>
+<td style="text-align:center;">$2\ 2$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$3\ 2$</td>
+<td style="text-align:center;">$1\ 1\ 1$</td>
+<td style="text-align:center;">$2\ 2$</td>
+<td style="text-align:center;">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$3\ 2$</td>
+<td style="text-align:center;">$1\ 1\ 1$</td>
+<td style="text-align:center;">$2\ 2\ 2$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>样例二</h2>
+<p>见附加文件中的 <code>ex_ball2.in/ans</code>。</p>
+<h2>样例三</h2>
+<p>见附加文件中的 <code>ex_ball3.in/ans</code>。</p>
+<h2>限制与约定</h2>
+<div class="table-responsive">
+<table class="table table-bordered table-text-center table-vertical-middle">
+<thead>
+<tr>
+<th style="text-align:center;">测试点编号</th>
+<th style="text-align:center;">$n \le$</th>
+<th style="text-align:center;">$m \le$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">$1 \sim 2$</td>
+<td style="text-align:center;">$2$</td>
+<td style="text-align:center;">$20$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$3 \sim 5$</td>
+<td style="text-align:center;">$10$</td>
+<td style="text-align:center;">$20$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$6 \sim 8$</td>
+<td style="text-align:center;">$50$</td>
+<td style="text-align:center;">$85$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$9 \sim 14$</td>
+<td style="text-align:center;">$50$</td>
+<td style="text-align:center;">$300$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$15 \sim 20$</td>
+<td style="text-align:center;">$50$</td>
+<td style="text-align:center;">$400$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>对于所有测试点，保证 $2 \le n \le 50$，$2 \le m \le 400$，所有球的颜色编号为 $1$ 到 $n$ 之间的整数，且每种颜色的球恰有 $m$ 个。</p>
+<p><strong>时间限制</strong>：$1 \texttt{s}$</p>
+<p><strong>空间限制</strong>：$512 \texttt{MB}$</p>
+<h2>校验器</h2>
+<p>为了方便选手测试，附加文件中我们给出了名为 <code>checker.cpp</code> 的文件，选手可以编译该程序，并使用它校验自己的输出文件。但请注意它与最终评测时所使用的校验器并不完全一致。你也不需要关心其代码的具体内容。</p>
+<p>编译命令为：<code>g++ -std=c++11 checker.cpp −o checker</code>。此外，附加文件中有还有名为 <code>testlib.h</code> 的文件，在编译时，请确保该文件与<code>checker.cpp</code> 在同一子目录下。</p>
+<p>在终端中，<code>checker</code> 的使用方式为：<code>checker &lt;输入文件名&gt; &lt;输出文件名&gt;</code>。如果你的输入文件名为ball.in，输出文件名为ball.out，则正确的使用方式为 <code>checker ball.in ball.out</code>。</p>
+<p>若你的方案正确，校验器会给出 <code>OK</code>，否则，该校验器会给出简要的错误信息：</p>
+<ol>
+<li><code>A x</code>，表示进行到第 $x$ 个操作时不合法。</li>
+<li><code>B x</code>，表示操作执行完毕后第 $x$ 个柱子上的球不合法。</li>
+<li>其他错误信息，表示你的输出格式不合法，或数字大小范围不合法，请仔细检查你的输出是否满足题面中的格式与数字范围要求。</li>
+</ol>
+<h2>下载</h2>
+<p><a href="./20986/file/attachment.zip">附加文件下载</a></p>

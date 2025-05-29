@@ -1,0 +1,36 @@
+<p><strong>[Due to SPOJ restrictions, this problem has been modified with respect to the original version used in the Argentinian Programming Tournament of 2016 in order to have multiple test cases per input file. The original version of this problem (in Spanish) can be found at <a href="http://torneoprogramacion.com.ar/wp-content/uploads/2016/09/tap2016.pdf">http://torneoprogramacion.com.ar/wp-content/uploads/2016/09/tap2016.pdf</a> ]</strong></p>
+<p>&nbsp;</p>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">Mabel Eucaliptos ha pasado toda la noche entren\'andose en el arte de comer hojas de eucalipto. Finalmente est\'a preparada para enfrentar a su malvada archin\'emesis, Pac\'ifica, en un \'ultimo juego que intentar\'a decidir de una vez por todas qui\'en de las dos es la mejor koala.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">El juego se llevar\'a a cabo en un bosque constituido por $N$ \'arboles de eucalipto numerados del $1$ al $N$. Los \'arboles est\'an conectados por $N - 1$ cuerdas. Cada cuerda conecta dos \'arboles diferentes, y permite a las koalas desplazarse de cualquiera de ellos al otro. El bosque de eucaliptos es tal que es posible ir de cualquier \'arbol a cualquier otro usando sucesivamente estas cuerdas.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">Los \'arboles de eucalipto contienen una cantidad no negativa de hojas. Cuando un \'arbol contiene cero hojas, se dice que est\'a vac\'io. Inicialmente ninguno de los $N$ \'arboles en los que se desarrollar\'a el juego se encuentra vac\'io.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">Antes de empezar el juego, a cada koala se le asigna un \'arbol diferente. Al principio de la partida cada jugadora sube al \'arbol que le fue asignado y come todas las hojas que este contiene, dej\'andolo vac\'io. A continuaci\'on, juegan alternadamente, siendo Mabel la encargada de realizar el primer movimiento. En cada turno la jugadora correspondiente se mueve a un \'arbol no vac\'io que est\'e conectado por una cuerda con el \'arbol en el que se encuentra ella. Seguidamente come todas las hojas que este nuevo \'arbol contiene, dej\'andolo vac\'io. En caso de no poder realizar un movimiento v\'alido, permanece donde est\'a y pasa a ser el turno de la otra jugadora. El juego termina cuando ninguna de las dos puede hacer un movimiento v\'alido.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">Una vez finalizada la partida, se cuentan las hojas que comi\'o cada koala, y se calcula la diferencia entre la cantidad que comi\'o Mabel y la cantidad que comi\'o Pac\'ifica. Mabel jugar\'a tratando de maximizar dicha diferencia, mientras que Pac\'ifica lo har\'a intentando minimizarla. Su tarea es determinar cu\'al ser\'a el resultado del juego, suponiendo que ambas juegan de manera \'optima.</div>
+<p>Mabel Eucalyptus spent last night training in the art of eucalyptus leaf eating. She is finally ready to face her evil arch-nemesis, Peaceful, in a last game which will decide once and for all which of them is the best koala.</p>
+<p>The game will take place in a forest containing <strong>N</strong> eucalyptus trees numbered from <strong>1</strong>&nbsp;to <strong>N</strong>. The trees are connected by <strong>N-1</strong>&nbsp;ropes, each of which joins two different trees. These ropes allow koalas to move from one tree to the other, and the eucalyptus forest is such that it is possible to go from a given tree to any other successively using the ropes.</p>
+<p>The eucalyptus trees contain a non-negative amount of leaves. When a tree contains no leaves, we say it is empty. Initially, none of the <strong>N</strong>&nbsp;trees in the forest is empty.</p>
+<p>Before commencing the game, each koala is assigned a different tree. At the beginning of the game, each player climbs the tree that was assigned to her and eats all the leaves it contains. After that both players take turns, Mabel being in charge of making the first move. In each turn, the corresponding player moves to a non-empty tree connected by a rope to the tree she is currently in. Then, she eats all the leaves this tree contains, thus leaving it empty. If a player can't make a valid move in her turn, she forfeits her turn staying wherever she is, and the other player gets to move again. The game ends when both players cannot make a valid move.</p>
+<p>Once the game has finished, the number of leaves eaten by each koala is counted, and the difference between the amount eaten by Mabel and the amount eaten by Peaceful is calculated. Mabel will play aiming to maximize this difference, whereas&nbsp;Peaceful&nbsp;will play to minimize it. Your task is to determine what the result of the game will be, assuming that both koalas play optimally.</p>
+<p>&nbsp;</p>
+<h3>Input</h3>
+<p>There are multiple test cases in the input file. For each test case, the first line contains three integer numbers <strong>N</strong>, <strong>M</strong>&nbsp;y <strong>P</strong>, representing the number of trees in the forest, the tree where Mabel starts, and the tree where Peaceful starts, respectively (<strong>2 ¡Ü&nbsp;N&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;10<sup>5</sup></strong>&nbsp;and <strong>1&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;M, P&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;N</strong>&nbsp;with <strong>M ¡Ù&nbsp;P</strong>). The second line contains <strong>N</strong>&nbsp;integer numbers <strong>C<sub>1</sub>, C<sub>2</sub>, ..., C<sub>N</sub></strong>, representing <strong>C<sub>i</sub></strong>&nbsp;the number of leaves contained in the <strong>i</strong>-th tree (<strong>1&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;C<sub>i</sub>&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;100</strong>&nbsp;for <strong>i = 1, 2, ..., N</strong>). Each of the following <strong>N-1</strong>&nbsp;lines contains two integer numbers <strong>U</strong>&nbsp;and <strong>V</strong>, representing that there is a rope connecting trees number <strong>U</strong>&nbsp;and <strong>V</strong>&nbsp;(<strong>1&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;U, V&nbsp;</strong><strong>¡Ü</strong><strong>&nbsp;N</strong>&nbsp;with <strong>U ¡Ù&nbsp;V</strong>).</p>
+<p>&nbsp;</p>
+<h3>Output</h3>
+<p>For each test case, output a single line containing an integer number, representing the difference between the number of leaves eaten by Mabel and the number of leaves eaten by Peaceful if both of them play optimally.</p>
+<p>&nbsp;</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+<span style="font-family: &quot;courier new&quot;, courier;">2 1 2
+5 3
+1 2
+6 2 3
+1 6 4 3 2 2
+1 2
+2 3
+3 4
+3 5
+5 6</span>
+
+<strong>Output:</strong>
+<span style="font-family: &quot;courier new&quot;, courier;">2
+-1</span><span style="white-space: normal;">
+</span></pre>

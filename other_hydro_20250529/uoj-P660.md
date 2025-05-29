@@ -1,0 +1,125 @@
+<p><strong> 由于某些原因本题仅支持 C++, C++11 语言的提交。 </strong></p>
+<p>Khong 阿姨正在给附近一所学校的学生准备 $n$ 盒糖果。盒子的编号分别为 $0$ 到 $n - 1$，开始时盒子都为空。第 $i$ 个盒子（$0 \le i \le n - 1$）至多可以容纳 $c[i]$ 块糖果（容量为 $c[i]$）。</p>
+<p>Khong 阿姨花了 $q$ 天时间准备糖果盒。在第 $j$ 天（$0 \le j \le q - 1$），她根据三个整数 $l[j]$、$r[j]$ 和 $v[j]$ 执行操作，其中 $0 \le l[j] \le r[j] \le n - 1$ 且 $v[j] \ne 0$。对于每个编号满足 $l[j] \le k \le r[j]$ 的盒子 $k$：</p>
+<ul>
+<li>如果 $v[j] &gt; 0$，Khong 阿姨将糖果一块接一块地放入第 $k$ 个盒子，直到她正好放了 $v[j]$ 块糖果或者该盒子已满。也就是说，如果该盒子在这次操作之前已有 $p$ 块糖果，那么在这次操作之后盒子将有 $\min{(c[k], p + v[j])}$ 块糖果。</li>
+<li>如果 $v[j] &lt; 0$，Khong 阿姨将糖果一块接一块地从第 k 个盒子取出，直到她正好从盒子中取出 $-v[j]$ 块糖果或者该盒子已空。也就是说，如果该盒⼦在这次操作之前已有 $p$ 块糖果，那么在这次操作之后盒子将有 $\max{(0, p + v[j])}$ 块糖果。</li>
+</ul>
+<p>你的任务是求出 $q$ 天之后每个盒子中糖果的数量。</p>
+<h2>实现细节</h2>
+<p>你必须引用 <code>candies.h</code> 头文件。</p>
+<p>你要实现以下函数：</p>
+<pre><code class="sh_cpp">int[] distribute_candies(int[] c, int[] l, int[] r, int[] v)</code></pre>
+<ul>
+<li>$c$：一个长度为 $n$ 的数组。对于 $0 \le i \le n - 1$，$c[i]$ 表示盒子 $i$ 的容量。</li>
+<li>$l$、$r$ 和 $v$：三个长度为 $q$ 的数组。在第 $j$ 天，对于 $0 \le j \le q - 1$，Khong 阿姨执行由整数 $l[j]$、$r[j]$ 和 $v[j]$ 决定的操作，如题面所述。</li>
+<li>该函数应该返回一个长度为 $n$ 的数组。用 $s$ 表示这个数组。对于 $0 \le i \le n - 1$，$s[i]$ 应为 $q$ 天以后盒子 $i$ 中的糖果数量。</li>
+</ul>
+<h2>输入格式</h2>
+<p>评测程序示例读入如下格式的输入：</p>
+<ul>
+<li>第 $1$ 行：$n$</li>
+<li>第 $2$ 行：$c[0] \; c[1] \; \ldots \; c[n - 1]$</li>
+<li>第 $3$ 行：$q$</li>
+<li>第 $4 + j$ 行（$0 \le j \le q - 1$）：$l[j] \; r[j] \; v[j]$</li>
+</ul>
+<h2>输出格式</h2>
+<p>评测程序⽰例按照以下格式打印你的答案：</p>
+<ul>
+<li>第 $1$ 行：$s[0] \; s[1] \; \ldots \; s[n - 1]$</li>
+</ul>
+
+
+<pre><code class="language-input1">3
+10 15 13
+2
+0 2 20
+0 1 -11
+</code></pre>
+
+
+<pre><code class="language-output1">0 4 13
+</code></pre>
+
+
+<p>考虑如下调用：</p>
+<pre><code class="sh_cpp">distribute_candies([10, 15, 13], [0, 0], [2, 1], [20, -11])</code></pre>
+<p>这表示盒子 $0$ 的容量为 $10$ 块糖果，盒子 $1$ 的容量为 $15$ 块糖果，盒子 $2$ 的容量为 $13$ 块糖果。</p>
+<p>在第 $0$ 天结束时，盒子 $0$ 有 $\min{(c[0], 0 + v[0])} = 10$ 块糖果，盒子 $1$ 有 $\min{(c[1], 0 + v[0])} = 15$ 块糖果，盒子 $2$ 有 $\min{(c[2], 0 + v[0])} = 13$ 块糖果。</p>
+<p>在第 $1$ 天结束时，盒子 $0$ 有 $\max{(0, 10 + v[1])} = 0$ 块糖果，盒子 $1$ 有 $\max(0, 15 + v[1]) = 4$ 块糖果。因为 $2 &gt; r[1]$，盒子 $2$ 中的糖果数量没有变化。每一天结束时糖果的数量总结如下：</p>
+<div class="table-responsive">
+<table class="table table-bordered table-text-center table-vertical-middle">
+<thead>
+<tr>
+<th style="text-align:center;">天</th>
+<th style="text-align:center;">盒子 $0$</th>
+<th style="text-align:center;">盒子 $1$</th>
+<th style="text-align:center;">盒子 $2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">$0$</td>
+<td style="text-align:center;">$10$</td>
+<td style="text-align:center;">$15$</td>
+<td style="text-align:center;">$13$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$1$</td>
+<td style="text-align:center;">$0$</td>
+<td style="text-align:center;">$4$</td>
+<td style="text-align:center;">$13$ </td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>就此情况，函数应该返回 $[0, 4, 13]$。</p>
+<h2>数据范围</h2>
+<p>对于所有数据：</p>
+<ul>
+<li>$1 \le n \le 200 \, 000$</li>
+<li>$1 \le q \le 200 \, 000$</li>
+<li>$1 \le c[i] \le {10}^9$（对所有 $0 \le i \le n - 1$）</li>
+<li>$0 \le l[j] \le r[j] \le n - 1$（对所有 $0 \le j \le q - 1$）</li>
+<li>$-{10}^9 \le v[j] \le {10}^9$，$v[j] \ne 0$（对所有 $0 \le j \le q - 1$）</li>
+</ul>
+<div class="table-responsive">
+<table class="table table-bordered table-text-center table-vertical-middle">
+<thead>
+<tr>
+<th style="text-align:center;">子任务</th>
+<th style="text-align:center;">分值</th>
+<th style="text-align:center;">特殊限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">$1$</td>
+<td style="text-align:center;">$3$</td>
+<td style="text-align:center;">$n, q \le 2000$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$2$</td>
+<td style="text-align:center;">$8$</td>
+<td style="text-align:center;">$v[j] &gt; 0$（对所有 $0 \le j \le q - 1$）</td>
+</tr>
+<tr>
+<td style="text-align:center;">$3$</td>
+<td style="text-align:center;">$27$</td>
+<td style="text-align:center;">$c[0] = c[1] = \cdots = c[n - 1]$</td>
+</tr>
+<tr>
+<td style="text-align:center;">$4$</td>
+<td style="text-align:center;">$29$</td>
+<td style="text-align:center;">$l[j] = 0$ 和 $r[j] = n - 1$（对所有 $0 \le j \le q - 1$）</td>
+</tr>
+<tr>
+<td style="text-align:center;">$5$</td>
+<td style="text-align:center;">$33$</td>
+<td style="text-align:center;">没有额外的约束条件</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>时间限制：$\texttt{4s}$</strong></p>
+<p><strong>空间限制：$\texttt{2GB}$</strong></p>

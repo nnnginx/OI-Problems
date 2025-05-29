@@ -1,0 +1,45 @@
+## 题目描述
+Master Oogway has $n$ deques, all elements in these deques are different.
+
+Panda wants to be the Dragon Warrior, needs to make most powerful array he can with this deques.
+
+In each turn he can choose a nonempty deque (if there is any) and choose it's front or back and append that value to end of the array, then pop that value from the deque. help him to find most powerful array he can make.
+
+The power of an array is the longest increasing subsequence (LIS) of it.
+
+## 输入格式
+First line of input contains integer $n$, the number of deques Master Oogway has.
+
+In the $i$-th line of next $n$ line, there is an integer $k_i$, the size of $i$-th deque, followed by $k_i$ integers, elements of $i$-th deque.
+
+## 输出格式
+In the first line of output, print the maximum LIS you can make, then print the resulted array, if there is more than one possible answer, you can print any of them.
+
+```input1
+3
+4 7 2 3 5
+3 1 11 9
+4 10 4 8 6
+```
+
+```output1
+9
+1 7 2 3 10 4 5 6 8 9 11
+```
+
+## 提示
+### constraints
+
+- $1 \leq n \leq 200\,000$
+- $1 \leq k_i \leq 200\,000$
+- $\sum_{i=1}^{n} k_i \leq 200\,000$
+- $a_{i_1,j_1} \neq a_{i_2,j_2}$
+- $a_{i,j} \leq 10^9$
+
+### Subtasks
+
+| subtask | score | limits |
+| :---: | :---: | :---: |
+| 1 | 50 | $\sum_{i=1}^{n} k_{i} \leq 2000$ |
+| 2 | 50 | No extra limits 
+

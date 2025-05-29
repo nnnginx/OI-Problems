@@ -1,0 +1,12 @@
+<p>Mona and her brother Alaa are very smart kids, they love math a lot and they are passionate to invent new games.<br><br>So after they went back from school they invented a new game called "N..K..Divide".<br><br>First of all, let's define a function D(m). such that D(m) is the number of distinct primes in the prime factorization of m.<br><strong>For Example D(9) = 1 and D(12) = 2.</strong><br><br>The rules of the game are simple:<br><br>*The game consists of R rounds.<br>*In each round there are two integer numbers n and k.<br>*Each round consists of multiple turns.<br>*Each player alternately takes turn (starting with the player who won the last round / by Mona in the first round).<br>*In each turn the player choose some positive integer m, where <strong>2 <strong>¡Ü</strong> m <strong>¡Ü</strong> n</strong> such that n is divisible by m and <strong>D(m) <strong>¡Ü</strong> k</strong>, then divides n by the chosen m.<br>*The first player who cannot make any valid move loses.<br>*The player who wins more rounds is declared as the winner of the game (if tie then Mona is considered the winner).<br><br>So the kids asked their father to run the game for them.<br><br>For each of the R rounds father gives them two integer numbers n, k and wants to know who will be the winner of this round if they both play optimally (to win the current round).</p>
+<h3>Input</h3>
+<p>The first line consists of a single integer <strong>1 <strong>¡Ü</strong> R <strong>¡Ü</strong> 10</strong> the number of rounds the kids are going to play.<br>Each of the next R lines contains two space-separated integers <strong>n, k</strong> where <strong>2 <strong>¡Ü</strong> n <strong>¡Ü</strong> 10<sup>14</sup></strong>, <strong>1 <strong>¡Ü</strong> k <strong>¡Ü</strong> 10</strong>.</p>
+<h3>Output</h3>
+<p>Print R+2 lines.<br>For the first R lines, the i'th line of them should contain the name of the winner of i'th round if both players play optimally "Mona" or "Alaa" (without quotation marks).<br>The line number R+1 is an empty line.<br>In the last print the name of the winner, print "Mona" if Mona is the winner of the game otherwise print "Alaa" (without quotation marks).</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+5<br>3 4<br>6 2<br>6 1<br>9 1<br>18 2
+
+<strong>Output:</strong>
+Mona<br>Mona<br>Alaa<br>Alaa<br>Alaa<br><br>Alaa
+</pre>

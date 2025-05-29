@@ -1,0 +1,10 @@
+<p>You live in Nlogonia, a country that has N cities connected by some bidirectional roads (as usual). In Nlogonia, there is exactly one path between any pair of cities.<br><br>You can't use the roads during your travels for free. There is an officer at each road that will let you use it only if you show him a certain number of tickets. If you don't have the required amount of tickets, you just can't use that road.<br><br>The officer will not keep the tickets, though. You need to show the tickets to him, but you can keep them after that. This indicates that you can use the same ticket in more than one road, if you want to.<br><br>You are given a description of the road system of Nlogonia and a number of queries. For each query, find the minimum number of tickets you must have to go from a city A to a city B. Consider that city A is the only place where you can buy tickets, so you must be holding all the tickets you will need during the travel before leaving city A.</p>
+<h3>Input</h3>
+<p>Each test case starts with a line containing the integer N (2 ¡Ü N ¡Ü 10<sup>5</sup>), the number of cities in Nlogonia. The cities are numbered from 1 to N.</p>
+<p>Each of the next N-1 lines contains the description of a road, A B T (1 ¡Ü A, B ¡Ü N, A ¡Ù B, T ¡Ü 10<sup>9</sup>), indicating that there's a road between the cities A and B, and you must show T tickets to use it. It's guaranteed that no pair of cities will appear more than once in the input.</p>
+<p>The next line contains the integer Q (1 ¡Ü Q ¡Ü 5¡Á10<sup>5</sup>), the number of queries. Each of the next Q lines contains two city numbers A B (1 ¡Ü A, B ¡Ü N, A ¡Ù B).<br><br>The last test case is followed by a line containg the number 0.</p>
+<h3>Output</h3>
+<p>For each query A B, print the minimum number of tickets needed during the travel from city A to city B. Print a blank line after each test case.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+6<br>1 2 1<br>1 3 5<br>3 4 3<br>3 5 8<br>1 6 2<br>3<br>2 6<br>5 2<br>4 6<br>0<br><br><strong>Output:</strong><br>2<br>8<br>5<br><br></pre>

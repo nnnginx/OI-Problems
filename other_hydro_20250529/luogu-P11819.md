@@ -1,0 +1,99 @@
+## 题目背景
+译自 PA 2019 Final。
+
+
+本题数据为自造。
+
+std: zimpha，validator: Starrykiller，generator：KanameMadoka&Starrykiller。Special Thanks to @N_z_。
+
+## 题目描述
+
+
+有一个 $n$ 个节点的简单有向带权图。Radewoosh 想要求出这张图的全源最短路。他决定写个 Floyd-Warshall：
+
+$$
+\def\arraystretch{1.2}
+    \begin{array}{ll}
+    \hline
+    \textbf{算法 1} & \text{\textbf{正确的} Floyd-Warshall 算法} \\
+    \hline
+    1&\textbf{Require: } n\times n \text{ 的矩阵 }M，满足：\\
+    & M_{i,j}=\begin{cases}
+                  0, & \text{当 } i=j \\
+                  w_{i,j}, & \text{当存在一条 } u\to v \text{ 的有向边，边权为 } w_{i,j} \\
+                  \infty, & \text{其他情况}
+               \end{cases}
+    \\
+    2&\ \textbf{for } x=1,2,3,\ldots,n \textbf{ do} \\
+    3&\ \qquad\textbf{for } y=1,2,3,\ldots,n \textbf{ do} \\
+    4&\ \qquad\qquad\textbf{for } z=1,2,3,\ldots,n \textbf{ do} \\
+    5&\ \qquad\qquad\qquad M_{y,z}\gets \min(M_{y,z},M_{y,x}+M_{x,z}) \\
+    \hline
+    \end{array} 
+$$
+
+然而他搞错了循环顺序，于是代码变成了这样：
+
+$$
+\def\arraystretch{1.2}
+    \begin{array}{ll}
+    \hline
+    \textbf{算法 2} & \text{\textbf{不正确的} Floyd-Warshall 算法} \\
+    \hline
+    1&\textbf{Require: } n\times n \text{ 的矩阵 }M，满足：\\
+    & M_{i,j}=\begin{cases}
+                  0, & \text{当 } i=j \\
+                  w_{i,j}, & \text{当存在一条 } u\to v \text{ 的有向边，边权为 } w_{i,j} \\
+                  \infty, & \text{其他情况}
+               \end{cases}
+    \\
+    2&\ \textbf{for } y=1,2,3,\ldots,n \textbf{ do} \\
+    3&\ \qquad\textbf{for } z=1,2,3,\ldots,n \textbf{ do} \\
+    4&\ \qquad\qquad\textbf{for } x=1,2,3,\ldots,n \textbf{ do} \\
+    5&\ \qquad\qquad\qquad M_{y,z}\gets \min(M_{y,z},M_{y,x}+M_{x,z}) \\
+    \hline
+    \end{array} 
+$$
+
+令这张图中，$x\to y$ 正确的距离为 $\operatorname{dist}(x,y)$，Radewoosh 求出的为 $\operatorname{dist}'(x,y)$。
+
+求出满足 $\operatorname{dist}(x,y)\neq \operatorname{dist}'(x,y)$ 的 $(x,y)$ 对数。
+
+
+
+
+## 输入格式
+第一行，两个正整数 $n,m$。
+
+接下来 $m$ 行，每行三个正整数 $u,v,w$，表示一条边权为 $w$ 的 $u\to v$ 的有向边。
+
+## 输出格式
+输出一行一个非负整数，表示答案。
+
+
+```input1
+4 5
+2 3 4
+3 4 3
+4 2 2
+1 3 1
+1 2 9
+```
+
+```output1
+1
+```
+
+## 提示
+- $2\le n\le 2\times 10^3$；
+- $1\le m\le 3\times 10^3$；
+- $1\le u,v\le n$，$u\neq v$；
+- $1\le w\le 10^5$；
+- 给定的图是简单图（无重边自环）。
+
+样例解释：
+
+以下左边的矩阵是正确的 $\operatorname{dist}$ 矩阵，右边是错误的 $\operatorname{dist'}$ 矩阵。
+
+$$\begin{bmatrix}0&6&1&4\\\infin&0&4&7\\\infin&5&0&3\\\infin&2&6&0\end{bmatrix}\qquad\begin{bmatrix}0&9&1&4\\\infin&0&4&7\\\infin&5&0&3\\\infin&2&6&0\end{bmatrix}$$
+

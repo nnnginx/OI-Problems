@@ -1,0 +1,17 @@
+<pre><span style="font-size: small;">The Alphabetic Rope is now available in the market. The Alphabetic Rope consists of alphabetic<br></span><span style="font-size: small;">characters in each stripe which looks like string.<br></span><span style="font-size: small;">You are given an Alphabetic rope consists of lowercase alphabetic characters only,you have to perform<br></span><span style="font-size: small;">some operations on rope and answers some queries on it.<br></span><span style="font-size: small;">Queries are of 3 types:</span><ul><li><span style="font-size: small;"><strong>1 X Y</strong> : Cut the rope segment from X to Y and join at the front of rope.</span></li></ul><ul><li><span style="font-size: small;"><strong>2 X Y</strong> : Cut the rope segment from X to Y and join at the back of rope.</span></li></ul><ul><li><span style="font-size: small;"><strong>3 Y</strong>: Print on a new line the Alphabet on Yth position of current rope.</span></li></ul></pre>
+<p>&nbsp;</p>
+<h3>Input</h3>
+<pre><span style="font-size: small;">There is only one input. Input begins with single line giving Alphabetic Rope as a string -<strong>S</strong>.<br></span><span style="font-size: small;">Next line containg <strong>Q</strong>, follows Q lines giving Queries as mentioned above. ( Index used are<br></span><span style="font-size: small;">0-based )</span></pre>
+<h3>Output</h3>
+<p><span style="font-size: small;">For each query of type 3, <span style="white-space: pre;">Print a single character in a new line.</span></span></p>
+<h3 style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-weight: 500; line-height: 1.1; color: #333333; margin-top: 20px; margin-bottom: 10px; font-size: 20px;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; font-size: 10px;"><span style="box-sizing: border-box; font-weight: 700;"><span style="box-sizing: border-box; font-size: small;"><span style="text-decoration: underline;">Constraints:</span></span></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; font-size: 10px;"><span style="box-sizing: border-box; font-weight: 700;"><span style="box-sizing: border-box; font-size: small;">1&lt;=|S|&lt;=100000. (Length of string)</span></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; font-size: 10px;"><span style="box-sizing: border-box; font-weight: 700;"><span style="box-sizing: border-box; font-size: small;"><span style="color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: small; font-weight: bold;">1&lt;=Q|&lt;=100000. (Total Queries)</span></span></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; font-size: 10px;"><span style="box-sizing: border-box; font-weight: 700;"><span style="box-sizing: border-box; font-size: small;"><br></span></span></p>
+</h3>
+<h3>Example</h3>
+<pre><strong><span style="font-size: small;"><span style="text-decoration: underline;">Input:</span></span></strong>
+<p><strong>gautambishal<br>3<br>3 1<br>2 0 5<br>3 0</strong></p></pre>
+<pre><strong><span style="font-size: small;"><span style="text-decoration: underline;">Output:</span></span></strong>
+<p><strong>a<br>b</strong></p></pre>

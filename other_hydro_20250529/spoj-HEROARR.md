@@ -1,0 +1,1 @@
+<p>Please click <a href="http://www.spoj.com/content/john_jones:shanghai2009.pdf">here</a> to download a PDF version of the contest problems. The problem is problem H in the PDF.</p>

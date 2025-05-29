@@ -1,0 +1,10 @@
+<p>A set of points on the XY plane, all of them with different x coordinate, defines a polygonal<br>line in the following way: sort the points in increasing order of their x coordinates, and connect<br>each point with its neighbors. The integral of such polygonal line is the area contained below<br>the line and above the x axis, between the first and last values of x. For instance, the set of<br>points {(5, 1), (3, 2), (6, 2), (2, 1)} defines the polygonal line shown in the figure; the integral of<br>the polygonal line is the shaded area, with a value of 6.</p>
+<p><img src="../../content/pabloh:integral.png" alt="" width="400" height="200"></p>
+<p>Given a set of N different values for x, and a set of N values for y, we want to pair them to<br> form N points on the plane such that the integral of the polygonal line defined by the points is<br> as large as possible.</p>
+<h3>Input</h3>
+<p>The input contains several test cases, each one described in exactly three lines. The first line of<br>each test case contains an integer N indicating the number of points in the set (2 ≤ N ≤ 10<sup>4</sup> ).<br>The second line contains N different integers Xi separated by single spaces (1 ≤ Xi ≤ 10<sup>4</sup><br>for 1 ≤ i ≤ N ); these integers represent the values of x and are given in increasing order<br>(Xi &lt; Xi+1 for 1 ≤ i ≤ N − 1). The third line contains N integers Yi separated by single spaces<br>(1 ≤ Yi ≤ 10<sup>4</sup> for 1 ≤ i ≤ N ); these integers represent the values of y and are not given in any<br>particular order. The last line of the input contains a single −1 and should not be processed<br>as a test case.</p>
+<h3>Output</h3>
+<p>For each test case output a single line with the maximum integral of a polygonal line formed<br>by pairing the input values, using exactly one decimal digit. Notice that one decimal digit is<br>always enough to represent the exact value of the integral of a polygonal line defined by points<br>with integer coordinates.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>2<br>1 2<br>1 2<br>4<br>2 3 5 6<br>1 2 1 2<br>-1<br><br><strong>Output:</strong>
+1.5<br>7.0</pre>

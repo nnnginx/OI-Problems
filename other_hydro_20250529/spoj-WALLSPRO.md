@@ -1,0 +1,12 @@
+<p><span style="white-space: normal;">There are a number of research stations on a featureless patch of desert, which can be modeled as a Cartesian plane. Each station is located at some point <strong>(x,y)</strong> where <strong>x</strong> and <strong>y</strong> are even integers. For security reasons, sufficiently long and high walls are to be constructed to separate the stations so that no station is visible from any of the other stations. A wall may only be constructed along a North-South or East-West line. A vertical wall may be built at an odd x-coordinate, and a horizontal wall may be built at an odd y-coordinate. Since the stations are located at even valued coordinates, and the walls are built along odd valued coordinates, no wall can ever touch a station. The walls are always long enough to completely separate stations on one side from stations on the other side.&nbsp;</span></p>
+<p><span style="white-space: normal;">Given a list of stations, you must determine the smallest number of walls that need to be constructed.</span></p>
+<h3>Input</h3>
+<p>There will be several test cases in the input. Each test case will begin with an integer <strong>n</strong> (2¡Ü<strong>n</strong>¡Ü100), which is the number of stations. The next <strong>n</strong> lines each will contain two integers <strong>x</strong> and <strong>y</strong> (0¡Ü<strong>x</strong>,<strong>y</strong>¡Ü36), separated by a single space, indicating the (<strong>x</strong>,<strong>y</strong>) location of a station. The <strong>x</strong> and <strong>y</strong> values are guaranteed to be even. Within a test case, all (<strong>x</strong>,<strong>y</strong>) locations will be unique. The last test case will be followed by a line with a single <strong>0</strong>.</p>
+<h3>Output</h3>
+<p>For each test case, output a single integer, indicating the smallest number of walls that can prevent the given <strong>n</strong> stations from seeing each other. That is, a straight line-segment joining any two stations must be intersected by at least one wall. Output no extra spaces, and do not separate answers with blank lines.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+4 <br>12 12 <br>4 8 <br>8 6 <br>2 4 <br>4 <br>0 0 <br>4 4 <br>10 8 <br>14 6<br>0
+
+<strong>Output:</strong>
+2<br>3&nbsp;</pre>

@@ -1,0 +1,12 @@
+<p>Salim is a part of THE INDIAN OCEAN BAND. Each musician of the  band has already decided what sound will he play (for the sake of  simplicity we assume each musician plays only one sound). We say two  sounds are in harmony if the frequency of any one of them divides the  frequency of the other (that's a pretty restrictive idea of harmony, but THE INDIAN OCEANS are known to be very conservative in music). Salim knows  that the notes played by other players are not necessarily in harmony  with each other. He wants his own note to improve the music, so he  wants to choose his note so that it is in harmony with the notes all the  other musicians play.</p>
+<p>Now, this sounds simple (as all the frequencies are positive  integers, it would be enough for Salim to play the note with frequency 1,  or, from the other side, the Least Common Multiple of all the other  notes), but unfortunately Salim's instrument has only a limited range of  notes available. Help Salim find out if playing a note harmonious with  all others is possible.</p>
+<h3>Input</h3>
+<p>The first line of the input gives the number of test cases, <strong>T</strong>.  <strong>T</strong> test cases follow.  Each test case is described by two lines. The first contains three numbers: <strong>N</strong>, <strong>L</strong> and <strong>H</strong>, denoting the number of other players, the lowest and the highest note Salim's instrument can play respectively. The second line contains <strong>N</strong> integers denoting the frequencies of notes played by the other players.</p>
+<p>1 ¡Ü <strong>T</strong> ¡Ü 40.</p>
+<p>1 ¡Ü <strong>N</strong> ¡Ü 10<sup>4</sup>.<br> 1 ¡Ü <strong>L</strong> ¡Ü <strong>H</strong> ¡Ü 10<sup>16</sup><br> All the frequencies are no larger than 10<sup>16</sup></p>
+<h3>Output</h3>
+<p>For each test case, output one line containing "Case #x: y", where x is  the case number (starting from 1) and y is either the string "NO" (if Salim cannot play an appropriate note), or a possible frequency. If there  are multiple frequencies Salim could play, output the lowest one.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+<code> 3<br> 3 2 100<br> 3 5 7<br> 4 8 16<br> 1 20 5 2<br></code> 2 5 10000000000000000<br> 9999999999999606 9999999999999822<br>&nbsp;<strong><br>Output:</strong>
+<br><code> Case #1: NO<br> Case #2: 10<br> Case #3: 6<br> </code></pre>

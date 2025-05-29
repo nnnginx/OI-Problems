@@ -1,0 +1,23 @@
+<p><span style="font-size: small;"><strong>This is an extension to the problem DEFKIN http://www.spoj.com/problems/DEFKIN/&nbsp;and solve it first before doing this.</strong><br></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; line-height: 20px;"><span style="font-size: small;">Theodore implements a new strategy game ¡°Defense of a Kingdom¡±. On each level a player defends the&nbsp;Kingdom that is represented by a rectangular grid of cells. The player builds crossbow towers in some&nbsp;cells of the grid. The tower defends all the cells in the same row and the same column. No two towers&nbsp;share a row or a column.</span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; line-height: 20px;"><span style="font-size: small;"><br></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; line-height: 20px;"><span style="font-size: small;">Now the king inputs width(w),height(h),number of towers(n). Here n&lt;= min(w,h).</span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; line-height: 20px;"><span style="font-size: small;">There there can be many ways to place the towers in the grid.</span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; line-height: 20px;"><span style="font-size: small;">Lets define a function penalty(N<sub>i</sub>) for the ith combination of tower placements,which is <span style="color: #555555; line-height: 20px;">&nbsp;number of cells in the largest undefended rectangle.<span style="color: #555555; line-height: 20px;">&nbsp;For example,one of the combinations of placing a tower is shown in the picture and has a penalty=12.</span></span></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; line-height: 20px;"><span style="font-size: small;">Suppose there are in total k combinations . Then there are penalty(N<sub>1</sub>),<span style="color: #555555; line-height: 20px;">penalty(N<sub>2</sub></span><span style="color: #555555; line-height: 20px;">),<span style="color: #555555; line-height: 20px;">penalty(N<sub>3</sub></span><span style="color: #555555; line-height: 20px;">)...........<span style="color: #555555; line-height: 20px;">penalty(N</span><span style="color: #555555; line-height: 20px;"><sub>k</sub>).&nbsp;</span></span></span></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;"><span style="color: #555555; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;"><span style="color: #555555; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;"><span style="color: #555555; line-height: 20px;"><span style="font-size: small;">The task of the user is to find the minimum of these penalties.</span></span></span></span></p>
+<p><span style="font-size: small;"><span style="color: #aa0000;"><br></span></span></p>
+<p>&nbsp;</p>
+<p><span style="color: #aa0000;"><span style="font-size: small;"><br></span></span></p>
+<h3><img src="../../content/fidels:DEFKIN.png" alt="An example of one of the combinations" width="658" height="239"></h3>
+<h3><span style="font-size: medium;">Input</span></h3>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">The first line of the input file contains the number of test cases.</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">&nbsp;</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #555555; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">Each test case consists of a line with three integer numbers: w ¡ª width of the grid, h ¡ª height of the&nbsp;grid and n ¡ª number of crossbow towers (1 ¡Ü w, h ¡Ü 40 000; 0 ¡Ü n ¡Ü min(w, h)).</p>
+<h3>Output</h3>
+<p><span style="color: #555555; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">For each test case, output a single integer number- the minimum penalty&nbsp;<br>Output answer for each test case in a new line&nbsp;</span></p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+1<br>15 8 3</pre>
+<pre><strong>Output:</strong>
+6</pre>

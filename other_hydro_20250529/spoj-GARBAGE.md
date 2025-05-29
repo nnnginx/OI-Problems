@@ -1,0 +1,10 @@
+<p>A big office uses a cleaning robot to empty the trash can in every cubicle. The surface of<br>each cubicle is a square and the office floor plan is organized as a rectangular matrix of R<br>rows of C cubicles each. The cleaning process begins by the robot entering the floor by a<br>door that accesses the topmost leftmost cubicle, and finishes with the robot exiting using<br>the same door. Both entering and leaving take 26 seconds each. When the cleaning robot<br>is in a cubicle it can emtpy the trash can using 13 seconds. The robot can also move to<br>a cubicle that shares a side with its current location, using 38 seconds. The robot needs<br>to enter in each cubicle at least once to empty its trash can.</p>
+<p>The total time the robot takes for the entire process depends on the actual tour through<br>the different cubicles. Among all possible tours, we are interested in those of minimum<br>time.</p>
+<p>Given the description of the office, you must indicate the minimum time required for<br>the entire cleaning process (including entering, leaving, emptying the trash can in every<br>cubicle, and moving around). Notice that it is possible that an optimal tour passes<br>through a cubicle several times, but the robot has to take the time to empty the trash<br>can only once.</p>
+<h3>Input</h3>
+<p>The input contains several test cases, each one described in a single line. The line contains<br>two integers R and C separated by a single space, representing the number of rows and<br>cubicles per row, respectively (1 ≤ R, C ≤ 100). The last line of the input contains the<br>number −1 twice separated by a single space and should not be processed as a test case.</p>
+<h3>Output</h3>
+<p>For each test case output a single line with an integer representing the minimum number<br>of seconds that the robot needs to complete the cleaning process.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>4 2<br>3 3<br>-1 -1<br><br><strong>Output:</strong>
+460<br>549</pre>

@@ -1,0 +1,9 @@
+<p>Imagine a chess board that extends indefinitely in both horizontal and vertical directions. N identical knights are placed on this board, each in a different square. N different squares are specially marked, which we will call the target squares, which could be different from where the knights are initially at. We would like you to determine the minimum number of knight-steps needed so that each of the target squares is occupied by one of the knights.</p>
+<p style="text-align: center;"><img title="a" src="../../../content/omar_azazy:ACPC10G" alt="a" width="276" height="278"></p>
+<p>As illustrated in the figure, a knight moves using the normal ¡±L¡± move (1 square in one dimension and 2 squares in the other dimension.) For this problem, it is possible for more than one knight to occupy the same square while trying to reach its final destination as long as each knight ends up in a different target square.</p>
+<h3>Input</h3>
+<p>Your program will be tested on one or more test cases. Each test case is specified using 2N +1 lines.<br>The first line specifies (1 ¡Ü N ¡Ü 15) which is the number of knights (or targets.) The following N lines each specifies the position of a knight by specifying two integers representing the x and y location. The remaining N lines each specifies the position of a target square again by specifying two integers representing the x and y location. All coordinates are 32-bit signed integers.<br>The last case is followed by a line with a single zero.</p>
+<h3>Output</h3>
+<p>For each test case, print the following line:<br>k. m<br>Where k is the test case number (starting at one,) and m is the minimum number of moves.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>2<br>3 5<br>6 5<br>5 3<br>7 3<br>0<br><strong>Output:</strong><br>1. 3</pre>

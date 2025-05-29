@@ -1,0 +1,25 @@
+<p><span style="font-size: small;">Tareq and Shawon were two friends of the problem setter's. Many years ago, they died in a road accident. The problem setter still misses them. He gives you the following task in memory of his friends.</span></p>
+<p><span style="font-size: small;">You're given a tree with n nodes and n-1 edges. Each node contains a single character<strong>(A node can contain any of the lowercase Latin letters 'a' to 'z' or special symbol '&amp;')</strong>. You've to answer if it is possible to find the string "<strong>tareq&amp;shawon</strong>", without quotes, as a subsequence if you choose a path from the root node to a leaf node. If it is possible then print the path that contains the mentioned string as a subsequence. If there are multiple paths containing the above string as a subsequence, print the lexicographically smallest one.&nbsp;<strong>Note that 1 is the root of the tree and you've to print the whole path from the root node to a leaf node that contains the above string as a subsequence.</strong></span></p>
+<p><span style="font-size: small;">You have to answer t independent test cases.</span></p>
+<h3>Input</h3>
+<p><span style="font-size: small;">The first line of the input contains one integer t (1 &lt;= t &lt;= 1000) - the number of test cases. Then t test cases follow.</span></p>
+<p><span style="font-size: small;">The first line of the test case contains one integer n( 1&lt;= n &lt;= 10^5) - number of nodes in the tree.</span></p>
+<p><span style="font-size: small;">The next n-1 lines contains two integers u(1 &lt;= u &lt;= n) and v(1 &lt;= v &lt;= n) denotes an edge between node u and v.</span></p>
+<p><span style="font-size: small;">The next line contains n space separated characters where c[i] corresponds to the character in the i¡¯th node. c[i] can be a lowercase Latin letter or special symbol '&amp;'.</span></p>
+<p><span style="font-size: x-small;"><strong><span style="font-size: small;">It is guaranted that the sum of n over all test cases does not <span style="color: #222222;">exceed</span>&nbsp;10^5</span></strong></span></p>
+<p>&nbsp;</p>
+<h3>Output</h3>
+<p><span style="font-size: small;">For each case print the case number and then&nbsp;print "YES" if there is a path from the root node to a leaf node that contains the mentioned string as a subsequence. And print the lexicographically smallest path that contains the mentioned string as a subsequence.</span></p>
+<p><span style="font-size: small;">Otherwise, print "NO".</span></p>
+<h3>Example</h3>
+<pre><span style="font-size: small;"><strong>Input:</strong>
+</span>
+<p><span style="font-size: small;">1</span></p><p><span style="font-size: small;">31</span></p><p><span style="font-size: small;">1 2</span></p><p><span style="font-size: small;">2 3</span></p><p><span style="font-size: small;">3 8</span></p><p><span style="font-size: small;">8 9</span></p><p><span style="font-size: small;">9 13</span></p><p><span style="font-size: small;">13 17</span></p><p><span style="font-size: small;">17 18</span></p><p><span style="font-size: small;">18 23</span></p><p><span style="font-size: small;">2 4</span></p><p><span style="font-size: small;">4 7</span></p><p><span style="font-size: small;">7 10</span></p><p><span style="font-size: small;">10 14</span></p><p><span style="font-size: small;">14 16</span></p><p><span style="font-size: small;">16 19</span></p><p><span style="font-size: small;">19 22</span></p><p><span style="font-size: small;">22 28</span></p><p><span style="font-size: small;">28 29</span></p><p><span style="font-size: small;">29 30</span></p><p><span style="font-size: small;">30 31</span></p><p><span style="font-size: small;">2 5</span></p><p><span style="font-size: small;">5 6</span></p><p><span style="font-size: small;">6 11</span></p><p><span style="font-size: small;">11 12</span></p><p><span style="font-size: small;">12 15</span></p><p><span style="font-size: small;">15 20</span></p><p><span style="font-size: small;">20 21</span></p><p><span style="font-size: small;">21 24</span></p><p><span style="font-size: small;">24 25</span></p><p><span style="font-size: small;">25 26</span></p><p><span style="font-size: small;">26 27</span></p><p><span style="font-size: small;">t a r r r e e e q q q &amp; &amp; &amp; s s s h h h a a a w o n m w o n x</span></p></pre>
+<pre><span style="font-size: small;">
+<strong>Output:</strong></span>
+<span style="font-size: small;">Case 1: YES</span>
+<span style="font-size: small;">1 2 4 7 10 14 16 19 22 28 29 30 31</span></pre>
+<pre><span style="font-size: small;"><strong>Notes:</strong></span>
+<span style="font-size: small;">There are two possible path from the root to a leaf that contains mentioned string as a subsequence. </span>
+<span style="font-size: small;">They are 1 2 4 7 10 14 16 19 22 28 29 30 31 and 1 2 5 6 11 12 15 20 21 24 25 26 27.</span>
+<span style="font-size: small;">But first one is lexicographically smaller.</span></pre>

@@ -1,0 +1,60 @@
+## 题目描述
+**Note: The time limit for this problem is 4s, 2x the default.**
+
+Farmer John has distributed cows and packages in a weird pattern across the number line using the following process:
+
+*   Farmer John chooses a number $M$ ($1 \le M \le 10^{18}$).
+*   Farmer John chooses $N$ ($1 \le N \le 2 \cdot 10^4$) intervals $[L_i, R_i]$ to distribute cows in ($1 \le L_i \le R_i \le 10^{18}$). He then places cows at locations $L_i, L_i + M, L_i + 2M, \dots, R_i$. It is guaranteed that $R_i - L_i$ is a multiple of $M$.
+*   Farmer John chooses $P$ ($1 \le P \le 2 \cdot 10^4$) intervals $[A_j, B_j]$ to distribute packages in ($1 \le A_j \le B_j \le 10^{18}$). He then places packages at locations $A_j, A_j + M, A_j + 2M, \dots, B_j$. It is guaranteed that $B_j - A_j$ is a multiple of $M$.
+
+Once the cows and packages are distributed, Farmer John wants to see how long it takes the cows to pick up the packages. Every second, Farmer John can issue a command to a single cow to move one unit left or right of their current position with his handy walkie talkie. If a cow travels to the position where a package is located, they are able to pick it up. Farmer John wants to know the minimum time in seconds that it would take the cows to pick up every package.
+
+## 输入格式
+The first line contains $M$, $N$, and $P$.
+
+The next $N$ lines each contain two integers $L_i$ and $R_i$.
+
+The next $P$ lines each contain two integers $A_j$ and $B_j$.
+
+## 输出格式
+Output a single integer, representing the minimum amount of time it can take the cows to pick up all the packages, given that every second, he can issue a single left/right command to a single cow.
+
+```input1
+100 3 7
+10 10
+20 20
+30 30
+7 7
+11 11
+13 13
+17 17
+24 24
+26 26
+33 33
+```
+
+```output1
+22
+```
+
+```input2
+2 1 1
+1 5
+2 6
+```
+
+```output2
+3
+```
+
+## 提示
+### Sample 1 Explanation
+
+In the above test case, suppose the cows and packages are numbered from left to right. Farmer John can follow this procedure to pick up the packages in 22 seconds:
+
+*   Issue 3 lefts to cow 1 so that it picks up package 1
+*   Issue 3 rights to cow 3 so that it picks up package 7
+*   Issue 4 rights to cow 2 so that it picks up package 5
+*   Issue 10 rights to cow 1 so that it picks up packages 2, 3, and 4
+*   Issue 2 rights to cow 2 so that it picks up package 6
+

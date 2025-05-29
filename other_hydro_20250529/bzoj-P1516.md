@@ -1,0 +1,29 @@
+## 题目描述
+
+The streets of the New Byte City form a rectangular grid - those running east-west are simply called streets, while those running north-south are called avenues. To avoid mistakes, we shall call them h-streets and v-streets, respectively. The v-streets are numbered from $1$ to $5 \times 10^8$ eastwards. Similarly, the h-streets are numbered from $1$ to $5 \times 10^8$ northwards. Every v-street crosses every h-street and, conversely, every h-street crosses every v-street. The distance between two consecutive v-streets, as well as between two consecutive h-streets, is exactly one kilometre.
+
+There are $k$ shops in the city, each one of them is situated at a crossroads. Byteasar, the merchant, supplies every single one of the $k$ shops, and furthermore he returns to some of them several times a day with fresh supplies. Recently he has decided to have a warehouse built, from which the goods would be delivered. For obvious reasons, it should stand at a crossroads. The lorry loaded with goods can supply only one shop per course - it leaves the warehouse, delivers to the shop and returns to the warehouse. The lorry always picks the shortest path from the warehouse to the shop, and the shortest one back (possibly the same one). The distance between points $(x_i, y_i)$ and $(x_j, y_j)$ equals $\max \{ |x_i - x_j|, |y_i - y_j| \}$.
+
+TaskWrite a programme that:
+
+reads the locations of shops, as well as the numbers of their daily deliveries, from the standard inputdetermines such a warehouse's position that the summary distance of the lorry's daily route is minimal,writes the result to the standard output.
+
+## 输入格式
+
+The first line of the standard input contains one integer $n$ ($1 \le n \le 10^5$), the number of shops in the New Byte City.
+
+The following $n$ lines contain the shops'; descriptions. The $(i+1)'$ h line contains three integers $x_i$, $y_i$ and $t_i$ ($1 \le x_i, y_i \le 5 \times 10^8$, $1 \le t_i \le 10^6$), separated by single spaces. This triple means that the $i'$ th shop lies at the crossing of $x_i'$ th v-street and $y_i'$ th h-street and the lorry delivers goods to this shop $t_i$ times a day.
+
+## 输出格式
+
+The first and only line of the standard output should contain two integers $x_m$ and $y_m$, separated by a single space, denoting the optimal position of the warehouse as the crossroads of the $x_m'$;th v-street and the $y_m'$ th h-street. Should there be many optimal solutions, your programme is to pick one of them arbitrarily.
+
+```input1
+3
+2 2 1
+6 2 1
+4 6 1
+```
+```output1
+4 4
+```

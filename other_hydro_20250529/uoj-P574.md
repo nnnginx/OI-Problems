@@ -1,0 +1,75 @@
+<p>众所周知，搜索引擎需要强有力的硬件支持，在进行“跳找”的开发之前，你计划先调查一下跳蚤王国的硬件技术储备。</p>
+<p>在取得跳蚤国王的许可后，你在硬件科技中心把档案翻了个遍，偶然发现了一款非常神奇的处理器“Jumptel D233”。</p>
+<p>这款处理器有着较低的热功比，在通常使用时，大量处理器集成在同一个主板上，且分布为 $n$ 行 $m$ 列。</p>
+<p>若给处理器分配多线程并行计算任务，由于夸张的频率波动，各个处理器完成任务所需时间不尽相同。</p>
+<p>具体的，对于每个处理器，其会在 $[0, 1)$ 中<strong>独立均匀随机</strong>的某个<strong>实数</strong>时刻 $p$ 完成计算。处理器之间互不影响。在完成计算之后，处理器会持续亮灯。你可以认为灯亮灭的切换不需要时间。</p>
+<p>你经过观察发现，整行（或列）处理器的亮灭情况会对主板供电产生微妙影响。</p>
+<p>具体地，存在 $h$ 组数对，令第 $i$ 组为 $(x_i,y_i)$；对于某种亮灭状态，若存在一个 $i$，满足<strong>恰好</strong>分别有 $x_i$ 行和 $y_i$ 列的处理器<strong>全部</strong>亮灯（可以存在其它行或列的处理器有亮灯，但不能存在另外的行或列处理器全部亮灯），则称该状态为<strong>节能态</strong>。</p>
+<p>在节能态触发时，假如当前已经有 $k$ 个处理器亮起，那么每单位时间会节省 $F_k$ 单位电量。其中数列 $\left\{F_n\right\}_{n \ge 0}$ 被以下递推式确定：$F_0=F_1=1;\ F_n=F_{n-1}+F_{n-2}\ (n&gt;1)$</p>
+<p>为了评估节电效果，请你求出节省电量数的期望对 $998244353$ 取模的结果。</p>
+<h2>输入格式</h2>
+<p>第一行三个整数，分别表示 $n, m, h$，意义如题目所述。</p>
+<p>下面 $h$ 行，第 $i$ 行为两个整数 $(x_i,y_i)$，是题中所述的与节能态相关的参数。（保证各个 $(x_i,y_i)$ 作为有序对互不相同）</p>
+<h2>输出格式</h2>
+<p>一行一个整数，表示节省电量数的期望对 $998244353$ 取模的结果。即如果答案的最简分数表示为 $\frac{x}{y}(x \geq 0, y \geq 1, \gcd(x,y) = 1)$，你需要输出满足 $ay \equiv x \pmod{998244353}$ 的那个唯一的整数 $a$ 满足 $0 \le a &lt; 998244353$。</p>
+
+
+<pre><code class="language-input1">1 1 1
+0 0
+</code></pre>
+
+
+<pre><code class="language-output1">499122177
+</code></pre>
+
+
+<p>唯一的一个处理器亮灯<strong>之前</strong>为节能态。</p>
+<p>节能态的持续时间是一在 $[0,1)$ 内均匀随机的变量，其期望为 $\frac{1}{2}=499122177\pmod{998244353}$，对节省电量数的贡献系数是 $F_0=1$。</p>
+
+
+<pre><code class="language-input2">2 2 1
+1 1
+</code></pre>
+
+
+<pre><code class="language-output2">798595483
+</code></pre>
+
+
+<p>$\rm O$ 表示亮灯, $-$ 表示未亮灯, 以下四种情况为节能态:</p>
+<p>$\begin{bmatrix}\rm O&amp;\rm O\\\rm O&amp;-\end{bmatrix}$ $\begin{bmatrix}\rm O&amp;-\\\rm O&amp;\rm O\end{bmatrix}$ $\begin{bmatrix}-&amp;\rm O\\\rm O&amp;\rm O\end{bmatrix}$ $\begin{bmatrix}\rm O&amp;\rm O\\-&amp;\rm O\end{bmatrix}$</p>
+
+
+<pre><code class="language-input3">3 3 3
+0 0
+1 1
+2 2
+</code></pre>
+
+
+<pre><code class="language-output3">720162004
+</code></pre>
+
+
+<p>$\begin{bmatrix}\rm O&amp;\rm O&amp;-\\ \rm O&amp;\rm O&amp;\rm O\\-&amp;\rm O&amp;\rm O\end{bmatrix}$ 是一种满足数对 $(1,1)$ 的可能的节能态。</p>
+<h2>限制与约定</h2>
+<p>对于所有测试点，$0\leq x_i&lt; n$，$0\leq y_i&lt; m$，$1\leq n\times m\leq 5\times 10^5\ ,1\leq h\leq n\times m$。</p>
+<table class="table table-bordered table-text-center table-vertical-middle">
+<thead>
+<tr><th>子任务编号</th><th>$n \times m\leq$</th><th>$n,m\leq$</th><th>$h\leq$</th><th>分值</th></tr>
+</thead>
+<tbody>
+<tr><td> $1$ </td><td> $10$ </td> <td> $10$ </td><td> $n\times m$ </td> <td> $25$ </td> </tr>
+<tr><td> $2$ </td><td rowspan="2"> $3000$ </td> <td rowspan="5"> $500$ </td> <td> $1$ </td> <td>$10$</td> </tr>
+<tr><td> $3$ </td><td> $n\times m$ </td> <td> $10$ </td> </tr>
+<tr><td> $4$ </td><td rowspan="4"> $5\times 10^5$ </td><td> $1$ </td><td>$5$</td> </tr>
+<tr><td> $5$ </td><td> $50$ </td> <td>$10$</td></tr>
+<tr><td> $6$ </td><td rowspan="2"> $n\times m$ </td> <td> $20$</td></tr>
+<tr><td> $7$ </td><td> $5\times 10^5$ </td> <td> $20$ </td> </tr>
+</tbody>
+</table>
+
+<p><strong>时间限制</strong>：$2\texttt{s}$</p>
+<p><strong>空间限制</strong>：$512\texttt{MB}$</p>
+<h2>下载</h2>
+<p><a href="./20978/file/attachment.zip">样例数据下载</a></p>

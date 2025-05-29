@@ -1,0 +1,8 @@
+<p>You are given two arrays each of length N(1 &lt;= N &lt;= 100000) which are initially filled with zeros. You have to apply M (1 &lt;= M &lt;= 100000) queries of three kind:&nbsp;</p>
+<p><strong>0 arr left right :</strong>&nbsp;&nbsp;calculate and output sum of elements from left to right in array arr (arr = 0 -- first array, arr = 1 -- second &nbsp; &nbsp; array);&nbsp;<br><strong>1 arr idx newValue :</strong>&nbsp;change value of element at index idx of array arr on newValue;<br><strong>2 left right :</strong>&nbsp;&nbsp;swap range of elements of two arrays from left to right ( for i = left to right do swap(a[i], b[i]) );</p>
+<h3>Input</h3>
+<p>The first line of input contains two integers - N, M. The folowing M lines contains information about queries. <br>On each query - one line: <br>First integer number cmd contains 0, 1 or 2 (type of query described above). <br>if cmd equals <strong>0</strong>, then following 3 integers arr, left, right - 0 &lt;= arr &lt;= 1, 0 &lt;= left &lt;= right &lt;= N - 1. <br>if cmd equals <strong>1</strong>, then following 3 integers arr, idx, newValue - 0 &lt;= arr &lt;= 1, 0 &lt;= idx &lt;= N - 1, -10000 &lt;= newValue &lt;= 10000. <br>if cmd equals <strong>2</strong>, then following 2 integers left, right - 0 &lt;= left &lt;= right &lt;= N - 1.</p>
+<h3>Output</h3>
+<p>On each query with cmd equals 0 you should output corresponding value described above.</p>
+<h3>Example</h3>
+<p><strong>Input:</strong><br>5 10 <br>1 0 0 1 <br>1 1 4 2 <br>0 0 0 4 <br>0 1 0 4 <br>2 0 0 <br>0 0 0 4 <br>0 1 0 4 <br>2 0 4 <br>0 0 0 4 <br>0 1 0 4<br><br><strong>Output:</strong><br>1 <br>2 <br>0 <br>3 <br>3 <br>0</p>

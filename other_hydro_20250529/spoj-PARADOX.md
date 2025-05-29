@@ -1,0 +1,10 @@
+<p>A paradox is a statement or group of statements that leads to a contradiction. Consider the following two statements.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "The statement below is false."<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "The statement above is true."</p>
+<p>If we assume that 1st statement is true then according to 1st statement the 2nd statement is false. Since the 2nd statement is false and it says that 1st statement is true, 1st statement must be false which is a contradiction. If we assume that 1st statement is false then the 2nd statement must be true (since 1st statement says 2nd statement is false). Then according to 2nd statement 1st statement must be true which is a contradiction. Thus the statement cannot be classified as true or false. This is a paradox.</p>
+<p>Given N statements of the form "Statement X is true/false", 1&lt;=X&lt;=N, your task is to find if these set of statements are paradoxical or not. A set of statements is paradoxical if one or more statements cannot be classified as true or false.</p>
+<h3>Input</h3>
+<p>Multiple test cases. Each test cases begins with an integer N representing the number of statements. <strong>1&lt;=N&lt;=100</strong>. Then follow N lines, representing N statements in the order 1,2,3, ...,N. Each line contains an integer X and a string S separated by a space. <strong>1&lt;=X&lt;=N</strong>. <strong>S is either "true" or "false"</strong> (quotes for clarity), which means the statement is "Statement X is S". N=0 indicates the end of testcases and should not be processed. There are atmost <strong>10000</strong> testcases.</p>
+<h3>Output</h3>
+<p>For each test case print <strong>"PARADOX"</strong> if the set of statements are paradoxical, else print <strong>"NOT PARADOX"</strong>, in a separate line.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>2<br>2 false<br>1 true<br>2<br>2 false<br>1 false<br>0<br><br><strong>Output:</strong><br>PARADOX<br>NOT PARADOX<br></pre>

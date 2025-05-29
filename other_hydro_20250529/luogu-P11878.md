@@ -1,0 +1,123 @@
+## 题目描述
+2024 年 9 月 11-22 日，第 45 届国际象棋奥林匹克团体赛在匈牙利首都布达佩斯举行。小威，作为一个国际象棋爱好者，正在密切关注着这场比赛。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/pe4k7psf.png)
+
+ _图注：在第五轮比赛中，中国选手韦奕战胜西班牙选手，帮助中国队以 2.5:1.5 的比分战胜西班牙队_ 
+
+现在，小威要向你介绍一些基础的国际象棋知识：
+
+1. 国际象棋棋盘共有 8 行 8 列，**自左向右**以 $a \sim h$ 表示列，**自下而上**以 $1 \sim 8$ 表示行；
+2. 每方各有一个国王、一个皇后、两个马、两个象、两个车以及八个兵。初始局面如下：
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/jx82759s.png)
+3. 国王可以攻击到它同一行、同一列、同一斜线上**一格内**的位置，例如：
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/vr3q36zs.png)
+   
+   *图注：国王的攻击范围，箭头表示它能攻击到的位置*
+4. 皇后可以攻击到它同一行、同一列、同一斜线上**任意格内**的位置，例如：
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/0rotqghv.png)
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/2iwr4258.png)
+5. 马可以攻击到形似"L"型的位置，且没有"蹩马脚"限制，例如：
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/j13m76k7.png)
+6. 象可以攻击到同一斜线上任意格内的位置，例如：
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/8rldzs2a.png)
+7. 车可以攻击到同一行、同一列上任意格内的位置，例如：
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/vga2ifsj.png)
+8. 兵可以攻击到前进方向上斜向一格内的位置，例如：
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/xo2fdlh3.png)
+9. 当王处于对方某个棋子的攻击范围内时，称作被将军（check），例如：
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/m3qj07yf.png)
+   
+   *图注：此时黑方的王处于白方皇后的攻击范围内，黑方被将军*
+
+我们使用 FEN 格式描述一个局面。FEN 格式是一个字符串，其中包含 7 个斜杠（/），将字符串分为 8 个部分 $s_{1..8}$。其中，$s_1$ 对应第 $8$ 行的内容，$s_2$ 对应第 $7$ 行的内容，以此类推。对于 $v = s_i$，$v_1$ 表示第 $a$ 列的内容，$v_2$ 表示第 $b$ 列的内容，以此类推。
+
+请注意，$v$ 的长度不一定等于 8。
+
+我们用 `R` 表示白方的车，`N` 表示白方的马，`B` 表示白方的象，`Q` 表示白方的皇后，`K` 表示白方的王，`P` 表示白方的兵，字符的小写格式对应黑方的棋子。
+
+在字符串中还会出现 $1 \leq i \leq 8$ 的数字，表示出现了连续 $i$ 个没有棋子的空格。
+
+例如，现在有一个局面：
+   ![](https://cdn.luogu.com.cn/upload/image_hosting/psnnis20.png)
+
+其对应的 FEN 为 `r1bq1rk1/pppp1ppp/2n2n2/2b1p3/2B1P3/1P3N2/PBPP1PPP/RN1Q1RK1`。
+
+现在，小威给你了一个使用 FEN 描述的局面，请你告诉他，是否有一方处于被将军的状态。
+
+
+## 输入格式
+第一行输入一个正整数 $t$，表示局面个数。
+
+接下来 $t$ 行，每行输入一个符合 FEN 格式的字符串 $s$，表示一个合法的局面。
+
+对于所有数据，满足：$1 \leq t \leq 10$，且局面中不存在双方同时被将军的情况。
+
+## 输出格式
+共 $t$ 行。
+
+第 $i$ 行输出第 $i$ 个局面的情况：如果白方被将军，输出 `check`；如果黑方被将军，输出 `CHECK`；如果不存在一方被将军，输出 `none`。
+
+```input1
+9
+1nb1n1r1/1r1kp2p/1PpP2p1/6b1/P4NPP/N2R4/R1PPQP2/q1B1KB2
+4k1nr/r2pbqpp/2n2B2/pb1p4/p4P2/8/2PPPNPP/R2QKB1R
+2b3nr/rp1pb1Qp/4pk2/2p5/P2qPP1P/3B4/RPnP2R1/1NB2KN1
+rn3k1r/1pRb1p1p/3b2p1/pB1pp2q/3PP3/P1P1nP2/1PK1Q3/RNB3N1
+r1b1kb2/1pppn1p1/p4p1r/4P3/8/1n1P2R1/P1PKP3/RNBQ1B2
+r1b3r1/p3bp1p/1p2p1pn/2p1kP2/1PPn3P/P2PpKP1/R3P1B1/1Nq3NR
+3qkb1r/p1p1pn1Q/1rn1b3/3PP1p1/1p4p1/NP3P2/P2P2BP/R1B1K1NR
+rnb1k1r1/p1qpbp2/2p2pp1/1p2P2Q/1P3PP1/P2P1N1K/2P5/1RB2B1R
+r4bnk/ppp1pb2/5QPr/3pP3/q1Pn4/P2p4/1P1P1P1P/1RB1K1NR
+
+```
+
+```output1
+none
+none
+CHECK
+check
+check
+check
+none
+none
+CHECK
+
+```
+
+```input2
+3
+r1bqkb2/pp1nnp1r/3Np2p/2p5/1P1P3p/P4P2/2PBP1P1/R2QKBNR
+2r4r/2N1nk1n/pp2b2p/2pq1pP1/1PPpP1P1/7P/P2PK3/R1B2BNR
+2b1k2r/3r2pp/3b4/1P6/p1B1p3/P3nN1q/1n1P1PR1/1RB2K2
+
+```
+
+```output2
+CHECK
+none
+check
+
+```
+
+```input3
+3
+3k4/8/5P2/p3N3/P3N2p/3K4/8/7r
+3k4/8/5P2/p3N3/P3N2p/3K4/8/3r4
+r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR
+
+```
+
+```output3
+none
+check
+CHECK
+
+```
+
+## 提示
+对于第三组样例，三个局面分别如下所示：
+![](https://cdn.luogu.com.cn/upload/image_hosting/c8gdly9e.png)
+![](https://cdn.luogu.com.cn/upload/image_hosting/y656nxud.png)
+![](https://cdn.luogu.com.cn/upload/image_hosting/uq352kqv.png)
+

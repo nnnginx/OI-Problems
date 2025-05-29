@@ -1,0 +1,8 @@
+<p>You have just bought an old fashioned jukebox that can hold 10 music albums. Albums<br>are mantained as a sequence, each album represented by a unique lowercase letter between<br>¡°a¡± and ¡°j¡±, inclusive. The jukebox allows you to select a subsequence of contiguous<br>albums and a mechanical arm inverts that part of the sequence. For instance, if the<br>current sequence is ¡°abcdefghij¡± and you select the subsequence ¡°bcd¡±, the result of<br>the inversion would be ¡°adcbefghij¡±. Soon you notice that it is possible to get the<br>albums into any desired order using simply inversions. However, you are interested in<br>doing so with the minimum number of operations.<br>Given the current order and a desired order of the 10 music albums, find the minimum<br>number of inversion operations needed to obtain the desired order.</p>
+<h3>Input</h3>
+<p>The input contains several test cases, each one described in a single line. The line contains<br>two strings C and D separated by a single space, representing the current and desired<br>orders of the music albums, respectively. Each of the strings has exactly 10 characters<br>and contains the characters of ¡°abcdefghij¡± in some order. The last line of the input<br>contains two asterisks (¡°*¡±) separated by a single space and should not be processed as<br>a test case.</p>
+<h3>Output</h3>
+<p>For each test case output a single line with an integer representing the minimum number<br>of inversions needed to transform the current order given by C, into the desired order<br>given by D.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong><br>abcdefghij adcbefghij<br>abcdefghij abcdefghij<br>bcdaefghji beagfcdhji<br>* *<br><br><strong>Output:</strong>
+1<br>0<br>2</pre>

@@ -1,0 +1,18 @@
+<p>YOU ARE GIVEN A 2D GRID WITH EACH CELL CONTAINING AN ALPHABET , YOU HAVE TO START AT ANY POINT AND MOVE EITHER UP,DOW,LEFT AND RIGHT TO CREATE THE WORD "ALCATRAZ" BY PICKING UP ALPHABETS <em><strong><span style="text-decoration: underline;">IN ORDER</span></strong></em> &nbsp;. AFTER CHOOSING AN ALPHABET , IT GETS REMOVED FROM THERE AND LEAVES AN EMPTY CELL BEHIND . YOU HAVE TO TELL THE MINIMUM NUMBER OF MOVES NEEDED TO DO SO&nbsp;</p>
+<h3>Input</h3>
+<p>2 SPACE SEPERATED INTEGERS N,M ( ROWS AND COLUMNS RESPECTIVELY )&nbsp;</p>
+<p>1&lt;= &nbsp;N,M &lt;=500</p>
+<p>THEN NEXT N LINES GIVES THE DETAILS OF THE MAZE&nbsp;</p>
+<h3>Output</h3>
+<p>THE SHORTEST PATH AS DESCRIBED IN THE ABOVE PROBLEM&nbsp;</p>
+<p>PRINT "IMPOSSIBLE" (WITHOUT QUOTES) IF YOU CAN'T MAKE UP THAT WORD .</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+4 5</pre>
+<pre>AZCLT</pre>
+<pre>AARAL</pre>
+<pre>SJATC</pre>
+<pre>LARAZ</pre>
+<pre><strong>Output:</strong>
+9</pre>
+<pre>PATH IS AS FOLLOWS : 2,4 - 2,5 - 3,5 - 3,4 - 3,3 - 3,4 - 4,4 - 4,3 - 4,4 - 4,5  </pre>

@@ -1,0 +1,20 @@
+<p>Gus is really smart guy. He really like challenges and he wants to be the best functional programmer in the world. He knows that the best way to start is reading the <em>Learn You a Haskell for Great Good!</em> book. But Gus isn’t so good at making decisions, nevertheless Gus is super good making “problem resolver” friends. So, let's solve this problem and help Gus!<br><br>There are <strong>n</strong> chapters in the book, the time that takes to move from the chapter <strong>i</strong> to the chapter (i+1) or vice versa, is t<sub>i</sub>. The time to move from the chapter n-th$ to the first one, or vice versa, is t<sub>n</sub> (yes, Gus sometimes is weird and starts to read from the end of the book). Also, all the chapters have different difficulty for Gus. The difficulty of the i-th chapter is d<sub>i</sub>. <br><br>Gus tries to read some chapters each day in the morning. He does the following steps each morning:<br><br>• He chooses two different chapters i,j.<br>• He starts to read the first selected chapter.<br>• When he finished the first chapter he moves to the next chapter (in one of the two possible<br>directions).<br>• He reads all chapters between i and j i.e. (i, i + 1, ...j) or (i, i − 1..., j)</p>
+<p>But Marcos is a competitive person and he wants to be the best functional programmer too. So each day in the morning he takes away some consecutive chapters of Gus’s book and he puts them back in the night. Gus can't stand the disorder, so he can't read the chapters in a non-consecutive order (remember that for Gus the consecutive of the chapter i is the chapter i+1 or the chapter i-1).</p>
+<p>If the two chapters that Gus chooses are x-th and y-th, we can estimate the energy the morning reading takes to him as 2*(d<sub>x</sub> + d<sub>y</sub>) + time(x,y). Since Marcos takes away chapters on exactly one of the two sequences connecting x and y, the time time(x,y) between chapters x and y is uniquely defined.<br><br>In the i-th day Marcos will take away the chapters between a<sub>i</sub> and b<sub>i</sub>. More formally, if a<sub>i</sub><span class="ILfuVd"><span class="e24Kjd"> ≤</span></span> b<sub>i</sub>, Marcos takes away the chapters with indices from range [a<sub>i</sub>,b<sub>i</sub>], otherwise he takes away the chapters with indices from [a<sub>i</sub>,n] ∪ 		 [1,b<sub>i</sub>].<br><br>Please help Gus to decide which two chapters he should choose in order to consume the most energy.</p>
+<h3>Input</h3>
+<p>The first line contains two integer n and m, denoting number of chapters and number of days, respectively.<br><br>The second line contains n integers t<sub>1</sub>, t<sub>2</sub>, ..., t<sub>n</sub>, the time between consecutive chapters.<br><br>The third line contains n integers d<sub>1</sub>, d<sub>2</sub>, ..., d<sub>n</sub>, the difficulty of chapters.<br><br>Each of following m lines contains two integers a<sub>i</sub> and b<sub>i</sub> describing each new day. There are always at least two different chapters Gus can choose that are not affected by Marcos.</p>
+<h3>Output</h3>
+<p>For each day print the answer in a separate line.</p>
+<h3>Example</h3>
+<pre><strong>Input:</strong>
+3 3<br>5 1 4<br>5 1 4
+3 3<br>2 2<br>1 1<br>
+<strong>Output:</strong>
+17<br>22<br>11
+</pre>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 4px; width: 1px; height: 1px; overflow: hidden;"><span style="left: 321.609px; top: 345.032px; font-size: 18.2872px; font-family: sans-serif; transform: scaleX(0.856444);">≤</span></div>
+<h3>Constraints</h3>
+<p><span style="font-size: 11.7px;">• (3 ≤ n ≤ 10<sup>5</sup>,1 ≤ m ≤ 10<sup>5</sup>) </span></p>
+<p><span style="font-size: 11.7px;">• t<sub>1</sub>,t<sub>2</sub>,...,t<sub>n</sub> (1 ≤ t<sub>i</sub> ≤ 10<sup>9</sup>) </span></p>
+<p><span style="font-size: 11.7px;">• d<sub>1</sub>, d<sub>2</sub>, ..., d<sub>n</sub> (1 ≤ d<sub>i</sub> ≤ 10<sup>9</sup>) </span></p>
+<p><span style="font-size: 11.7px;">• a<sub>i</sub> and b<sub>i</sub> (1 ≤ a<sub>i</sub>,b<sub>i</sub> ≤ n)</span></p>

@@ -1,0 +1,11 @@
+<p style="text-align: justify;"><span style="font-size: small;">Vertu, the clever businessman, sells the ropes to his customers at the rate of 1 rupee per meter. He can only sell an integer length of a rope to a customer. Also, he has a magic locker which functions this way:<br>&nbsp;&nbsp;&nbsp; Suppose the locker has 'x' rupees. Now if 'y' rupees more are put into this locker, it multiplies them and total money in the locker now is 'x*y'.<br>This morning, Vertu starts his bussiness with 'n' meters of rope. He puts 1 rupee in the locker as to have good luck.<br>Find the maximum money he can earn today considering that he sold all of his rope at the end of the day.</span></p>
+<p style="text-align: justify;"><span style="font-size: small;">NOTE: <span style="color: #000020; font-size: 13px; background-color: #e8edd0;">Vertu has to put all rupees into the locker as soon as he gets it, and can get rupees from locker only at the end of the day.</span></span></p>
+<h3 style="text-align: justify;"><span style="font-size: small;">Input&nbsp; and Output<br></span></h3>
+<h4 style="text-align: justify;"><span style="font-size: small;"><span style="font-weight: normal;">The  first line contains t, the number of test cases. t lines follow, each  containing one positive integer n. For each of these integers, print the required answer modulo(10<sup>9</sup>+7).</span></span></h4>
+<p style="text-align: justify;"><span style="font-size: small;"><span style="font-weight: normal;">Constraints</span></span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><span style="font-weight: normal;">t&lt;10<sup>5</sup></span></span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><span style="font-weight: normal;">0&lt;n&lt;10<sup>12</sup><br></span></span></p>
+<h3 style="text-align: justify;"><span style="font-size: small;">Example</span></h3>
+<pre style="text-align: justify;"><span style="font-size: small;"><strong>Input:</strong>
+2<br>4<br>5<br><strong>Output:</strong>
+4<br>6</span></pre>
