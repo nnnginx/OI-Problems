@@ -48,6 +48,7 @@ hydro - https://hydro.ac/
 luoguUVA - https://www.luogu.com.cn/problem/list?type=UVA
 luoguATCODER - https://www.luogu.com.cn/problem/list?type=AT
 luogu - https://www.luogu.com.cn/problem/list
+zmbc - https://csp.zmbc100.com/
 ```  
 
 ### Included Problem Sources (with RemoteJudge)  
@@ -71,6 +72,11 @@ luogu - https://www.luogu.com.cn/problem/list
 - SPOJ  
 - AtCoder  
 - Hydro
+- CSP-J/S
+- NOIP
+- GESP
+- IOI
+- zhimabianchen
 
 ### Contribute
 
@@ -125,6 +131,7 @@ hydro - https://hydro.ac/
 luoguUVA - https://www.luogu.com.cn/problem/list?type=UVA
 luoguATCODER - https://www.luogu.com.cn/problem/list?type=AT
 luogu - https://www.luogu.com.cn/problem/list
+zmbc - https://csp.zmbc100.com/
 ```
 
 以下是我们有的题库（包含RemoteJudge）：
@@ -148,6 +155,11 @@ luogu - https://www.luogu.com.cn/problem/list
 - SPOJ
 - AtCoder
 - Hydro
+- CSP-J/S
+- NOIP
+- GESP
+- IOI
+- zhimabianchen
 
 ### 贡献
 
