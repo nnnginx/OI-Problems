@@ -1,0 +1,35 @@
+# P12105 [NWRRC2024] Another Brick in the Wall
+
+## 题目描述
+
+Alice likes building toy walls. She has a lot of $1 \times 2$ bricks and a limited supply of $1 \times 3$ bricks. Both types of bricks have a height of 1 and can not be rotated.
+
+Alice is going to build a one unit thick wall of length $l$ and height $h$ out of these bricks. A wall is $\textit{solid}$ if there are no seams directly above another seam.
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/zgs4gn57.png)
+
+Help Alice determine the minimum number of $1 \times 3$ bricks required to build a solid wall of length $l$ and height $h$.
+
+## 输入格式
+
+The only line contains two integers $l$ and $h$, denoting the length and the height of the wall ($5 \le l \le 1000$; $2 \le h \le 1000$).
+
+## 输出格式
+
+Print the minimum number of $1 \times 3$ bricks required to build a solid $l \times h$ wall.
+
+It can be shown that it is always possible to build a solid wall of length $l$ and height $h$.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+7 4
+```
+
+### 输出 #1
+
+```
+4
+```

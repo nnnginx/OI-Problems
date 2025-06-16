@@ -1,0 +1,70 @@
+# P12753 [POI 2017 R3] 披萨配送员 Pizza delivery
+
+## 题目背景
+
+翻译来自于 [LibreOJ](https://loj.ac/p/5061)。
+
+## 题目描述
+
+**题目译自 [XXIV Olimpiada Informatyczna — III etap](https://sio2.mimuw.edu.pl/c/oi24-3/dashboard/) [Dostawca pizzy](https://szkopul.edu.pl/problemset/problem/q_HBwDECevrQ2iQh1wT6ssx2/statement/)**
+
+拜托城是一座风景如画的城市，拥有 $n$ 个路口，通过 $n-1$ 条双向道路相连。每路口旁有一户人家，其中之一是 Bajtazar 的披萨店。拜托城的居民酷爱披萨，每日清晨，Bajtazar 烘焙 $n-1$ 张披萨，挨家挨户送达（除自家外）。
+
+为避免披萨冷却，Bajtazar 为配送车配备了尖端加热器，但其耗能极高，他希望尽量缩短使用时间。他的策略是：装载若干披萨，开启加热器，送至部分住户，送完最后一张后关闭加热器，返回披萨店。他最多愿意进行 $k$ 次配送，想知道送完所有披萨所需的最短加热器运行时间。
+
+加热器在停留期间（Bajtazar 送披萨上门时）的运行时间可忽略。
+
+## 输入格式
+
+第一行包含两个正整数 $n, k$，分别表示拜托城的路口数量和 Bajtazar 最多愿意进行的配送次数。路口编号为 $1$ 至 $n$，披萨店位于路口 $1$。
+
+接下来的 $n-1$ 行描述路网，第 $i$ 行包含三个正整数 $a_i, b_i, c_i$ $(a_i, b_i \leq n, a_i \neq b_i)$，表示路口 $a_i$ 和 $b_i$ 间有一条双向道路，单向通行需 $c_i$ 分钟。路网保证任意两路口间可达（不一定直接）。
+
+## 输出格式
+
+输出一行，包含一个整数，表示 Bajtazar 配送所有披萨所需的最短加热器运行时间（分钟）。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+7 3
+1 2 5
+2 3 11
+2 4 2
+5 2 6
+1 6 1
+7 1 1
+```
+
+### 输出 #1
+
+```
+34
+```
+
+## 说明/提示
+
+**样例 1 解释**
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/5ybl7frg.png)
+
+Bajtazar 进行三次配送：$1 \rightarrow 2 \rightarrow 4 \rightarrow 2 \rightarrow 5 \rightsquigarrow 1$（加热器运行 $15$ 分钟），$1 \rightarrow 2 \rightarrow 3 \rightsquigarrow 1$（$16$ 分钟），$1 \rightarrow 6 \rightarrow 1 \rightarrow 7 \rightsquigarrow 1$（$3$ 分钟）。
+
+**附加样例**
+
+1. $n=15, k=3$，小型完全二叉树，通往叶子的道路通行时间 $6$ 分钟，其余道路 $1$ 分钟。
+2. $n=2000, k=100$，披萨店直达所有路口，大型随机通行时间。
+3. $n=50000, k=1000$，披萨店直达两个路口，其中之一可达其余所有路口，所有通行时间为 $1$。
+
+所有测试数据满足 $n \geq 2, k \geq 1, 1 \leq c_i \leq 1000000$。
+
+详细子任务附加限制及分值如下表所示。
+
+| 子任务 | 附加限制 | 分值 |
+| :---: | :--: | :---: |
+| $1$    | $n, k \leq 10$           | $12$ |
+| $2$    | $n, k \leq 2000$         | $24$ |
+| $3$    | $n, k \leq 100000$ 且 $n \cdot k \leq 4000000$ | $28$ |
+| $4$    | $n, k \leq 100000$       | $36$ |

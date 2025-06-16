@@ -1,0 +1,64 @@
+# P12751 [POI 2017 R2] 集装箱 Shipping containers
+
+## 题目背景
+
+翻译来自于 [LibreOJ](https://loj.ac/p/5059)。
+
+## 题目描述
+
+**题目译自 [XXIV Olimpiada Informatyczna — II etap](https://sio2.mimuw.edu.pl/c/oi24-2/dashboard/) [Kontenery](https://szkopul.edu.pl/problemset/problem/oNnWY6ZuzzhvG-jCmijiXkIk/statement/)**
+
+工程师 Bajtazar 负责管理一个集装箱装卸坡道。坡道由 $n$ 个连续位置组成，编号从 $1$ 至 $n$。每位位置上，起重机可堆放任意数量的集装箱，层层叠放。
+
+部分集装箱装有危险物质，需避免过于密集堆放。
+
+Bajtazar 收到 $k$ 项起重机操作指令，第 $i$ 项操作形如 $(a_i, \ell_i, d_i)$，表示从位置 $a_i$ 开始，每隔 $d_i$ 个位置放置一个集装箱，共放置 $\ell_i$ 个（即在位置 $a_i, a_i+d_i, a_i+2d_i, \ldots, a_i+(\ell_i-1)d_i$ 各放一个）。他想知道所有操作完成后，每位位置上的集装箱数量。
+
+## 输入格式
+
+第一行包含两个正整数 $n, k$，分别表示坡道位置数量和操作数量。
+
+接下来的 $k$ 行描述操作，第 $i$ 行包含三个正整数 $a_i, \ell_i, d_i$，满足 $a_i+(\ell_i-1)d_i \leq n$。当 $\ell_i=1$ 时，保证 $d_i=1$。
+
+## 输出格式
+
+输出一行，包含 $n$ 个整数 $c_1, c_2, \ldots, c_n$，其中 $c_i$ 表示所有操作完成后位置 $i$ 上的集装箱数量。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+8 3
+3 4 1
+2 3 3
+3 2 2
+```
+
+### 输出 #1
+
+```
+0 1 2 1 3 1 0 1
+```
+
+## 说明/提示
+
+**样例 1 解释**
+
+每个集装箱上的编号对应将其放置在坡道上的操作序号。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/49gtt0eh.png)
+
+**附加样例**
+
+1. $n=10, k=10$，随机样例。  
+2. $n=11000, k=999, a_i=\ell_i=i+1, d_i=10$，对于 $i=1, 2, \ldots, k$。  
+3. $n=100000, k=100000, \ell_1=\ell_2=\ldots=\ell_k=1$。
+
+详细子任务附加限制及分值如下表所示。
+
+| 子任务 | 附加限制 | 分值 |
+| :---: | :--: | :---: |
+| $1$    | $n \leq 1000, k \leq 2000$ | $21$ |
+| $2$    | $n, k \leq 100000, d_1=d_2=\ldots=d_k$ | $33$ |
+| $3$    | $n, k \leq 100000$       | $46$ |

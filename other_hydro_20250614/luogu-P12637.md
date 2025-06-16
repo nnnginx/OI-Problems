@@ -1,0 +1,96 @@
+## 题目描述
+Vus the Cossack accidentally found a rectangular field $n \times m$ square meters. The field has $n$ rows and $m$ columns. Rows are numbered from $1$ to $n$ from top to bottom. Columns are numbered from $1$ to $m$ from left to right.
+
+Cossack noticed that in some squares there are gold coins, namely: in the square, which is in the $i$-th row and the $j$-th column, there are exactly $a_{ij}$ gold coins.
+
+Just pick up all the coins --- it's too easy for Vus, so he decided to take all the coins from the squares where the number of coins is even.
+
+However, this task turned out to be too easy for him, so Vus the Cossack decided to move the coins the next way: he can take **all** coins in a square and transfer them to any neighboring square. Squares are considered adjacent if they have a common side. He can perform the described shift operation any number of times.
+
+Now Cossack is wondering how many coins he can take. Help him find that number, and help him understand how he needs to move coins to pick up that number.
+
+Note that Cossack does not need to minimize the number of shift operations, he only needs to maximize the number of coins he will take.
+
+## 输入格式
+The first line contains two integers $t$ and $g$ ($1 \leq t \leq 10$, $0 \leq g \leq 6$) --- number of tests and block number.
+
+The first line of each test contains two integers $n$ and $m$ ($1 \leq n, m \leq 50$) --- field sizes.
+
+Each of the next $n$ line contains $m$ integers $a_{i1}, a_{i2}, \dots, a_{im}$ ($0 \leq a_{ij} \leq 100$) --- the number of gold coins in the squares.
+
+It is not guaranteed that there is at least one coin in the field.
+
+## 输出格式
+For each test, do the following:
+
+In the first line, print one integer --- the maximum number of coins that Vus will take.
+
+In the second line, print one integer $p$ ($0 \leq p \leq 10\,000$) --- the number of move operations that need to be performed. Note that you do not need to minimize the value of $p$.
+
+In each of the following $p$ lines, print four integers $x_1$, $y_1$, $x_2$, $y_2$ ($1 \leq x_1, x_2 \leq n$, $1 \leq y_1, y_2 \leq m$), which means that coins that are squared ($x_1$, $y_1$) must be shifted to the square ($x_2$, $y_2$).
+
+If there are several correct answers, it is allowed to deduce any of them. It is guaranteed that there is an optimal answer, where the number of shift operations does not exceed $10\,000$.
+
+```input1
+2 0
+2 3
+4 5 1
+9 2 0
+1 4
+1 4 5 4
+```
+
+```output1
+20
+4
+1 1 2 1
+1 2 2 2
+2 1 2 2
+2 2 2 3
+14
+3
+1 1 1 2
+1 2 1 3
+1 3 1 4
+```
+
+## 提示
+In the first example, the Cossack can first move all the coins from the square $(1, 2)$ to $(2, 2)$, after which the field will look like this:
+
+$$\begin{array}{cc}
+4 & 0 & 1\\
+9 & 7 & 0\\
+\end{array}$$
+
+After shifting coins from $(2, 2)$ to $(2, 1)$ the field will look like this:
+
+$$\begin{array}{cc}
+4 & 0 & 1\\
+16 & 0 & 0\\
+\end{array}$$
+
+Therefore, the answer is $4+16=20$.
+
+In the second example, the Cossack can first move all the coins from the square $(1, 1)$ to $(1, 2)$, after which the field will look like this:
+
+$$\begin{array}{c}
+0 & 5 & 5 & 4
+\end{array}$$
+
+After shifting coins from $(1, 2)$ to $(1, 3)$ the field will look like this:
+
+$$\begin{array}{c}
+0 & 0 & 10 & 4
+\end{array}$$
+
+Therefore, the answer is $10+4=14$.
+
+### Scoring
+
+- ($14$ points) $n=1$, all $a_{ij}$ are even;
+- ($16$ points) $n=1$, all $a_{ij}$ are odd;
+- ($19$ points) $n=1$;
+- ($14$ points) $n,m>1$, all $a_{ij}$ are even;
+- ($17$ points) $n,m>1$, all $a_{ij}$ are odd;
+- ($20$ points) $n,m>1$.
+

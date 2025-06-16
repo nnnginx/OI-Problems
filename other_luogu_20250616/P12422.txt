@@ -1,0 +1,143 @@
+# P12422 【MX-X12-T5】「ALFR Round 5」Another string problem
+
+## 题目背景
+
+原题链接：<https://oier.team/problems/X12E>。
+
+---
+
+决（け）して逃（に）げない怖（こわ）くはないから
+
+目（め）を开（あ）け弱（よわ）さをかき消（け）すんだ
+
+## 题目描述
+
+我们定义 $S\mid T$ 为：设 $k=\lfloor |T|/|S| \rfloor$，则 $k$ 个 $S$ 连起来在 $T$ 中以子序列出现过。例如 $S=\textsf{ab},T=\textsf{abcab}$，则 $S\mid T$，$T$ 中出现的 $S$ 有 $\underline{\textsf{ab}}\textsf c{\underline{\textsf{ab}}}$。
+
+对于 $t$ 组测试数据，给定一个 $S$ 和正整数 $q$，$q$ 次询问：
+
+- 给定 $T_i$，问是否 $T_i\mid S$。如果 $T_i\mid S$，输出 `Yes`，否则输出 `No`。
+
+## 输入格式
+
+本题有多组测试数据，第一行输入一个整数 $t$，表示数据组数。对于每组数据：
+
+- 第一行，一个字符串 $S$ 和一个正整数 $q$。
+- 接下来 $q$ 行，每行一个字符串 $T_i$。
+
+保证 $S,T_i$ 均由小写英文字符（`a` 到 `z`）组成。
+
+## 输出格式
+
+输出 $q$ 行，第 $i$ 行为第 $i$ 组测试数据的答案（`Yes` 或 `No`）。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+2
+abcaabc 2
+abc
+ab
+abaabab 3
+ab
+aa
+aba
+```
+
+### 输出 #1
+
+```
+Yes
+No
+Yes
+No
+Yes
+```
+
+## 说明/提示
+
+**【样例解释】**
+
+第一组测试数据中，$T=\textsf{abc}$ 时可以在 $S$ 种寻找到 $\textsf{abcabc}$ 作为子序列，具体的，$S$ 种出现的 $T$ 有 $\underline{\textsf{abc}}\textsf a{\underline{\textsf{abc}}}$。而 $T=\textsf{ab}$ 时 $\textsf{ababab}$ 不是 $S$ 的子序列。
+
+第二组测试数据中，第一、三个询问分别有 $\underline{\textsf{ab}}\textsf a{\underline{\textsf{abab}}}$、$\underline{\textsf{aba}} {\underline{\textsf{aba}}}\textsf b$。
+
+**【数据范围】**
+
+**本题使用捆绑测试。**
+
+对于 $100\%$ 的数据，$1 \le t \le 2\times 10^5$，$\lvert S\rvert,q,\lvert T_i\rvert\ge 1$，$\sum \lvert S\rvert\le 2\times 10^5$，$\sum q\le 2\times 10^5$，$\sum \sum \lvert T_i\rvert\le 4\times 10^5$，并且 $|T_i|\le |S|$。$S,T_i$ 均由小写英文字符（`a` 到 `z`）组成。
+
+| 子任务 | $\sum \lvert S\rvert\le$ | 特殊性质 | 分值 |
+| :----------: | :----------: | :----------: | :----------: |
+| $1$ | $2\times 10^5$ | $\lvert S\rvert\le 10$ | $3$ |
+| $2$ | $3\times 10^3$ | 无 | $17$ |
+| $3$ | $2\times 10^5$ | 数据随机$^†$ | $2$ | 
+| $4$ | $2\times 10^5$ | $S$ 中不同字符最多 $1$ 种 | $8$ |
+| $5$ | $2\times 10^5$ | $S$ 中不同字符最多 $2$ 种 | $15$ |
+| $6$ | $10^5$ | 无 | $20$ |
+| $7$ | $2\times 10^5$ | 无 | $35$ |
+
+$†$：并非完全均匀随机字符，具体见【**子任务 3 数据随机方式**】。
+
+**【子任务 3 数据随机方式】**
+
+下面是造“数据随机”的部分分的代码（因为 `generator` 较长，这里是所有有关片段）：
+
+```cpp
+mt19937 rng((unsigned long long) new char);
+
+int rnd_l(int l,int r){
+	return rng()%(r-l+1)+l;
+}
+
+char rnd(vector<int> v){ // 0~25 权重 
+	int sum=0;
+	for (auto u : v) sum+=u;
+	int r=rng()%(sum)+1,c=0;
+	sum=0;
+	for (auto u : v){
+		if (sum+u>=r) return c+'a';
+		c++;
+		sum+=u;
+	}
+}
+
+vector<int> pl;
+
+void rnd_g(){
+	string s=rnd_s(pl,n);
+	cout<<s<<" "<<q<<endl;
+	string t=rnd_s(pl,n);
+	vector<int> ct=rnd_v(n,q);
+	ct.push_back(n);
+	for (int i=1,pr=0; i<=q; i++){
+		cout<<t.substr(pr,ct[i-1]-pr)<<endl;
+		pr=ct[i-1];
+	}
+}
+
+vector<int> rnd_v(int fw,int ti){ // 不可重复的划分 
+	vector<int> ct;
+	ct.push_back(0);
+	for (int i=1,cr=0; i<ti; i++){
+		ct.push_back(rnd_l(cr+1,fw-(ti-i)));
+		cr=ct.back();
+	}
+	return ct;
+}
+
+for (int i=0; i<26; i++) pl.push_back(rnd_l(5,15));
+```
+
+需要注意的是，`rnd` 函数并非均匀随机，是按照随机生成的权重 `pl` 随机 $a\sim z$ 的（即 $c$ 的概率为 $\frac{pl_c}{\sum pl_i}$）。`pl` 每一个数据点都会重新生成。
+
+这个代码中，$n=|S|,q$ 是数据范围内给定的数。随机的方式如下：
+
+- $q\in [1,n]$，均匀随机。
+
+- 按照 `rnd` 函数随机生成一个 $S$ 字符串和 $T$ 字符串，长度均为 $n$。
+
+- 按照 `rnd_v` 函数随机一个 $T$ 的分割，一共 $q-1$ 个分割点，分成 $q$ 段，分别为 $T_1\sim T_q$。

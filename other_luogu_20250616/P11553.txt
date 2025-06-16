@@ -1,0 +1,50 @@
+# P11553 [ROIR 2016] 奇怪的字符串 (Day 1)
+
+## 题目背景
+
+翻译自 [ROIR 2016 D1T3](https://neerc.ifmo.ru/school/archive/2015-2016/ru-olymp-regional-2016-day1.pdf)。
+
+注意：本题官方数据行末存在 `\r`。
+
+## 题目描述
+
+考虑一个由小写字母组成的字符串 $ s $，如 $\texttt{abba}$。
+- 记 $ W(s) $ 为一个集合，包含了字符串 $ s $ 所有的非空子串。例如，$ W(\texttt{abba}) = \{\texttt{a}, \texttt{b}, \texttt{ab}, \texttt{ba}, \texttt{bb}, \texttt{abb}, \texttt{bba}, \texttt{abba}\} $。
+- 记 $ Y(s) $ 为一个集合，包含了字符串 $ s $ 所有的非空子序列。由于任何子串都是子序列，因此 $ Y(s) $ 集合包含了 $ W(s) $，但它还可以包含其他的字符串。例如，$ Y(\texttt{abba}) = W(\texttt{abba}) \cup \{\texttt{aa}, \texttt{aba}\} $。
+
+如果一个字符串 $ s $ 满足 $ W(s) = Y(s) $，那么我们称它是**奇怪的**。例如，字符串 $\texttt{abba}$ 不是奇怪的，而字符串 $\texttt{abb}$ 是奇怪的，因为对于 $\texttt{abb}$，有 $ W(\texttt{abb}) = Y(\texttt{abb}) = \{\texttt{a}, \texttt{b}, \texttt{ab}, \texttt{bb}, \texttt{abb}\} $。
+
+我们称字符串 $s$ 的**奇异度**为它所有不同的奇怪子串的数量，即，$W(s)$ 中奇怪的字符串的数量。例如，字符串 $\texttt{abba}$ 的奇异度为 $7$，因为它的所有除它本身以外的子串都是奇怪的。
+
+给定一个字符串 $s$，你要求出它的奇异度。
+
+## 输入格式
+
+输入一个由小写字母组成的字符串 $s$。
+
+## 输出格式
+
+输出 $s$ 的奇异度。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+abba
+```
+
+### 输出 #1
+
+```
+7
+```
+
+## 说明/提示
+
+| 子任务 | 是否捆绑 | 分值 | 特殊性质 |
+| :----------: | :----------: | :----------: | :----------: |
+| $1$ | 是 | $29$ | $\vert s\vert\le50$ 且 $s$ 只含 $\tt a$ 和 $\tt b$ |
+| $2$ | 是 | $12$ | $\vert s\vert\le50$ |
+| $3$ | 是 | $25$ | $\vert s\vert\le1000$ |
+| $4$ | 是 | $34$ | $\vert s\vert\le200000$ |

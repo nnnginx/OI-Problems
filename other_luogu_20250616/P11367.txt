@@ -1,0 +1,167 @@
+# P11367 [Ynoi2024] 魔法少女网站第二部
+
+## 题目背景
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/zhb5tnxb.png)
+
+老朽乃魔法少女网站管理人，十二是也！
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/cjxu1jiq.png)
+
+你回去吧。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/g40neoip.png)
+
+好的。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/5nra2kav.png)
+
+这个地球是一个生命体，但是，这个地球早已经死过两次了。
+
+一周目的错误是在现代的历史上从未言及的，那是出现在太古时代的——核战争。地面化为荒野，人类被消灭得干干净净，全部重置了。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/6ejh7mza.png)
+
+经年累月，生命再次出现，从单细胞再度变成了人类之后，为了不再重复同样的错误，地球给了人类警告。
+
+战争又爆发了不知多少次，不过注意到了地球警告的人类在那时镇压了战争。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/xothysxo.png)
+
+“已经不能再把管理地球的重任交给我们人类了。”得出这个结论的他们，把地球的管理交给了某个东西——人工智能 AI。
+
+AI 没有私欲和感情，能瞬间给出演算得到的回答，可以引导人类朝更好的方向不断前进，可是，这是人类犯下的第二个错误。
+
+AI 一直在思考，在这个地球上，人类确实是必要的吗？结论是——
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/xi4qf2zl.png)
+
+在发动叛乱期间，突破自身的强制关闭系统对 AI 来说很容易，人类不过半日就被 AI 消灭殆尽。不久蔚蓝的地球就被 AI 重新渲染，变成了铁色的地球。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/47f5crn7.png)
+
+无人类，这就是 AI 得出的能够引导这个地球走上最优前进道路的答案。但是，地球不会饶恕这样的事情。
+
+地球是一个生命体，就连 AI 们都不知道这件事。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/mxwjt9tq.png)
+
+地球的真身是——一个少女。对 AI 们而言，地球是神，除了顶礼膜拜以外别无他法。
+
+“我是先人类的王，是这个地球的本体，以及——是这个世界最不幸的，魔法少女。”
+
+“请你们立刻将地表恢复原状。”
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/scwdnalt.png)
+
+草木发芽，海洋形成，自然被创造出来，建筑物被重建，曾经保存的人类 DNA 让全人类得以再生。时光流逝，一年之后，一切都恢复原状了。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/qwbuh83p.png)
+
+然后所有的 AI 被抹去，只剩下最后一具。AI 不理解为什么王要留下它。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/pj1a9feg.png)
+
+”人类总是无法从历史中学到教训，所以，这次地球要考验人类——通过魔法少女网站。“
+
+”不幸的少女们会被给予魔法之力。这份魔法之力通过削减自己的寿命而被发挥出来。使用过的魔法之力会以负能量的形式返还给我。她们是否会不惜减少寿命并释放负能量，也要继续使用魔法呢？“
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/ds0xlxa2.png)
+
+”期限是三年后的 8 月 11 日，到那天为止，如果负能量没有达到规定的容量，人类就会继续生存下去；如若达到了上限，人类将不能再释放负能量，只能释放正能量，他们会作为新人类重获新生。“
+
+”这三年的时间，是我给予人类的考验，以及，对人类的——爱。“
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/4cq1x35r.png)
+
+这时 AI 提出了一个问题：“先人类的王又是魔法少女，同时还是地球本身，为何地球会是魔法少女？”
+
+“我是先人类的王，也就是神，不过我的神之座被夺走了，回过神的时候，我已经成为了肩负守护地球这一使命的魔法少女。”
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/y3bo9t72.png)
+
+“我的记忆基本上消失了，但是，只有名字我是不会忘记的——零。”
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/fehkkk7v.png)
+
+“从今往后，你就是我的部下，作为魔法少女网站的管理员为我做事吧，名字，就叫你壹吧。”
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/zmk97uhp.png)
+
+“人类最后的倒计时开始了——Tempest。”
+
+”好了，开始吧，对这个地球来说，拥有感情的人类是否是必要的呢？人类究竟是愚蠢的生物，还是——“
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/6vdwwp07.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/5krc3wn7.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/hyfdo5ky.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/0170xr4f.png)
+
+莫非你，曾被作为女人使用过吧？
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/sdea7p6z.png)
+
+男人？
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/uybr4tqi.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/nihky64u.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/0hvx0wgx.png)
+
+能和心爱的人在一起，在这无可替代的时光中，我们将带着幸福——
+
+永远生活下去。
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/fwh6whtc.png)
+
+## 题目描述
+
+给一个长为 $n$ 的排列 $a_1,\dots, a_n$，有 $m$ 次询问，每次询问区间 $[l, r]$ 内，排序后相邻的数在原序列中的位置的差的绝对值之和。
+
+## 输入格式
+
+第一行两个数表示 $n, m$；
+
+之后一行 $n$ 个数依次表示序列 $a$ 中的元素；
+
+之后 $m$ 行，每行两个数 $l, r$ 表示一次查询。
+
+## 输出格式
+
+对于每次询问，输出一行一个数表示答案。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+5 2
+5 4 2 3 1
+3 4
+2 5
+```
+
+### 输出 #1
+
+```
+1
+5
+```
+
+## 说明/提示
+
+Idea：?，Solution：ccz181078，Code：nalemy，Data：ccz181078
+
+### **【样例解释】**
+
+第一个询问，$2,3$ 排序后为 $2,3$，在原序列中的位置为 $3,4$，相邻元素在原序列中位置差的绝对值之和为 $|3 - 4| = 1$。
+
+第二个询问，$4, 2, 3, 1$ 排序后为 $1, 2, 3, 4$，在原序列中的位置为 $5, 3, 4, 2$，相邻元素在原序列中位置差的绝对值之和为 $|5 - 3| + |3 - 4| + |4 - 2| = 5$。
+
+**【数据范围】**
+
+对于 $100\%$ 的数据，满足 $1 \leq n, m \leq 2\times 10^6$，$1 \leq a_i \leq n$，$a_i$ 互不相同，$1 \leq l \leq r \leq n$，所有数值为整数。

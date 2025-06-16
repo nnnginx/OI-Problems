@@ -1,0 +1,131 @@
+# P11407 [RMI 2020] 寻线 / Nice Lines
+
+## 题目背景
+
+译自 [8th Romanian Master of Informatics, RMI 2020](https://rmi.lbi.ro/rmi_2020/) D2T2。$\texttt{0.2s,0.25G}$。
+
+**不需要引入头文件**。在文件头加入
+
+```cpp
+long double query(long double x, long double y);
+void the_lines_are(std::vector<int> a, std::vector<int> b);
+```
+
+以评测。
+
+---
+
+交互库地址：
+- checker.cpp：[https://www.luogu.com.cn/paste/9l2ikcx9](https://www.luogu.com.cn/paste/9l2ikcx9)
+- interactive_lib.cpp：[https://www.luogu.com.cn/paste/m4jysztc](https://www.luogu.com.cn/paste/m4jysztc)
+
+为了减少计算 Eculidean 距离时的精度损失，本题交互库使用了 [tiger2005](https://www.luogu.com.cn/user/60864) 的 [高精度小数类](https://www.luogu.com.cn/article/5dhvt1ck)（感谢 tiger2005 老师）。计算结果将保留小数点后 $50$ 位然后转换到 `long double`。
+
+为了让交互库不 TLE，我们将时限开大到 3s。
+
+如果发现 SPJ 有锅（具体而言，在其他地方可以通过），请联系搬题人。如果发现高精度小数类有锅，请联系 tiger2005。
+
+## 题目描述
+
+**这是一道（函数式）交互题。**
+
+二维笛卡尔坐标系上有 $N$ 条直线，描述为 $f_i(x)=a_ix+b_i$。其中，$a_i,b_i$ 为整数，且 $|a_i|,|b_i|\le 10^4$。
+
+每次可以选择一个**实数点** $P$，询问 $P$ 到这 $N$ 条直线的（欧几里得）距离之和。通过询问找出这 $N$ 条直线的解析式。
+
+有两个参数限制询问次数：
+- 欲获得满分，询问次数应不大于 $q$； 
+- 欲获得非零分，询问次数应不大于 $Q$。 
+
+此外，**保证直线两两不平行。**
+
+### 实现细节
+
+你不需要，也不应该实现 main 函数。
+
+你需要实现以下的函数：
+
+```cpp
+void solve(int subtask_id, int N);
+```
+
+交互库会调用 `solve` 函数恰好一次。参数的含义：
+- `subtask_id`：子任务编号。
+- `N`：直线数量。
+
+你可以调用以下的函数：
+
+```cpp
+long double query(long double x, long double y);
+```
+
+调用此函数，返回点 $(x,y)$ 到每条直线的（欧几里得）距离和。**你需要保证 $|x|,|y|\le 10^{12}$。**
+
+```cpp
+void the_lines_are(std::vector<int> a, std::vector<int> b)
+```
+
+调用此函数恰好一次，描述你找到的 $N$ 条直线。
+
+## 输入格式
+
+Sample Grader 按照以下格式读取输入：
+
+第一行，一个正整数 $\mathrm{id}$，表示子任务编号；
+
+第二行，三个正整数 $n,Q,q$；
+
+接下来 $n$ 行，每行两个整数 $a_i,b_i$。
+
+注意你需要自行修改 Sample Grader 的 `compute_query()` 以获得正确的距离计算结果。
+
+## 输出格式
+
+Sample Grader 将输出选手程序回答的 $n$ 条直线，以及使用的询问次数。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+1
+1 10000 10000
+1 0
+```
+
+### 输出 #1
+
+```
+
+```
+
+## 说明/提示
+
+对于 $100\%$ 的数据，保证：
+
+- $1\le N\le 10^2$；
+- $-10^4\le a_i,b_i\le 10^4$；
+- **直线两两不平行。**
+
+
+| 子任务编号 | $N  $ |  $q=$ | $Q=$ | 特殊性质 | 得分 |  
+| :--: | :--: |  :--: |  :--: |:--: | :--: |
+| $ 1 $    | $ =1 $  | $10^4$ | $10^4$ ||$11$ | 
+| $ 2 $    | $ =2 $  | $10^4$ | $10^4$ ||$13$ | 
+| $ 3 $    | $ =3 $  | $10^4$ | $10^4$ ||$7$ |
+| $ 4 $    | $ \le 100 $  | $402$ | $10^4$ | A |$19$ |
+| $ 5 $    | $ \le 30 $  | $402$ | $10^4$ ||$23$ |
+| $ 6 $    | $ \le 100 $  | $402$ | $10^4$ ||$27$ |
+
+特殊性质 A：$|a_i|,|b_i|\le 500$。
+
+计分方式：令你询问了 $x$ 次，则得分系数 $k$ 计算公式如下
+
+$$k=\begin{cases}
+1, & x\le q \\
+\displaystyle 1-0.7\cdot \frac{x-q}{Q-q} & q\lt x\le Q \\
+0, & x\gt Q
+\end{cases}
+$$
+
+每个子任务得分为得分系数的最小值乘上子任务满分。

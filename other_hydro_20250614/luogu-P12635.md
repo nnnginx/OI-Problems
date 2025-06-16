@@ -1,0 +1,64 @@
+## 题目描述
+Given $n$ balls numbered from $1$ to $n$. Each ball has its own color, which you do not know. There are $k$ different colors in total.
+
+You can look at a ball in one query and find out the number of balls of the same color that you have already seen (including this one). You will not know the color of the ball itself with such a query. In total, such a query can be made no more than $c$ times.
+
+You need to find an array $colors$ of $n$ elements, where each element --- an integer from $1$ to $k$ such that $colors[i]=colors[j]$ if and only if balls with numbers $i$ and $j$ of the same color.
+
+## 输入格式
+### Interaction
+
+The first line contains four integers $n$, $k$, $c$, and $g$ ($1 \leq k \leq n \leq 10^4$) --- the number of balls, the number of colors, the maximum number of queries, and the block number, respectively. See the constraints on $c$ below.
+
+You can make no more than $c$ queries. To make a query, you need to output the number $1$ and the number $index$ ($1 \leq index \leq n$) in one line --- the position of the ball you want to look at. After that, you need to output the end of line character and perform the 'flush' operation. Only after that can you read the answer.
+
+When you already know the answer --- you need to output the number $2$ and $n$ integers of the array $colors$, where each element is from $1$ to $k$. After that, you need to output the end of line character, perform the 'flush' operation, and terminate the program.
+
+## 输出格式
+See Interaction
+
+```input1
+5 3 100 0
+0
+0
+1
+1
+0
+2
+3
+```
+
+```output1
+1 1
+1 2
+1 3
+1 4
+1 5
+1 1
+1 3
+2 1 2 1 2 3
+
+```
+
+## 提示
+Let $n=5$, $k=3$, $c=100$ and $a = [2\ 1\ 2\ 1\ 3]$.
+
+If you look at a ball $1$, you will get a value of $1$. If you look at the ball $1$ again, the value will be $2$. Now, if you look at the ball $2$, the value will be $1$. Then for $3$ ball --- we get $3$. For $4$ ball --- we get $2$. For $5$ ball --- we get $1$.
+
+After that, the array $[2\ 3\ 2\ 3\ 1]$ can be returned. This answer will be correct.
+
+### Scoring
+
+- ($7$ points) $n \le 10^4$; $k = n-1$; $c = 5 \cdot 10^4$; there are two balls of the same color, and the rest of the balls are of different colors;
+- ($7$ points) $n \le 10^4$; $k = 2$; $c = 5 \cdot 10^4$;
+- ($10$ points) $n \le 500$; $k \le n$; $c = 3 \cdot 10^5$;
+- ($14$ points) $n \le 10^4$; $k \le 10$; $c = 3 \cdot 10^5$;
+- ($15$ points) $n \le 10^4$; $k \le n$; $c = 2 \cdot 10^4$; for each color from $1$ to $k$, the number of balls of this color is different; each color occurs at least once;
+- (up to $47$ points) $n \le 10^4$; $k \le n$; $c = 4 \cdot 10^6$:
+    - $7$ points if you use no more than $4 \cdot 10^6$ requests;
+    - $17$ points if you use no more than $10^6$ requests;
+    - $32$ points if you use no more than $6 \cdot 10^5$ requests;
+    - $47$ points if you use no more than $3 \cdot 10^5$ requests;
+
+
+

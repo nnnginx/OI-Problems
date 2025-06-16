@@ -1,0 +1,185 @@
+# P11949 [KTSC 2025] 木筏制作 / raft
+
+## 题目背景
+
+版权信息：译自 [2025年度 国际情报 올림피아드 (Olympiad) 代表学生 选拔考试](https://www.ioikorea.or.kr/archives/ioitst/2025/) R2T4。[[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)]
+
+**滥用本题评测将被封号。**
+
+## 题目描述
+
+给定长度为 $n$ 的正整数数列 $a_0 \sim a_{n-1}$ 和长度为 $m$ 的正整数数列 $b_0\sim b_{m-1}$。
+
+对于 $a,b$，定义好的序列为满足以下条件的序列 $h_0\sim h_{k-1}$：
+
+- 能够把 $h$ **划分**成两个子序列 $p,q$，使得 $\textcolor{red}{\boldsymbol{p=a\land q=b}}$。（子序列可以不连续。）
+
+定义好的序列 $h_0\sim h_{k-1}$ 的**权值**为
+
+$$\max_{0\le l\le r\lt k} \left((r-l+1)\cdot \min_{i\in [l,r]} \{h_i\} \right)$$
+
+定义 $f(a',b')$ 为：当 $a=a',b=b'$ 时，好的序列的权值的最大值。
+
+有 $q$ 次询问。第 $i$ 次询问给定 $L_i,R_i$，求出 $f(a,[b_{L_i},b_{L_i+1},\ldots,b_{R_i}])$。
+
+
+### 实现细节
+
+
+你不需要，也不应该实现 `main` 函数。
+
+你应当实现以下的函数：
+
+```cpp
+vector<long long> max_stability(vector<int> a, vector<int> b,
+vector<int> L, vector<int> R)
+```
+
+- `a`：长度为 $n$ 的正整数数列。
+- `b`：长度为 $m$ 的正整数数列。
+- $L,R$：长度为 $q$ 的非负整数序列，$L_i,R_i$ 描述一次询问。
+- 返回一个长度为 $q$ 的非负整数序列 $c$，$c_i$ 表示询问 $(L_i,R_i)$ 的答案。
+
+## 输入格式
+
+Sample Grader 输入格式如下：
+
+第一行，三个正整数 $n,m,q$。
+
+第二行，$n$ 个正整数 $a_0\sim a_{n-1}$。
+
+第三行，$m$ 个正整数 $b_0\sim b_{m-1}$。
+
+接下来 $q$ 行，第 $i$ 行两个非负整数 $L_{i-1},R_{i-1}$。
+
+## 输出格式
+
+输出一行 $q$ 个非负整数 $c_0,c_1,\ldots,c_{q-1}$。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+5 4 2
+3 3 1 6 1
+3 5 7 6
+0 1
+0 3
+```
+
+### 输出 #1
+
+```
+12 20
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+5 8 8
+9 9 9 9 9
+1 2 3 4 5 6 7 8
+0 1
+0 2
+0 3
+0 4
+0 5
+0 6
+0 7
+```
+
+### 输出 #2
+
+```
+45 45 45 45 45 45 45 49
+```
+
+## 输入输出样例 #3
+
+### 输入 #3
+
+```
+3 2 1
+1000000000 1000000000 1000000000
+1000000000 1000000000
+0 1
+```
+
+### 输出 #3
+
+```
+5000000000
+```
+
+## 说明/提示
+
+### 样例交互
+
+#### 样例交互 $1$
+
+$n = 5, m = 4, q = 2, a = [3, 3, 1, 6, 1], b = [3, 5, 7, 6], L = [0, 0], R = [1, 3]$。
+
+交互库调用
+
+```cpp
+max_stability([3, 3, 1, 6, 1], [3, 5, 7, 6], [0, 0], [1, 3]);
+```
+
+考虑第一个询问 $L_0=0,R_0=1$。
+
+令 $h = [\textbf{\textcolor{red}{3}, \textcolor{red}{3}, 3, 5}, \textcolor{red}{1}, \textcolor{red}{6}, \textcolor{red}{1}]$，可以验证答案为 $\min \{3,3,3,5\}\times 4=12$。
+
+考虑第二个询问 $L_1=0,R_1=3$。
+
+
+令 $h = [\textcolor{red}3, \textcolor{red}3, \textcolor{red}1, 3, \textbf{5, 7, \textcolor{red}6, 6}, \textcolor{red}1]$，可以验证答案为 $\min \{5,7,6,6\}\times 4=20$。
+
+所以返回 $[12,20]$。
+
+
+
+#### 样例交互 $2$
+
+交互库调用
+
+```cpp
+max_stability([9, 9, 9, 9, 9], [1, 2, 3, 4, 5, 6, 7, 8], [0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 3, 4, 5, 6, 7]);
+```
+
+返回 $[45, 45, 45, 45, 45, 45, 45, 49]$。
+
+#### 样例交互 $3$
+
+
+交互库调用
+
+```cpp
+max_stability([1000000000, 1000000000, 1000000000], [1000000000, 1000000000], [0], [1])
+```
+
+返回 $[5\, 000\, 000\, 000]$。
+
+### 数据范围
+
+- $1\le n,m\le 1.5\times 10^5$；
+- $1\le q\le 5\times 10^5$；
+- $1\le a_i,b_i\le 10^9$；
+- $0\le l_i\le r_i\lt m$。
+
+### 子任务
+
+- $\text{Subtask 1 (10 pts)}$：$n,m,q\le 3\times 10^3$。
+- $\text{Subtask 2 (8 pts)}$：$q\le 300$。
+- $\text{Subtask 3 (20 pts)}$：
+    - $\forall 0\le i\lt q$，都有：
+        - 要么 $L_i=0$，要么 $\displaystyle b_{L_i-1}\lt \min \{b_{L_i},b_{L_{i}+1},\ldots,b_{R_i}\}$；
+        - 要么 $R_i=m-1$，要么 $\displaystyle b_{R_i+1}\lt \min \{b_{L_i},b_{L_{i}+1},\ldots,b_{R_i}\}$。
+- $\text{Subtask 4 (6 pts)}$：$a_i\le 50,b_i\le 50$。
+- $\text{Subtask 5 (14 pts)}$：$a_0=a{1}=\ldots=a_{n-1}$。
+- $\text{Subtask 6 (11 pts)}$：$b_0\ge b_1\ge \ldots \ge b_{m-1}$。
+- $\text{Subtask 7 (13 pts)}$：$\forall 0\le i\le q$，$L_i=0$。
+- $\text{Subtask 8 (7 pts)}$：$R_0-L_0=R_1-L_1=\ldots=R_{q-1}-L_{q-1}$。
+- $\text{Subtask 9 (11 pts)}$：无额外约束。

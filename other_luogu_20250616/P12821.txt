@@ -1,0 +1,72 @@
+# P12821 [NERC 2021] Heroes of Might
+
+## 题目描述
+
+Recently, Hellen played her favorite game "Heroes of Might". She had a hero with only one Rust dragon, which was attacked by another hero with a lot of peasants. Another hero had $n$ groups of peasants, $i$-th of them had $a_i$ peasants in it. Unfortunately, Hellen lost that battle, but now she is wondering how big the health of the Rust dragon should be to win against such a big army of peasants?
+
+Let's discuss how the battle goes. Initially, the Rust dragon has $h_d$ health points, and each peasant has $h_p$ health points. So $i$-th group of peasants has a total of $H = h_p \cdot a_i$ health points at the start of the battle. The battle consists of several rounds. In each round, two things happen:
+
+- First, $\textbf{the dragon chooses one group of peasants and attacks it}$. The health of that group is decreased by the dragon's damage rating $d$. If the group has zero or less health points, it is destroyed and is removed from the game. 
+- Second, $\textbf{each one of the peasant groups attacks the dragon}$. A group with the total current health $H$ has $\lceil\frac{H}{h_p}\rceil$ peasants still alive and each of them decreases the dragon's health by one.
+
+If the dragon's health becomes zero or less at any point, it dies and Hellen loses. If all peasant groups are destroyed, Hellen wins the battle. 
+
+You need to determine the smallest possible $h_d$, which could make Hellen win if she chooses targets on each turn optimally.
+
+## 输入格式
+
+The first line of the input contains an integer $t$ ($1 \le t \le 1000$) --- the number of test cases you need to solve.
+
+Each of the test cases is described by two lines. The first line contains three numbers $n$ ($1 \le n \le 1000$), $d$ ($1 \le d \le 10^9$), and $h_p$ ($1 \le h_p \le 10^9$) --- the number of peasant groups, the dragon's damage rating, and the health of each peasant. The second line contains $n$ numbers $a_i$ ($1 \le a_i \le 10^9; h_p \cdot \sum{a_i} \le 10^9$) --- the number of peasants in each group.
+
+The sum of $n$ over all test cases does not exceed $1000$.
+
+## 输出格式
+
+For each test case, output one number --- the smallest amount of health $h_d$ that the dragon should have for Hellen to win the battle. If the dragon is never attacked by a peasant, it should still have positive health, so output 1 in this case.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+4
+1 15 10
+4
+1 10 1
+10
+2 15 10
+4 5
+2 11 15
+10 17
+```
+
+### 输出 #1
+
+```
+5
+1
+26
+504
+```
+
+## 说明/提示
+
+In the third test case, the optimal Hellen's strategy leads to the following battle. At the start, the dragon has $h_d=26$ health points, and two groups of peasants have $H_1=4\cdot10$ and $H_2=5\cdot10$ health points. We'll denote them as $H_1=40(4)$ and $H_2=50(5)$, placing the value of $\lceil\frac{H}{h_p}\rceil$ in the brackets. 
+
+$$\begin{array}{c}
+h_d=26, H_1=40(4), H_2=50(5) & \text{Round 1} & \textbf{The dragon attacks the first group}, \text{dealing 15 damage, leaving}\ H_1=25(3). \\
+h_d=26, H_1=25(3), H_2=50(5) &  & \text{Peasants attack the dragon}, \text{dealing 3+5 damage, leaving}\ h_d=18. \\
+h_d=18, H_1=25(3), H_2=50(5) & \text{Round 2} & \textbf{The dragon attacks the first group}, \text{dealing 15 damage, leaving}\ H_1=10(1). \\
+h_d=18, H_1=10(1), H_2=50(5) & & \text{Peasants attack the dragon}, \text{dealing 1+5 damage, leaving}\ h_d=12. \\
+h_d=12, H_1=10(1), H_2=50(5) & \text{Round 3} & \textbf{The dragon attacks the second group}, \text{dealing 15 damage, leaving}\ H_2=35(4). \\
+h_d=12, H_1=10(1), H_2=35(4) &  & \text{Peasants attack the dragon}, \text{dealing 1+4 damage, leaving}\ h_d=7. \\
+h_d=7, H_1=10(1), H_2=35(4) & \text{Round 4} & \textbf{The dragon attacks the second group}, \text{dealing 15 damage, leaving}\ H_2=20(2). \\
+h_d=7, H_1=10(1), H_2=20(2) &  & \text{Peasants attack the dragon}, \text{dealing 1+2 damage, leaving}\ h_d=4. \\
+h_d=4, H_1=10(1), H_2=20(2) & \text{Round 5} & \textbf{The dragon attacks the second group}, \text{dealing 15 damage, leaving}\ H_2=5(1) \\
+h_d=4, H_1=10(1), H_2=5(1) &  & \text{Peasants attack the dragon}, \text{dealing 1+1 damage, leaving}\ h_d=2. \\
+h_d=2, H_1=10(1), H_2=5(1) & \text{Round 6} & \textbf{The dragon attacks the second group},  \text{destroying it, so it is removed from the game.} \\
+h_d=2, H_1=10(1) &  & \text{Peasants attack the dragon}, \text{dealing 1 damage, leaving}\ h_d=1. \\
+h_d=1, H_1=10(1) & \text{Round 7} & \textbf{The dragon attacks the first group}, \text{destroying it, so it is removed from the game.} \\
+h_d=1 & \text{Game over} & \text{The dragon is still alive, Hellen wins.}
+\end{array}$$

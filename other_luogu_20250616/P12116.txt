@@ -1,0 +1,87 @@
+# P12116 [NWRRC2024] Longest Common Substring
+
+## 题目描述
+
+Lisa wrote a program to solve the Longest Common Substring problem. She then used the program to find, for some two strings $s$ and $t$ consisting of characters $\tt{0}$ and $\tt{1}$, the longest string $w$ that is a substring of both $s$ and $t$. If there were multiple such longest strings, she found an arbitrary one.
+
+Notably, the length of $w$ Lisa found was very small --- at most 3.
+
+Lisa remembers $n$ (the length of $s$), $m$ (the length of $t$), and $w$, but she doesn't remember strings $s$ and $t$ themselves. Now she wonders how many pairs of strings $s$ and $t$ exist such that they have lengths $n$ and $m$, respectively, consist of characters $\tt{0}$ and $\tt{1}$, and have $w$ as one of their longest common substrings.
+
+Help Lisa and find this number of pairs modulo $998\,244\,353$. Note that if $n = m$ and $s \ne t$, pairs $(s, t)$ and $(t, s)$ are considered distinct.
+
+## 输入格式
+
+The first line contains three integers $n$, $m$, and $k$, denoting the lengths of the strings $s$, $t$, and $w$ ($1 \le n, m \le 100$; $1 \le k \le \min(3, n, m)$).
+
+The second line contains the string $w$ of length $k$ consisting of characters $\tt{0}$ and $\tt{1}$.
+
+## 输出格式
+
+Print the number of pairs of strings $(s, t)$ that have $w$ as one of their longest common substrings, modulo $998\,244\,353$.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+2 2 1
+1
+```
+
+### 输出 #1
+
+```
+6
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+3 4 2
+01
+```
+
+### 输出 #2
+
+```
+28
+```
+
+## 输入输出样例 #3
+
+### 输入 #3
+
+```
+7 5 3
+110
+```
+
+### 输出 #3
+
+```
+399
+```
+
+## 输入输出样例 #4
+
+### 输入 #4
+
+```
+23 42 3
+000
+```
+
+### 输出 #4
+
+```
+174497840
+```
+
+## 说明/提示
+
+Note that a string $a$ is a substring of a string $b$ if $a$ can be obtained from $b$ by deleting zero or more characters from the beginning and zero or more characters from the end.
+
+In the first test, all pairs of strings satisfying the conditions are ($\tt{01}$, $\tt{10}$), ($\tt{01}$, $\tt{11}$), ($\tt{10}$, $\tt{01}$), ($\tt{10}$, $\tt{11}$), ($\tt{11}$, $\tt{01}$), and ($\tt{11}$, $\tt{10}$).

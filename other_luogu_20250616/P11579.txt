@@ -1,0 +1,66 @@
+# P11579 [CCC 2020] Cyclic Shifts
+
+## 题目背景
+
+本题译自 [Canadian Computing Competition](https://cemc.uwaterloo.ca/resources/past-contests?contest_category=29) [2020 Junior](https://cemc.uwaterloo.ca/sites/default/files/documents/2020/2020CCCJrProblemSet.html) T4 Cyclic Shifts。
+
+## 题目描述
+
+Thuc 喜欢寻找字符串的循环移位。字符串的循环移位是通过不断将字符从字符串的开头移动到字符串的末尾来得到的。当然，一个字符串是它自身的循环移位。例如，`ABCDE` 的循环移位有：`ABCDE`，`BCDEA`，`CDEAB`，`DEABC`，`EABCD`。
+
+给定一些文本串 $T$ 和一个字符串 $S$，判断 $T$ 是否包含 $S$ 的循环移位。
+
+## 输入格式
+
+共两行。
+
+第一行一个文本串 $T$。
+
+第二行一个字符串 $S$。
+
+## 输出格式
+
+若 $T$ 包含 $S$ 的循环移位，输出 `yes`，否则输出 `no`。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+ABCCDEABAA
+ABCDE
+```
+
+### 输出 #1
+
+```
+yes
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+ABCDDEBCAB
+ABA
+```
+
+### 输出 #2
+
+```
+no
+```
+
+## 说明/提示
+
+#### 【样例解释】
+对于第一组样例，`CDEAB` 是 `ABCDE` 的循环移位，且存在于 `ABCCDEABAA` 之中。
+
+对于第二组样例，易证明 `ABA` 的所有循环移位都不存在于 `ABCDDEBCAB` 之中。
+#### 【数据范围】
+**本题采用捆绑测试**。
+
+对于 $40\%$ 的数据，$|S|=3$。
+
+对于 $100\%$ 的数据，保证 $1\le |S|,|T|\le 1000$。

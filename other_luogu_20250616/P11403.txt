@@ -1,0 +1,82 @@
+# P11403 [RMI 2020] 软盘 / Floppy（无法评测）
+
+## 题目背景
+
+译自 [8th Romanian Master of Informatics, RMI 2020](https://rmi.lbi.ro/rmi_2020/) D1T1。$\texttt{0.5s,0.25G}$。
+
+由于洛谷评测系统的限制，本题无法评测。
+
+## 题目描述
+
+**这是一道通信题。**
+
+有一个长度为 $N$ 的整数序列 $v_0,v_1,\cdots,v_{N-1}$，其中**元素两两不同**。
+
+有 $M$ 个询问，形如：给定 $[l,r]$，求出 $x\in [l,r]$ 使得 $v_x=\max\{v_l,v_{l+1},\cdots,v_{r}\}$。
+
+请你将这个序列压缩成一个 $\texttt{01}$ 串保存在软盘上，并只使用这个 $\texttt{01}$ 串回答这些询问。
+
+### 实现细节
+
+你不需要，也不应该实现 main 函数。
+
+你需要实现以下的函数：
+
+```cpp
+void read_array(int subtask_id, const std::vector<int> &v);
+std::vector<int> solve_queries(int subtask_id, 
+    int N, const std::string &bits, 
+    const std::vector<int> &a,
+    const std::vector<int> &b);
+```
+
+你可以调用以下的函数。
+
+```cpp
+void save_to_floppy(const std::string &bits);
+```
+#### 第一次运行
+
+交互库将会调用 `read_array` 函数恰好一次。参数的含义：
+- `subtask_id`：子任务编号。
+- `v`：数列 $v$。
+
+随后，调用 `save_to_floppy` 函数恰好一次，传入一个 $\texttt{01}$ 串，表示你要存储的信息。
+
+#### 第二次运行
+
+交互库将会调用 `solve_queries` 函数恰好一次。参数的含义：
+- `subtask_id`：子任务编号。
+- `N`：$v$ 的长度。
+- `bits`：软盘上的信息。
+- `a`, `b`：每次询问的左右端点。
+
+设有 $M$ 次询问，返回一个长度为 $M$ 的 `std::vector<int>` 表示每次询问的答案。
+
+## 输入格式
+
+无
+
+## 输出格式
+
+无
+
+## 说明/提示
+
+对于 $100\%$ 的数据，保证：
+- $1\le N\le 4\times 10^4$；
+- $1\le M\le 8\times 10^4$；
+- $-10^9\le v_i\le 10^9$。
+
+你保存的 $\texttt{01}$ 串最长为 $2\times 10^5$。超出限制，得 $0$ 分。
+
+| 子任务编号 | $N\le  $ | $M\le$ | 特殊性质 | 计分方式 | 得分 |  
+| :--: | :--: |  :--: | :--: |:--: | :--: |
+| $ 1 $    | $ 500 $  | $10^3$ | A | I | $7$ | 
+| $ 2 $    | $ 10^4 $  | $2\times 10^4$ |  | II | $21$ | 
+| $ 3 $    | $ 4\times 10^4 $  | $8\times 10^4$ |  | III | $72$ |
+
+- 特殊性质 A：$0\le v_i\lt N$。
+- 计分方式 $\text{I}$：正确回答每个询问，得满分；否则得零分。
+- 计分方式 $\text{II}$：令 $\texttt{01}$ 串长度为 $L$，得分为 $21\cdot \min(1,1/2^{L/N-1-\log_2 N})$。
+- 计分方式 $\text{III}$：令 $\texttt{01}$ 串长度为 $L$，得分为 $72\cdot \min(1,1/2^{L/N-2})$。

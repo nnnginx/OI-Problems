@@ -1,0 +1,67 @@
+# P6964 [NEERC 2016] Abbreviation
+
+## 题目描述
+
+定义 word 为一个首字母大写、长度大于 1 、 其他位为小写字母的单词，如 `Ab`、 `Abc`、 `Abcd`、 和 `Abcde`，但 `ab`、`A`、 `AB`、 `ABc` 和 `AbC`。
+
+定义一个 word 串为一个有大于 1 个 word 、每两个 word 中有且只有一个空格的串，如 `International Business Machines`。
+
+现给你若干行，如遇到 word 串则让他变为缩写，缩写方式为：先提取首字母（大写），再加空格和 `(` ，再把全称写出来，最后加上 `)` ，如: `International Business Machines` 可缩写为 `IBM (International Business Machines)` 。
+
+## 输入格式
+
+若干行（不超过 1000 行）由大小写字母、标点和空格组成的的字符串（每行不超过 120 个字符）。
+
+## 输出格式
+
+缩写后的若干行字符串（无法缩写的不用缩写）。
+
+#### translate by:`ddgtang`
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+This is ACM North Eastern European Regional Contest,
+sponsored by International Business Machines.
+The. Best. Contest. Ever.
+A Great Opportunity for all contestants.
+```
+
+### 输出 #1
+
+```
+This is ACM NEERC (North Eastern European Regional Contest),
+sponsored by IBM (International Business Machines).
+The. Best. Contest. Ever.
+A GO (Great Opportunity) for all contestants.
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+ab Ab A Abc AB Abcd ABc Abcde AbC
+```
+
+### 输出 #2
+
+```
+ab Ab A Abc AB Abcd ABc Abcde AbC
+```
+
+## 输入输出样例 #3
+
+### 输入 #3
+
+```
+Oh  No  Extra Spaces.And,Punctuation Ruin Everything
+```
+
+### 输出 #3
+
+```
+Oh  No  ES (Extra Spaces).And,PRE (Punctuation Ruin Everything)
+```

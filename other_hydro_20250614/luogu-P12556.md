@@ -1,0 +1,65 @@
+## 题目描述
+You are given a table $a$ of size $n \times m$, consisting of symbols $\tt{R}$, $\tt{G}$, $\tt{B}$.
+
+Also, given are integers $c$ ($2 \leq c \leq 3$) and $q$, where $c$ is the number of different symbols that can appear in the table. If $c$ equals $2$, only the symbols $\tt{R}$ and $\tt{G}$ are available; if $c$ equals $3$, the symbols $\tt{R}$, $\tt{G}$, $\tt{B}$ are available.
+
+You need to change the values of at most $q$ elements of the table so that there are no pairs of neighboring cells with the same value. Note that if $c=2$, using the symbol $\tt{B}$ when changing the values of the table cells is prohibited.
+
+It is guaranteed that under the given constraints, there is a way to change the values of at most $q$ elements of the table so that there are no pairs of neighboring cells with the same value.
+
+**Note that there are no additional constraints in the problem.**
+
+## 输入格式
+The first line contains two integers $n$ and $m$ ($1 \leq n, m \leq 100$) --- the number of rows and columns of the table $a$ respectively.
+
+The second line contains two integers $c$ ($2 \leq c \leq 3$) and $q$, representing the number of available symbols and the number of allowed changes in the table, respectively.
+
+The next $n$ lines contain $m$ symbols each --- the elements of the table $a$. If $c=2$, then $a_{ij} \in $ $\{\tt{R}, \tt{G}\}$. If $c=3$, then $a_{ij} \in $ $\{\tt{R}, \tt{G}, \tt{B}\}$.
+
+## 输出格式
+Output $n$ lines of $m$ symbols each, describing the table after the changes.
+
+If there are multiple correct answers, any of them is allowed.
+
+```input1
+3 3
+3 4
+RRR
+RRR
+RRR
+```
+
+```output1
+RGR
+GRG
+RGR
+
+```
+
+```input2
+3 2
+2 3
+RG
+GG
+GR
+```
+
+```output2
+RG
+GR
+RG
+```
+
+## 提示
+### Scoring
+
+- ($7$ points): $n = 1,\ c = 3,\ q = \lfloor \frac{n \cdot m}{2} \rfloor $;
+- ($7$ points): $n = 1,\ c = 2,\ q = \lfloor \frac{n \cdot m}{2} \rfloor$;
+- ($3$ points): $c = 3,\ q = n \cdot m$;
+- ($7$ points): all rows of table $a$ are the same, $a[1][j] \neq a[1][j+1]$ (for $1 \leq j < m$), $c = 3$, $q = \lfloor \frac{n \cdot m}{2} \rfloor$;
+- ($7$ points): all rows of table $a$ are the same, $c = 3$, $q = \lfloor \frac{n \cdot m}{2} \rfloor$;
+- ($13$ points): $c = 3,\ q = \lfloor \frac{2 \cdot n \cdot m}{3} \rfloor $;
+- ($19$ points): $c = 3,\ n \leq 5,\ m \leq 100,\ q = \lfloor \frac{n \cdot m}{2} \rfloor$;
+- ($17$ points): $c = 2,\ q = \lfloor \frac{n \cdot m}{2} \rfloor$;
+- ($20$ points): $c = 3,\ q = \lfloor \frac{n \cdot m}{2} \rfloor$.
+

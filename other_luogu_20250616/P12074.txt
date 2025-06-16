@@ -1,0 +1,89 @@
+# P12074 [OOI 2025] The Arithmetic exercise
+
+## 题目描述
+
+Oleg and Dasha participated in a team competition, but unfortunately, they were unable to solve any problems. Oleg immediately realized that their team wasn't training enough. Then, their mutual friend suggested an interesting exercise. The exercise was quite simple, and to solve it, they only needed to know the rules of addition and subtraction of integers.
+
+You are given an array $a$ of length $n$, where initially all values are zero. You are also given $m$ numbers $x_1,\ x_2,\ \ldots\ x_m$. Then, for each $i$ from $1$ to $m$, you choose some index $j_i$ and make the change $a_{j_i} = x_i - a_{j_i}$.
+
+Help Oleg and Dasha determine what the maximum possible sum of the elements of array $a$ can be after all the changes, if the choices are made optimally.
+
+## 输入格式
+
+Each test consists of several input data sets. The first line contains a single integer $t$ ($1 \le t \le 10\,000$) --- the number of input data sets. Then follows the description of the data sets.
+
+The first line of each data set contains two integers $n$ and $m$ ($1 \le n, m \le 300\,000$) --- the length of the array $a$ and the number of values $x_i$, respectively.
+
+The second line of each data set contains $m$ integers $x_1$, $x_2$, $\ldots$, $x_m$ ($-10^9 \le x_i \le 10^9$) --- the description of the values.
+
+Let $N$ be the sum of $n$ over all data sets, and $M$ be the sum of $m$ over all data sets.
+
+It is guaranteed that $N$ and $M$ do not exceed $300\,000$.
+
+## 输出格式
+
+For each data set, output a single number on a new line --- the maximum sum of the array $a$ that can be obtained.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+4
+1 4
+1 2 3 4
+2 7
+10 3 7 1 4 6 3
+4 10
+103 354 1 227 179 189 142 201 165 140
+5 3
+-10 11 -4
+```
+
+### 输出 #1
+
+```
+2
+18
+1085
+17
+```
+
+## 说明/提示
+
+**Note**
+
+In the first data set, all operations are applied to the first element of the array $a$. It sequentially becomes $1 - 0 = 1$, $2 - 1 = 1$, $3 - 1 = 2$, $4 - 2 = 2$, so the answer is $2$.
+
+In the second data set, the following sequence of changes can be performed:
+
+
+- Apply the change to the first element: $a_1 = 10 - a_1 = 10 - 0 = 10$, $a = [10, 0]$.
+- Apply the change to the first element: $a_1 = 3 - a_1 = 3 - 10 = -7$, $a = [-7, 0]$.
+- Apply the change to the first element: $a_1 = 7 - a_1 = 7 - (-7) = 14$, $a = [14, 0]$.
+- Apply the change to the first element: $a_1 = 1 - a_1 = 1 - 14 = -13$, $a = [-13, 0]$.
+- Apply the change to the second element: $a_2 = 4 - a_2 = 4 - 0 = 4$, $a = [-13, 4]$.
+- Apply the change to the first element: $a_1 = 6 - a_1 = 6 - (-13) = 19$, $a = [19, 4]$.
+- Apply the change to the second element: $a_2 = 3 - a_2 = 3 - 4 = -1$, $a = [19, -1]$.
+
+At the end, we have $a = [19, -1]$, so the final sum is $18$.
+
+It can be shown that a better result is not possible.
+
+**Scoring**
+
+The tests for this problem consist of ten groups. Points for each group are given only if all tests of the group and all tests of the required groups are passed. Please note that passing the example tests is not required for some groups. $\textbf{Offline-evaluation}$ means that the results of testing your solution on this group will only be available after the end of the competition.
+
+| Group | Points | Additional constraints: $n, N$ | Additional constraints: $m, M$ | Additional constraints: $x_i$ | Required Groups | Comment                                                      |
+| :---- | :----- | :----------------------------- | :----------------------------- | :---------------------------- | :-------------- | :----------------------------------------------------------- |
+| 0     | 0      | --                             | --                             | --                            | --              | Examples.                                                    |
+| 1     | 4      | --                             | --                             | $0 \le x_i$                   | --              | All $x_i$ are same                                           |
+| 2     | 8      | $n=2$                          | $M \le 30$, $m \le 18$      | --                            | --              |                                                              |
+| 3     | 11     | $n=2$                          | $M \le 50$                     | $-10 \le x_i \le 10$          | --              |                                                              |
+| 4     | 9      | $n=2$                          | $M \le 400$                    | $-400 \le x_i \le 400$        | 3               |                                                              |
+| 5     | 8      | $N \le 30$, $n \le 18$      | $M \le 30$, $m \le 18$      | --                            | 0               |                                                              |
+| 6     | 10     | $N \le 2000$                   | $M \le 2000$                   | $0 \le x_i$                   | --              |                                                              |
+| 7     | 12     | $N \le 2000$                   | $M \le 2000$                   | --                            | 0, 2 -- 6       |                                                              |
+| 8     | 10     | --                             | --                             | $0 \le x_i$                   | 1               | There are no more than two different values among $x_i$      |
+| 9     | 17     | --                             | --                             | $0 \le x_i$                   | 1, 6, 8         |                                                              |
+| 10    | 11     | --                             | --                             | --                            | 0 -- 9          | **Offline-evaluation.**                                      |

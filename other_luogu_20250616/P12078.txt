@@ -1,0 +1,77 @@
+# P12078 [OOI 2025] Best Runner
+
+## 题目描述
+
+There are $n$ running tracks in the stadium with lengths $a_1$, $a_2$, $\ldots$, $a_n$. There are also $m$ runners, with the $i$-th runner starting at the beginning of track $b_i$.
+
+All runners will train for $T$ seconds. The training of a runner proceeds as follows:
+
+Let the runner currently be at the beginning of track $i$. They will run to the end of the current track in $a_i$ seconds. After that, they can either instantly return to the beginning of the current track, or move to the beginning of track $(i - 1)$ (if $i > 1$), or to the beginning of track $(i + 1)$ (if $i < n$). After this, they continue running from the track they moved to. Once the training duration reaches $T$ seconds, they finish their training.
+
+We define the best runner as the one who runs the most number of $\textbf{full}$ tracks during the training time (there may be several such runners). Determine how many tracks the best runner will run.
+
+## 输入格式
+
+The first line contains three integers $n$, $m$, and $T$ ($1 \le m \le n \le 300\,000$, $1 \le T \le 10^9$) --- the number of tracks, the number of runners, and the duration of the training.
+
+The second line contains $n$ integers $a_1$, $a_2$, $\ldots$, $a_n$ ($1 \le a_i \le 10^9$) --- the lengths of the tracks.
+
+The third line contains $m$ integers $b_1$, $b_2$, $\ldots$, $b_m$ ($1 \le b_1 < b_2 < \ldots < b_m \le n$) --- the track numbers from which the runners start.
+
+## 输出格式
+
+Output a single integer --- the maximum number of full tracks that one of the runners can run during the training time.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+5 3 10
+4 5 2 7 1
+1 2 4
+```
+
+### 输出 #1
+
+```
+4
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+4 2 11
+4 5 7 10
+2 3
+```
+
+### 输出 #2
+
+```
+2
+```
+
+## 说明/提示
+
+**Note**
+
+In the first example, the runner starting on track $4$ can run the most tracks: they should run track $4$, then move to track $5$ and run it $3$ times.
+
+In the second example, the runner starting on track $2$ can run the second track $2$ times.
+
+**Scoring**
+
+The tests for this problem consist of six groups. Points for each group are given only if all tests of the group and all tests of the required groups are passed.
+
+| Group | Points | Additional constraints: $n$ | $T$ | $a_i$ | Required Groups | Comment |
+| :---- | :----- | :--------------------------- | :-- | :---- | :-------------- | :------ |
+| 0     | 0      | --                           | --  | --    | --              | Examples. |
+| 1     | 23     | $n \le 1000$                 | --  | --    | 0               |          |
+| 2     | 10     | --                           | --  | --    | --              | $a_i \le a_{i + 1}$ for all $1 \le i < n$ |
+| 3     | 16     | --                           | $T \le 20$ | -- | 0           |          |
+| 4     | 19     | --                           | --  | $a_i \le 20$ | 0       |          |
+| 5     | 11     | --                           | --  | --    | --              | $m = n$ |
+| 6     | 21     | --                           | --  | --    | 0 -- 5          |          |

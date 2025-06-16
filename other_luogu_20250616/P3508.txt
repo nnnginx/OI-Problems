@@ -1,0 +1,90 @@
+# P3508 [POI 2010] LAT-Lamp
+
+## 题目描述
+
+在半夜，Bitratio 打开了 Byteasar 所住楼房入口处的灯。
+
+现在强光让 Byteasar 无法入睡。
+
+虽然灯光没有直接照射到 Byteasar 的窗户上，但通过其他窗户反射到了他的窗户上。
+
+失去睡眠的 Byteasar 变得烦躁。
+
+为了缓解这种情况，他试图让自己分心，但他能想到的只有灯光。
+
+因此，Byteasar 望向窗外，想知道他的邻居们是否也遭受着类似的折磨，即灯光是否也照射到了他们的窗户上。
+
+至少在 Byteasar 看来，这是一个有趣的问题。
+
+你比预期更早地知道了这个难题：因为无法独自解决这个问题，现在（无论是他的还是你的）对睡眠不再有任何想法，Byteasar 打电话给你寻求帮助。
+
+你对他很了解，知道在你写出一个解决他问题的程序之前，你也无法入睡。
+
+Byteasar 住在一栋有 ![](http://main.edu.pl/images/OI17/lat-en-tex.1.png) 个窗户的建筑中。
+
+灯位于这栋建筑的最底部的墙上。
+
+在这栋建筑的对面，正好相隔 10 米，有另一栋建筑，![](http://main.edu.pl/images/OI17/lat-en-tex.4.png)。
+
+这栋有 ![](http://main.edu.pl/images/OI17/lat-en-tex.5.png) 个窗户的建筑的墙与 Byteasar 所住建筑的墙平行。
+
+灯光的行为如你所料，即按照几何光学（或射线光学）的预测。
+
+即光沿着射线传播，如果射线击中窗户，则会被反射。
+
+根据反射定律，射线的反射角等于入射角。
+
+我们在两栋建筑的墙上引入坐标系。
+
+两个 ![](http://main.edu.pl/images/OI17/lat-en-tex.7.png) 轴是水平的，而两个 ![](http://main.edu.pl/images/OI17/lat-en-tex.8.png) 轴是垂直的；两面墙上的坐标轴方向相同，墙上的 ![](http://main.edu.pl/images/OI17/lat-en-tex.9.png) 点彼此相对。
+
+两栋建筑上的窗户都是矩形，边与坐标系的轴平行。
+
+射线仅在任何窗户的内部反射；在窗户的边界上被吸收。
+
+在每栋建筑中，没有两个窗户的内部有任何部分重叠。
+
+灯位于 ![](http://main.edu.pl/images/OI17/lat-en-tex.10.png) 建筑的墙上，位于点 ![](http://main.edu.pl/images/OI17/lat-en-tex.11.png)，既不在任何窗户的内部也不在边界上。
+
+## 输入格式
+
+标准输入的第一行有两个整数 ![](http://main.edu.pl/images/OI17/lat-en-tex.12.png) 和 ![](http://main.edu.pl/images/OI17/lat-en-tex.13.png) (![](http://main.edu.pl/images/OI17/lat-en-tex.14.png))，用一个空格分隔，表示第一栋和第二栋建筑中的窗户数量。
+
+接下来的 ![](http://main.edu.pl/images/OI17/lat-en-tex.15.png) 行描述了 Byteasar 所住建筑（![](http://main.edu.pl/images/OI17/lat-en-tex.16.png) 建筑）中的窗户，每行一个。
+
+第 ![](http://main.edu.pl/images/OI17/lat-en-tex.17.png) 行（对于 ![](http://main.edu.pl/images/OI17/lat-en-tex.18.png)）包含四个整数 ![](http://main.edu.pl/images/OI17/lat-en-tex.19.png)、![](http://main.edu.pl/images/OI17/lat-en-tex.20.png)、![](http://main.edu.pl/images/OI17/lat-en-tex.21.png)、![](http://main.edu.pl/images/OI17/lat-en-tex.22.png) (![](http://main.edu.pl/images/OI17/lat-en-tex.23.png)、...
+
+## 输出格式
+
+标准输出的第一行，你的程序应输出 ![](http://main.edu.pl/images/OI17/lat-en-tex.31.png) 建筑中被某些射线击中的窗户数量。
+
+你可以假设在每个测试实例中至少会有一个这样的窗户（即 Byteasar 的窗户）。
+
+在第二行，应以递增顺序打印这些窗户的编号（窗户从 1 开始编号），用单个空格分隔。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+3 3
+-1 2 1 4
+-1 5 1 7
+-3 8 -2 20
+-1 1 1 2
+-1 4 1 5
+-1 7 1 10
+```
+
+### 输出 #1
+
+```
+2
+1 2
+```
+
+## 说明/提示
+
+$-1000 \le x_{1,i} < x_{2,i} \le 1000$，$0 \le y_{1,i} < y_{2,i} \le 1000$。
+
+题面翻译由 ChatGPT-4o 提供。

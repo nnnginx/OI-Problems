@@ -1,0 +1,80 @@
+# P12450 [INOI Team Selection 2021] Maximal Tree Coloring
+
+## 题目描述
+
+Arash's mom gave him a $n$ vertex tree as a birthday gift.
+
+Arash has $m$ pencils in different colors, he will color the edges one by one with these pencils, for each edge, he will choose one of his pencils randomly and colors this edge with that pencil, the color of each edge is independent of colors of the other edges', and for each edge, the probability of choosing each edge is exactly $1/m$.
+
+After he finishes coloring edges, he will put edges in groups. edges $a$ and $b$ will be in the same group if and only if a series of edges exist such that:
+
+- The first edge in the series is equal to $a$.
+- The last edge in the series is equal to $b$.
+- For all adjacent pairs of edges in the series, these two edges have a common vertex.
+- All of this edges should have same color.
+
+After coloring the tree and putting edges into groups, he will count the number of groups. What is the expected value of the number of groups?
+
+One can prove that the answer is in the form of $P/Q$ such that $P$ and $Q$ are relatively prime numbers. You should calculate $P \cdot Q^{-1}$ modulo $10^9 + 7$ and print it in the output.
+
+## 输入格式
+
+The first line of the input contains $n$ and $m$, the number of vertices and the number of pencils.
+
+The following $n - 1$ lines describe the edges of the tree. The $i$-th line contains two integers $u$ and $v$ ($1 \leq u, v \leq n$, $u \neq v$), denotes an edge between $u$ and $v$. It is guaranteed that these edges form a tree.
+
+## 输出格式
+
+Print one integer, the answer of the question.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+3 1
+1 2
+2 3
+```
+
+### 输出 #1
+
+```
+1
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+3 2
+1 2
+2 3
+```
+
+### 输出 #2
+
+```
+500000005
+```
+
+## 说明/提示
+
+### Sample Explanation
+
+In the second sample, if both edges had same color, there would be only one group and if their color were different, there would be two groups. So the expectation would be $1/2\times 1+1/2\times 2=3/2$. $3/2$ in the form of $P \cdot Q^{-1} \mod 10^9 + 7$ is equal to $500000005$.
+
+
+### Constraints
+
+- $3 \leq n \leq 10^6$；
+- $1 \leq m \leq 10^9 + 6$；
+
+### Subtasks
+
+| subtask | score | limits |
+| :---: | :---: | :---: |
+| 1 | 11 | $m \leq 2$ |
+| 2 | 23 | $n \leq 1000$ |
+| 3 | 66 | No extra limits |

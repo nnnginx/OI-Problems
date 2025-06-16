@@ -1,0 +1,77 @@
+# P12441 [NERC2023] Joy of Pokémon Observation
+
+## 题目描述
+
+The Pokémon Conservation Society protects Pokémon and their habitats all around the globe. In recent research, data about $h$ habitats was collected.
+
+Each habitat may be inhabited by several Pokémon species. Researchers know how many limbs each species has. Pokémon are swift and extremely good at hiding, so researchers were only able to detect the total number of limbs in each of the habitats.
+
+Researchers understand that it might not be possible to find the population of each species, but would like to understand how much uncertainty is left. How many different combinations of Pokémon would have the observed number of limbs?
+
+## 输入格式
+
+The first line contains a single integer $h$ ($1 \le h \le 1\,024$) --- the number of habitats.
+The next $h$ lines contain the description of each habitat.
+
+Each line starts with two integers $t$ and $s$ ($0 \le t \le 10^9$, $1 \le s \le 3$), where $t$ is the total number of limbs, and $s$ is the number of species in the habitat. They are followed by $s$ integers $l_i$ ($1 \le l_i \le 16$) --- the number of limbs for each species.
+
+## 输出格式
+
+Output the number of possible combinations of Pokémon in each habitat.
+Output should contain $h$ lines with a single integer.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+3
+6 1 3
+6 2 2 3
+6 3 1 2 3
+```
+
+### 输出 #1
+
+```
+1
+2
+7
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+4
+1000000000 3 1 1 1
+0 3 2 4 5
+17 2 2 4
+34 3 5 3 2
+```
+
+### 输出 #2
+
+```
+500000001500000001
+1
+0
+25
+```
+
+## 说明/提示
+
+For the sake of example we will use $\LaTeX{}$ Pokémon: $\c{O}$ has one limb, $\angle$ has two limbs, $\exists$ has three limbs. In the first example all three habitats have $6$ limbs.
+
+**In the first example** the first habitat has only one Pokémon species --- $\exists$. So it is likely the young family containing $\exists\exists$.
+
+In the second habitat there are two Pokémon species: $\angle$ and $\exists$. So it is either $\angle\angle\angle$ or $\exists\exists$.
+
+The third habitat may contain any of the three Pokémon species: $\c{O}$, $\angle$ and $\exists$. There are seven possible combinations: $\exists\exists$, $\angle\angle\angle$, $\c{O}\angle\exists$, $\c{O}\c{O}\angle\angle$, $\c{O}\c{O}\c{O}\exists$, $\c{O}\c{O}\c{O}\c{O}\angle$, $\c{O}\c{O}\c{O}\c{O}\c{O}\c{O}$.
+
+**In the second example** the first habitat has three Pokémon species, but all of them have only one limb: $\partial$, $\c{O}$ and $\rho$. There are $10^9$ limbs and $\sum_{i=0}^{i\le 10^9}(i + 1)$ combinations.
+
+In the second habitat no limbs were detected. So there are unfortunately no Pokémon left in the area. 
+
+In the third habitat all Pokémon have an even number of limbs, so it is not possible to have 17 limbs.

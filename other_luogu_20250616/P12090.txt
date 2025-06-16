@@ -1,0 +1,133 @@
+# P12090 [RMI 2019] 秘密排列 / Secret Permutation
+
+## 题目背景
+
+**不要引入 `permutation.h`。**
+
+你需要在文件头添加
+
+```cpp
+int query(vector<int>);
+void answer(vector<int>);
+```
+
+**我们在附件中提供了 Sample Grader。**
+
+## 题目描述
+
+**这是一道交互题。本题中，交互库是非自适应的。**
+
+有一个隐藏的 $1\sim n$ 的排列 $p_1\sim p_n$。
+
+你可以进行如下的询问：
+
+> **询问** 给定 $1\sim n$ 的排列 $v_1\sim v_n$。交互库会返回 
+>
+> $$\sum_{1\le i\le n-1} \left|p_{v_i}-p_{v_{i+1}}\right|$$
+
+目标是，找到与 $p$ **等价**的任意一个排列 $p'$。
+> 定义：我们说排列 $p$，$p'$ **等价**，当且仅当它们无法通过询问区分。亦即，无论 $v$ 取什么，询问的答案都相同。
+
+
+### 实现细节
+
+你不需要，也不应该实现 `main` 函数。
+
+你需要在文件头添加
+
+```cpp
+int query(vector<int>);
+void answer(vector<int>);
+```
+
+
+你应该实现如下的函数：
+
+```cpp
+void solve(int n);
+```
+
+每个测试点中仅调用一次，表示要找出长度为 $n$ 的排列 $1\sim n$。
+
+你可以调用如下的函数：
+
+```cpp
+int query(vector<int> v);
+```
+
+- 发起一次询问。
+- $v[i-1]=v_i$（$\forall 1\le i\le n$）是一个 $1\sim n$ 的排列。
+- 返回 $\displaystyle \sum_{1\le i\le n-1} \left|p_{v_i}-p_{v_{i+1}}\right|$。
+
+
+
+```cpp
+void answer(vector<int> p);
+```
+
+- 报告排列 $p$。
+- $p[i-1]=p_i$（$\forall 1\le i\le n$）表示你找到的排列。
+- **调用此函数后，程序将立刻终止。**
+
+注意：参数中的数组都是 $\texttt{0-indexed}$ 的。
+
+## 输入格式
+
+Sample Grader 输入格式如下：
+
+> $n$\
+> $p_1$ $p_2$ $\ldots$ $p_n$
+
+## 输出格式
+
+Sample Grader 将如下内容输出到标准输出流：
+
+- 对于每次 `query` 调用，输出参数 $v$ 和 `query` 的返回值；
+- 对于 `answer` 调用，输出答案合法性（Correct / Wrong Answer），$n$，以及你调用 `query` 函数的次数 $q$。
+
+## 说明/提示
+
+### 样例交互
+
+样例交互示例如下。
+
+```cpp
+void solve(int N) {
+    if (N == 2) {
+        std::vector<int> V = {1, 2};
+        int qAns = query(V);
+        if (qAns == 1) {
+            std::vector<int> P = {1, 2};
+            answer(P);
+        }
+    }
+}
+```
+
+### 数据范围
+
+
+对于 $100\%$ 的数据，保证 $3\le n\le 256$。
+
+### 子任务
+
+| 编号 | $n\le$ |  分值 |
+| :-: | :-:  | :-: |
+| $1$ | $7$  | $15$ |
+| $2$ | $50$  | $35$ |
+| $3$ | $256$ |  $50$ |
+
+### 计分方式
+
+令调用 `query` 函数的次数为 $q$。
+
+答案错误，超时，内存超限，运行时错误，得 $0$ 分。
+
+否则，得分方式按照如下方式计算：
+
+- $q\le n$，得 $100\%$ 测试点满分。
+- $n\lt q\le 2n$，得 $\left(1-\dfrac{0.4(q-n)}{n}\right)$ 倍测试点满分（值域为 $[0.6,1)$，线性递减）。
+- $2n\lt q\le n^2$，得 $\left(0.6-\dfrac{0.4(q-2n)}{n^2-2n}\right)$ 倍测试点满分（值域为 $[0.2,0.6)$，线性递减）。
+- $q\gt n^2$，得 $0.2$ 倍测试点满分。
+
+存在得分高于 $98$ 的官解。

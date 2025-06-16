@@ -1,0 +1,95 @@
+# P12572 [UOI 2023] An Array and Addition Again
+
+## 题目描述
+
+Given an array $a$ with elements numbered from $1$ to $100$. Initially, $a_i = 0$ for $1 \leq i < 100$, and the last element $a_{100}$ is equal to $1$.
+
+The array $a$ can be modified using **increment operations**. To perform $m$ **increment operations**, it is necessary to select $m$ integers $p_1, p_2, \dots, p_m$ ($1\le p_i < 100$) and sequentially execute assignments $a_{p_i} \leftarrow (a_{p_i} + a_{p_i + 1})$ for $i$ from $1$ to $m$.
+
+Given an integer $n$, find the sequence of **increment operations** after which the element at the first position in array $a$ becomes equal to $n$.
+
+## 输入格式
+
+The first line contains two integers $t$ and $g$ ($1 \le t \le 100$, $0 \leq g \leq 5$) --- the number of input sets and the test block number, respectively.
+
+In the next $t$ lines, there is a single integer $n$ ($1 \le n \le 10^{18}$) --- the value that $a_1$ should be equal to after performing the **increment operations** in the corresponding set.
+
+## 输出格式
+
+For each set of input data, output one integer $m$ ($0 \leq m \leq 2000$) in the first line --- the number of **increase operations**.
+
+In the second line, output $m$ integers $p_i$ ($1 \le p_i < 100$) --- the parameters of the **increase operations**.
+
+If there are multiple correct answers, you can output any of them.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+1 0
+1
+```
+
+### 输出 #1
+
+```
+99
+99 98 ... 7 6 5 4 3 2 1
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+2 0
+3
+16
+```
+
+### 输出 #2
+
+```
+101
+99 98 ... 7 6 5 4 3 2 1 1 1
+103
+99 98 ... 7 6 5 4 4 3 3 2 2 1 1
+```
+
+## 说明/提示
+
+For clarity, the examples of the input data in the problem statement have been reduced. To obtain the correct answer, replace $\tt{...}$ with the sequence of integers from $97$ to $8$.
+
+Let's consider the second set of input data for the second example, where $n = 16$. The first 8 elements of the array $a$ after performing the next operation look as follows:
+
+- $p_1$ = 99, $a = [0, 0, 0, 0, 0, 0, 0, 0, \ldots, 0, 0, 1, 1]$;
+- $p_2$ = 98, $a = [0, 0, 0, 0, 0, 0, 0, 0, \ldots, 0, 1, 1, 1]$;
+- $\ldots$
+- $p_{93} = 7$, $a = [0, 0, 0, 0, 0, 0, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{94} = 6$, $a = [0, 0, 0, 0, 0, 1, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{95} = 5$, $a = [0, 0, 0, 0, 1, 1, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{96} = 4$, $a = [0, 0, 0, 1, 1, 1, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{97} = 4$, $a = [0, 0, 0, 2, 1, 1, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{98} = 3$, $a = [0, 0, 2, 2, 1, 1, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{99} = 3$, $a = [0, 0, 4, 2, 1, 1, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{100} = 2$, $a = [0, 4, 4, 2, 1, 1, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{101} = 2$, $a = [0, 8, 4, 2, 1, 1, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{102} = 1$, $a = [8, 8, 4, 2, 1, 1, 1, 1, \ldots, 1, 1, 1, 1]$;
+- $p_{103} = 1$, $a = [16, 8, 4, 2, 1, 1, 1, 1, \ldots, 1, 1, 1, 1]$.
+
+### Scoring
+
+The first four test blocks allow using **no more than 300** increment operations.
+
+- ($4$ points): $n \leq 100$;
+- ($6$ points): $n = k^2$ for some integer $1 \le k \le 100$;
+- ($10$ points): $n = (2^k - 1)$ for some integer $k$;
+- ($13$ points): $n$ is a Fibonacci number (i.e., $n$ is an element of the sequence where each element is the sum of the two previous ones: $1, 1, 2, 3, 5, 8, 13, 21, 34, \dots$);
+- (up to $67$ points): without additional restrictions. Let the maximum number of increment operations used be $c$. If $c \le 300$, you will receive $67$ points, otherwise you will receive ($17 + \left \lfloor \frac{2000 - c}{34} \right \rfloor$) points.
+
+The $\tt{C++}$ code that calculates the number of points for the last test block depending on the number of increment operations used is:
+
+```cpp
+((c <= 300) ? 67 : (17 + (2000 - c) / 34))
+```

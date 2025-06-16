@@ -1,0 +1,75 @@
+## 题目描述
+Let's call the **weight** of an array of integers $b$ of length $m$ the absolute value of the sum of its elements, i.e., $|b_1+b_2+...+b_m|$.
+
+We define the **beauty** of a partition of array $c$ into several subarrays as the minimum **weight** among the **weights** of the subarrays. Formally, the **beauty** of a partition of array $c$ into $k$ subarrays $[c_1,\ldots,c_{p_1}],[c_{p_1+1},\ldots,c_{p_2}],\ldots,[c_{p_{k-1}+1},\ldots,c_{p_k}]$, where $1 \leq p_1 < p_2 < \ldots < p_{k-1} < p_k = n$, is the value $\min(|c_1+\ldots+c_{p_1}|,|c_{p_1+1}+\ldots+c_{p_2}|,\ldots,|c_{p_{k-1}+1}+\ldots+c_{p_k}|)$. For example, the partition of the array $[3,-6,4,5,-8]$ into subarrays $[3,-6],[4],[5,-8]$ has a **beauty** of $\min(|3+(-6)|,|4|,|5+(-8)|)=\min(3,4,3)=3$.
+
+We define the **beauty** of an array $c$ as the maximum **beauty** among all possible partitions into subarrays.
+
+An array of integers $a$ of length $n$ is given.
+
+You need to perform $q$ queries. The queries can be of two types:
+
+- find the **beauty** of the subarray consisting of elements $[a_{l},a_{l+1},\ldots,a_r]$, where ($l$, $r$) are the query parameters;
+- replace the element $a_x$ with $v$, where ($x$, $v$) are the query parameters.
+
+## 输入格式
+The first line contains two integers $n$, $q$ ($1\le n, q\le 10^6$) --- the length of array $a$ and the number of queries, respectively.
+
+The second line contains $n$ integers $a_1, a_2, \ldots, a_n$ ($-10^9\le a_i\le 10^9)$ --- the elements of array $a$.
+
+The next $q$ lines contain three integers each. The first of the numbers, $type_i$ ($1 \le type_i \le 2$), denotes the type of the query. Queries of the first type are given in the format "$\texttt{1 l r}$" ($1\le l\le r\le n$), and queries of the second type are given in the format "$\texttt{2 x v}$" ($1\le x\le n,$ $-10^9\le v\le 10^9$).
+
+## 输出格式
+For each query of the first type, output a single integer --- the **beauty** of the corresponding subarray.
+
+```input1
+6 4
+1 -3 4 2 -5 6
+1 1 6
+1 2 3
+1 2 5
+1 1 1
+```
+
+```output1
+5
+3
+3
+1
+```
+
+```input2
+5 6
+1 -2 3 -4 5
+1 1 4
+1 2 3
+2 3 -6
+1 2 4
+2 4 2
+1 1 5
+```
+
+```output2
+2
+2
+12
+7
+```
+
+## 提示
+In the first example, for the third query, the maximum beauty of the partition of the array $[-3,4,2,-5]$ is achieved when partitioned into subarrays $[-3],[4,2],[-5]$.
+
+In the second example, for the first query, the maximum beauty of the partition of the array $[1,-2,3,-4]$ is achieved when partitioned into subarrays $[1,-2,3],[-4]$.
+
+### Scoring
+
+- ($4$ points): $type_i = 1$ for $1\le i\le q$; $a_i > 0$ for $1\le i\le n$;
+- ($14$ points): $type_i = 1$ for $1\le i\le q$; $n,q \le 1000$;
+- ($10$ points): $type_i = 1$ for $1\le i\le q$; $n,q \le 2 \cdot 10^5$, for each query there exists an optimal division into no more than $2$ subarrays;
+- ($10$ points): $type_i = 1$ for $1\le i\le q$; $q \le n \le 2 \cdot 10^5$, $l_i = 1$, $r_i = i$ for $1\le i\le q$;
+- ($11$ points): $type_i = 1$ for $1\le i\le q$; $n,q \le 2 \cdot 10^5$, $-5 \le \sum\limits_{j=1}^{i} a_j \le 5$ for $1\le i\le n$;
+- ($18$ points): $type_i = 1$ for $1\le i\le q$; $n,q \le 2 \cdot 10^5$;
+- ($9$ points): $type_i = 1$ for $1\le i\le q$;
+- ($16$ points): $n,q \le 2 \cdot 10^5$;
+- ($8$ points): without additional constraints.
+

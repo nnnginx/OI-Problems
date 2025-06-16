@@ -1,0 +1,115 @@
+# P12757 [POI 2017 R3] 厨师 Cook【交互题暂未配置】
+
+## 题目背景
+
+翻译来自于 [LibreOJ](https://loj.ac/p/5065)。
+
+## 题目描述
+
+**题目译自 [XXIV Olimpiada Informatyczna — III etap](https://sio2.mimuw.edu.pl/c/oi24-3/dashboard/) [Kucharz](https://szkopul.edu.pl/problemset/problem/9NFtPM59qGWa7wdn570ifuP0/statement/)**
+
+厨师 Bajtazar 在一家餐厅工作，需处理 $n$ 份待烹饪的订单。每份订单记录在一张纸条上，纸条按序钉在尖桩上。Bajtazar 只能从顶部取下纸条，依次完成订单。烹饪耗时，他希望尽快完成所有订单，且不必逐一处理。假设尖桩上剩余 $k$ 份订单，他可选择以下操作：
+
+- 取顶部一份订单，耗时 $\texttt{jeden}(k)$ 烹饪。
+- 若 $k > 1$，取顶部两份订单，耗时 $\texttt{dwa}(k)$ 烹饪。
+- 若 $k > 1$，取顶部 $\lfloor k/2 \rfloor$ 份订单，耗时 $\texttt{polowa}(k)$ 烹饪。
+
+Bajtazar 的初始能量为 $e$。第三种操作（取一半订单）极耗体力，降低 $1$ 单位能量；第一种操作（单份订单）是他的专长，增加 $1$ 单位能量。能量不得低于 $0$。他不关心最终能量，只求最短时间内完成所有订单。
+
+编写程序，通过与提供 Bajtazar 状态和厨房信息的库交互，找出最短的订单完成时间。本题需特别注意内存限制。
+
+### 交互方式
+
+提供以下函数：
+
+- $\texttt{dajn}, \texttt{daje}$
+
+$\texttt{dajn}$ 返回整数 $n$，表示订单数量；$\texttt{daje}$ 返回整数 $e$，表示 Bajtazar 初始能量。
+
+```cpp
+// C/C++
+int dajn();
+int daje();
+// Pascal
+function dajn: LongInt;
+function daje: LongInt;
+```
+
+- $\texttt{jeden}(k), \texttt{dwa}(k), \texttt{polowa}(k)$
+ 
+
+返回当尖桩上有 $k$ 份订单时，分别烹饪一份、两份或 $\lfloor k/2 \rfloor$ 份订单的耗时。若 $k=1$，$\texttt{dwa}(k)$ 和 $\texttt{polowa}(k)$ 无意义。耗时为 $1$ 至 $10^7$ 的整数。
+
+```cpp
+// C/C++
+int jeden(int k);
+int dwa(int k);
+int polowa(int k);
+// Pascal
+function jeden(k: LongInt): LongInt;
+function dwa(k: LongInt): LongInt;
+function polowa(k: LongInt): LongInt;
+```
+
+- $\texttt{odpowiedz}(wynik)$
+
+向库报告最短完成时间 $wynik$，调用后程序终止。
+
+```cpp
+// C/C++
+void odpowiedz(int wynik);
+// Pascal
+procedure odpowiedz(wynik: LongInt);
+```
+
+程序不得读取任何数据（标准输入或文件），不得写入文件或标准输出，可写入标准错误输出（`stderr`，但耗时）。可多次查询库。
+
+「文件」中提供了示例库，用于测试程序形式正确性。库从标准输入读取以下格式数据：
+
+- 第一行：两个整数 $n, e$；
+- 第二行：$n$ 个 $[1, 10^7]$ 内的整数，为 $\texttt{jeden}$ 在 $k=1,\ldots,n$ 的值；
+- 第三、四行：$\texttt{dwa}$ 和 $\texttt{polowa}$ 的值（同格式，$k=1$ 值无意义）。
+
+示例输入见文件 `kuc0.in`。调用 $\texttt{odpowiedz}$ 后，库输出答案至标准输出。
+
+目录内还有示例程序 `kuc.c`, `kuc.cpp`, `kuc.pas`，使用库但不正确，仅在最后调用 $\texttt{jeden}$，其余用 $\texttt{polowa}$。
+
+编译命令：
+- C: `gcc -O2 -static ckuclib.c kuc.c -lm -std=gnu99`
+- C++: `g++ -O2 -static ckuclib.c kuc.cpp -lm -std=c++11`
+- Pascal: `ppc386 -O2 -XS -Xt kuc.pas`
+
+程序与库文件需在同一目录。
+
+## 输入格式
+
+见交互方式。
+
+## 输出格式
+
+见交互方式。
+
+## 说明/提示
+
+以下是程序示例运行过程：
+
+| C/C++ | Pascal | 结果 |
+| :--: | :--: | :--: |
+| `n = dajn();` | `n := dajn;` | `3` |
+| `e = daje();` | `e := daje;` | `1` |
+| `p[3] = polowa(3);` | `p[3] := polowa(3);` | `1` |
+| `p[2] = polowa(2);` | `p[2] := polowa(2);` | `4` |
+| `j[2] = jeden(2);` | `j[2] := jeden(2);` | `2` |
+| `j[1] = jeden(1);` | `j[1] := jeden(1);` | `5` |
+| `d[2] = dwa(2);` | `d[2] := dwa(2);` | `6` |
+| `odpowiedz(7);` | `odpowiedz(7);` | - |
+
+上述程序运行在形式上正确，但未必给出最优结果。从数据可知，操作 $\texttt{polowa}$ 和 $\texttt{dwa}$（耗时 $p[3]+d[2]=7$）优于一次 $\texttt{polowa}$ 和两次 $\texttt{jeden}$（耗时 $p[3]+j[2]+j[1]=8$）。因 $p[3]=1, j[3] \geq 1$，不宜在 $k=3$ 时选 $\texttt{jeden}$。但 $e=1$ 限制了两次 $\texttt{polowa}$。若不知 $\texttt{dwa}(3)$ 耗时，无法确认 $\texttt{dwa}$ 后接 $\texttt{jeden}$ 是否更优。
+
+详细子任务附加限制及分值如下表所示。
+
+| 子任务 | 附加限制 | 分值 |
+| :---: | :--: | :---: |
+| $1$    | $n, e \leq 1000$         | $12$ |
+| $2$    | $n, e \leq 50000$        | $8$  |
+| $3$    | $n, e \leq 1000000$      | $80$ |

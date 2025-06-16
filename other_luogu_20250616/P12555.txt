@@ -1,0 +1,80 @@
+# P12555 [UOI 2024] AND Array
+
+## 题目描述
+
+An integer $b$ and an array of non-negative integers $a_1,a_2,\ldots,a_n$ are given. All elements of the array $a$ are less than $2^b$.
+
+Let's define $f(s, p)$ ($1\le s\le n$, $0\le p < b$) as the result of the following pseudocode:
+
+```
+res = 0
+x = power(2, p)
+for i = s to n:
+    if ((x AND a[i]) == 0):
+        x = (x OR a[i])
+        res = res + i
+return res
+```
+
+Here, ``power(2, p)`` denotes $2^p$, ``AND`` denotes the bitwise $\textit{AND}$ operation, and ``OR`` denotes the bitwise $\textit{OR}$ operation.
+
+The bitwise $\textit{AND}$ of non-negative integers $a$ and $b$ is equal to a non-negative integer, in which the binary representation has a one at a certain position only if both binary representations of $a$ and $b$ have ones at that position. For example, $3_{10}$ AND $5_{10} = 0011_{2}$ AND $0101_{2} = 0001_{2} = 1_{10}$.
+
+The bitwise $\textit{OR}$ of non-negative integers $a$ and $b$ is equal to a non-negative integer, in which the binary representation has a zero at a certain position only if both binary representations of $a$ and $b$ have zeros at that position. For example, $3_{10}$ OR $5_{10} = 0011_{2}$ OR $0101_{2} = 0111_{2} = 7_{10}$.
+
+For each $i$ from $1$ to $n$, find
+
+$$f(i,0) + f(i, 1) + \ldots + f(i, b-1)$$
+
+## 输入格式
+
+The first line contains two integers $n$ and $b$ ($1 \leq n \leq 10^5$, $1 \leq b \leq 20$) --- the length of array $a$ and the limit on the elements of the array, respectively.
+
+The second line contains $n$ integers $a_1, a_2, \ldots, a_n$ ($0 \leq a_i < 2^b$) --- the elements of array $a$.
+
+## 输出格式
+
+Output $n$ integers --- the required values.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+5 3
+0 2 1 3 4
+```
+
+### 输出 #1
+
+```
+23 20 16 14 10
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+3 2
+1 3 2
+```
+
+### 输出 #2
+
+```
+4 3 3
+```
+
+## 说明/提示
+
+In the first example, $f(1,0)=1+2+5=8$, $f(1,1)=1+3+5=9$, $f(1,2)=1+2+3=6$, and the first of the required values is equal to $8+9+6 = 23$.
+
+### Scoring
+
+- ($10$ points): $n \leq 2\,000$;
+- ($10$ points): $a_i = 2^k$, where $k$ is an integer;
+- ($15$ points): $b \leq 8$;
+- ($15$ points): $b \leq 12$;
+- ($25$ points): $b \leq 16$;
+- ($25$ points): without additional constraints.

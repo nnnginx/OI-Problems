@@ -1,0 +1,95 @@
+# P12095 [NERC2024] DAG Serialization
+
+## 题目描述
+
+Consider a simple single-bit boolean register that supports two operations:
+
+- $\textbf{set}$ --- sets the register to $\textbf{true}$ if it was $\textbf{false}$, and returns $\textbf{true}$; otherwise, it returns $\textbf{false}$;
+- $\textbf{unset}$ --- sets the register to $\textbf{false}$ if it was $\textbf{true}$, and returns $\textbf{true}$; otherwise, it returns $\textbf{false}$.
+
+The initial state of the register is $\textbf{false}$. Suppose there were $n$ operations $op_i$ (for $1 \le i \le n$) where $\textbf{at most two operations returned true}$. Also, we are given the partial order of operations as a directed acyclic graph (DAG): an edge $i \rightarrow j$ means that $op_i$ happened before $op_j$. You are asked whether it is possible to put these operations in some linear sequential order that satisfies the given partial order and such that if operations are applied to the register in that order, their results are the same as given.
+
+## 输入格式
+
+In the first line, you are given an integer $n$ --- the number of operations ($1 \le n \le 10^5$). In the following $n$ lines, you are given operations in the format $\textit{type} \textit{result}$, where $\textit{type}$ is either $\texttt{set}$ or $\texttt{unset}$ and $\textit{result}$ is either $\texttt{true}$ or $\texttt{false}$. It is guaranteed that at most two operations have $\texttt{true}$ results. 
+
+In the next line, you are given an integer $m$ --- the number of arcs of the DAG ($0 \le m \le 10^5$). In the following $m$ lines, you are given arcs --- pairs of integers $a$ and $b$ ($1 \leq a, b \leq n$; $a \neq b$). Each arc indicates that operation $op_a$ happened before operation $op_b$.
+
+## 输出格式
+
+Print any linear order of operations that satisfies the DAG constraints and ensures the results of the operations match the ones given in the input. If a correct operation order does not exist, print $-1$.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+5
+set true
+unset true
+set false
+unset false
+unset false
+2
+1 4
+5 2
+```
+
+### 输出 #1
+
+```
+5 1 3 2 4
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+3
+unset true
+unset false
+set true
+0
+```
+
+### 输出 #2
+
+```
+2 3 1
+```
+
+## 输入输出样例 #3
+
+### 输入 #3
+
+```
+2
+unset false
+set true
+1
+2 1
+```
+
+### 输出 #3
+
+```
+-1
+```
+
+## 输入输出样例 #4
+
+### 输入 #4
+
+```
+2
+unset false
+set false
+0
+```
+
+### 输出 #4
+
+```
+-1
+```

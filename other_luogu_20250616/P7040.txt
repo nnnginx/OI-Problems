@@ -1,0 +1,85 @@
+# P7040 [NWRRC 2016] Java2016
+
+## 题目描述
+
+John 喜欢学习晦涩的编程语言。最近他发现了概率编程语言 Java2K。Java2K 的内置函数只有一定的概率能够执行你想让它们做的事情。
+
+Java2K 编程非常困难，所以 John 设计了一种更简单的语言用于训练：Java2016。Java2016 的内置运算符是确定性的，而它们的操作数是随机的。在 Java2016 中，每个值都是范围在 $0 \cdots 255$ 之间的正整数。
+
+Java2016 支持三种优先级的六个运算符：
+
+$$
+\begin{aligned}
+{\langle \mathrm{expression}\rangle}&\quad::=\quad{\langle \mathrm{expression}\rangle}\operatorname{`\texttt{min}\text'}{\langle \mathrm{sum}\rangle}\mid{\langle \mathrm{expression}\rangle}\operatorname{`\texttt{max}\text'}{\langle \mathrm{sum}\rangle}\mid {\langle \mathrm{sum}\rangle}\\
+{\langle \mathrm{sum}\rangle}&\quad::=\quad{\langle \mathrm{sum}\rangle}\operatorname{`\texttt{+}\text'}{\langle \mathrm{term}\rangle}\mid{\langle \mathrm{sum}\rangle}\operatorname{`\texttt{-}\text'}{\langle \mathrm{term}\rangle}\mid{\langle \mathrm{term}\rangle}\\
+{\langle \mathrm{term}\rangle}&\quad::=\quad{\langle \mathrm{term}\rangle}\operatorname{`\texttt{*}\text'}{\langle \mathrm{factor}\rangle}\mid {\langle \mathrm{term}\rangle}\operatorname{`\texttt{\/}\text'}{\langle \mathrm{factor}\rangle}\mid {\langle \mathrm{factor}\rangle}\\
+{\langle \mathrm{factor}\rangle}&\quad::=\quad\operatorname{`\texttt{(}\text'}{\langle \mathrm{expression}\rangle}\operatorname{`\texttt{)}\text'}\mid `\texttt{?}\text'\mid {\langle \mathrm{macro}\rangle}
+\end{aligned}
+$$
+
+最小值（`min`）和最大值（`max`）运算符的定义与通常相同。加法（`+`）、减法（`-`）和乘法（`*`）的定义是模 $256$。除法（`/`）的结果向零取整。如果除数为零，程序崩溃。运算符的参数是另一个运算符的结果、均匀分布的随机值（`?`）或宏替换。
+
+例如，`?/?/?` 被评估为零的概率是 $98.2\%$，而崩溃的概率是 $0.8\%$。
+
+Java2016 程序由零个或多个宏定义组成，后跟结果表达式。每个宏定义的形式为：
+
+$$
+\begin{aligned}
+{\langle \mathrm{macrodef}\rangle}&\quad::=\quad{\langle \mathrm{macro}\rangle}\operatorname{`\texttt{=}\text'}{\langle \mathrm{expression}\rangle}\\
+{\langle \mathrm{macro}\rangle}&\quad::=\quad\operatorname{`\texttt{a}\text'}\ldots\operatorname{`\texttt{z}\text'}
+\end{aligned}
+$$
+
+宏应该在第一次使用之前定义。它不能被重新定义。宏在每次使用时扩展为其定义。例如，
+
+```plain
+a = ? max ?
+(a max $a) / a
+```
+
+被扩展为 `((? max ?) max (? max ?)) / (? max ?)`。
+
+John 打算向 Java2016 添加概率常量，因此对于每个可能的常量值，他需要一个程序，该程序能够以至少一半的概率成功评估为该值。崩溃被计入失败。
+
+## 输入格式
+
+输入包含一个整数 $c$ —— 目标常量 $(0 \le c \le 255)$。
+
+## 输出格式
+
+输出一个 Java2016 程序，该程序成功评估为常量 $c$ 的概率不小于 $1/2$。程序的总长度不应超过 $256$ 个字符（不包括空格）。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+0
+```
+
+### 输出 #1
+
+```
+? /?/ ?
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+1
+```
+
+### 输出 #2
+
+```
+a = ? max ?
+(a max a) / a
+```
+
+## 说明/提示
+
+时间限制：2 秒，内存限制：512 MB。
+
+题面翻译由 ChatGPT-4o 提供。

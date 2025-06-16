@@ -1,0 +1,70 @@
+# P12793 [NERC 2022] Dominoes
+
+## 题目描述
+
+Dora likes to play with dominoes. She takes $n \times m$ table, marks some cells as occupied, and then tries to fill all unoccupied cells with $2 \times 1$ dominoes.
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/izci2rsk.png)
+
+Her little brother Dani loves to play pranks on his older sister. So when she is away, he marks two more unoccupied cells as occupied. He wants to do it in such a way that it will be impossible to fill all unoccupied cells with dominoes.
+
+Help Dani to count the number of ways he can select these two cells. Since Dani can only count to one million, if this number of ways is $x$, output $\min(x, 10^6)$.
+
+## 输入格式
+
+The first line contains integers $n$ and $m$ ($1\le n, m\le 1000$). Next $n$ lines contain $m$ characters each --- the initial state of the table. Character $\tt{\#}$ corresponds to an occupied cell, and character $\tt{.}$ corresponds to an unoccupied cell. It is guaranteed that there are at least two unoccupied cells, and that it is possible to fill all unoccupied cells with dominoes.
+
+## 输出格式
+
+Let $x$ be the number of ways Dani can mark two cells in such a way that it will be impossible to fill all unoccupied cells with dominoes. 
+
+Print one integer $\min(x, 10^6)$.
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+3 6
+...#..
+......
+#...##
+```
+
+### 输出 #1
+
+```
+52
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+2 2
+..
+..
+```
+
+### 输出 #2
+
+```
+2
+```
+
+## 输入输出样例 #3
+
+### 输入 #3
+
+```
+2 2
+#.
+#.
+```
+
+### 输出 #3
+
+```
+0
+```

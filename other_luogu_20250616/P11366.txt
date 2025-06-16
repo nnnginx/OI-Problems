@@ -1,0 +1,109 @@
+# P11366 [Ynoi2024] 末日的魔法少女计划
+
+## 题目背景
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/gu2canu2.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/zr2prltd.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/450q6z6z.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/10ntmhxz.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/gtn14jr6.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/4o7rowbj.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/3rj866um.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/13cscyn0.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/lsf5mhce.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/1l09guml.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/ej6qg7v0.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/hjkcg54p.png)
+
+## 题目描述
+
+给定含幺半群 $(D,+,e)$，给定 $D$ 中的元素构成的序列 $a_1,\dots,a_n$，初值都为 $e$，支持 $m$ 次操作，每次操作可以是单点修改，或查区间和。
+
+限制每次修改操作使用 $+$ 的次数不超过 $M_1$；
+
+限制每次查询操作使用 $+$ 的次数不超过 $M_2$；
+
+幺半群的基本性质：
+
+$\forall a\in D,\; e+a=a+e=a$
+
+$\forall a,b,c\in D,\;(a+b)+c=a+(b+c)$
+
+
+
+这是一道交互题，你需要包含头文件 `lib.h`，或将其内容放在程序的最前面。
+
+下发的头文件 `lib.h` 的内容如下：
+
+```c++
+struct Data{
+	unsigned short a,b,c,d;
+};
+Data operator+(Data a,Data b);
+
+void init(int n,int k,Data d);
+void update(int x,Data d);
+Data query(int l,int r);
+```
+
+其中 `Data` 表示 $D$，`Data operator+` 表示 $+$，交互库给出了这部分的实现；
+
+你需要实现：
+
+`init` 用于初始化，`n,k,d` 依次表示 $n,M_2$ 和 $D$ 的单位元 $e$，你可以使用 $+$，但由于 $e+e=e$ 而不能得出有用的结果；
+
+`update` 表示一次修改操作，将 $a_x$ 修改为 $d$；
+
+`query` 表示一次查询区间和的操作，查询 $a_l+a_{l+1}+\dots+a_r$，查询结果应当作为返回值返回；
+
+## 输入格式
+
+无
+
+## 输出格式
+
+无
+
+## 说明/提示
+
+Idea：ccz181078，Solution：ccz181078，Code：ccz181078，Data：ccz181078
+
+对所有数据，满足 $n=10^5,\;m=2\times 10^5$
+
+| 数据点编号 | $M_1$ | $M_2$ | 分数 |
+| ---------- | ----- | ----- | ---- |
+| 1          | 4000  | 2     | 11   |
+| 2          | 700   | 3     | 7    |
+| 3          | 400   | 4     | 5    |
+| 4          | 200   | 5     | 4    |
+| 5          | 200   | 6     | 4    |
+| 6          | 100   | 7     | 3    |
+| 7          | 80    | 8     | 3    |
+| 8          | 60    | 9     | 3    |
+| 9          | 2811  | 2     | 16   |
+| 10         | 542   | 3     | 11   |
+| 11         | 272   | 4     | 8    |
+| 12         | 137   | 5     | 7    |
+| 13         | 113   | 6     | 5    |
+| 14         | 75    | 7     | 5    |
+| 15         | 69    | 8     | 4    |
+| 16         | 48    | 9     | 4    |
+
+`lib\down` 目录为下发的交互库文件
+
+`lib\require` 目录为评测用的交互库文件
+
+`data` 目录为评测用的测试点
+
+`data2` 目录为下发的样例

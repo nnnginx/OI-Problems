@@ -1,0 +1,109 @@
+# P12525 [Aboi Round 1] 私は雨
+
+## 题目背景
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/29ph2q84.png)
+
+## 题目描述
+
+给你一个长度为 $n$ 的序列 $\{a\}$，以及 $q$ 次询问。
+
+询问形如 `l r L R p x`，表示询问有多少 $i \in [l,r]$ 且 $ a_i \in [L,R]$，$a_i$ 对 $p$ 取余的结果是 $x$。 
+
+强制在线。
+
+## 输入格式
+
+第一行两个整数 $ n,\text{type}$。
+
+第二行包含 $n$ 个整数，第 $i$ 个整数表示 $a_i$。
+
+第三行一个整数 $q$。
+
+接下来 $q$ 行，每行包含六个整数，分别表示 $l,r,L,R,p,x$，如果 $\text{type}=0$，则输入的数字即为真实的询问，否则将每一个数都要按位异或上上一次询问的答案 $\text{last}$，若前面没有询问，则 $\text{last}=0$。
+
+## 输出格式
+
+对于每次询问，输出一行表示答案。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+6 0
+1 1 4 5 1 4
+3
+1 6 1 6 2 0
+2 3 1 6 3 1
+2 5 2 5 4 1
+```
+
+### 输出 #1
+
+```
+2
+2
+1
+```
+
+## 输入输出样例 #2
+
+### 输入 #2
+
+```
+见附件中的 rvmq_sample2.in。
+```
+
+### 输出 #2
+
+```
+见附件中的 rvmq_sample2.out。
+```
+
+## 说明/提示
+
+$$
+\def\arraystretch{1.2}
+\begin{array}{|c|c|c|c|}
+\hline
+\begin{array}{c}
+\tt{subtask}\\\hline
+1\\\hline
+2\\\hline
+3\\\hline
+4\\\hline
+\end{array}
+&
+\begin{array}{c}
+n,q\\\hline
+\le 5\times10^3\\\hline
+\le 10^5\\\hline
+\le 10^5\\\hline
+\le 10^5 
+\end{array}
+&
+\begin{array}{c}
+\tt{\tt{特殊性质}}\\\hline
+\tt{无}\\\hline
+\tt{保证序列中元素 \le 2\times10^4}\\\hline
+\tt{保证 \text{type}= 0 }\\\hline
+\tt{无}\\\hline
+\end{array}
+&
+\begin{array}{c}
+\tt{pts}\\\hline
+10\\\hline
+30\\\hline
+20\\\hline
+40\\\hline
+\end{array}
+\\\hline
+\end{array}
+$$
+
+
+
+对于所有数据，$1 \le n \le 10^5$，$1 \le q \le 10^5$，$1 \le a_i \le 2\times10^5$，$1 \le l \le r \le n$，$1 \le L \le R \le 2 \times 10^5$，$0 \le x < p \le 2 \times 10^5$，$\text{type} \in \{0,1 \}$。
+
+所有输入均为非负整数。

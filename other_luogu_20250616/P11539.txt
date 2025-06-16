@@ -1,0 +1,79 @@
+# P11539 [Code+#5] 方案计数
+
+## 题目背景
+
+**题目来源：**[link](https://www.gitlink.org.cn/thusaa/codeplus5)。
+
+## 题目描述
+
+小 V 刚考完拓扑，闭区间套让他有点自闭，所以他决定把这一场 CP 安排一下。
+
+我们首先选定一个数据范围 $N$，这里 $N$ 是一个整数。
+
+考虑如下的函数：
+
+```cpp
+// rand_int(l, r) 返回闭区间 [l, r] 中的一个随机整数
+vector<int> ans;
+
+void solve(int l, int r) {
+    if (l == r) {
+        ans.push_back(r);
+        return ;
+    }
+    int m = rand_int(l, r - 1);
+    if (rand_int(0, 1) == 0) {
+        solve(l, m);
+        solve(m + 1, r);
+    } else {
+        solve(m + 1, r);
+        solve(l, m);
+    }
+}
+```
+
+我们初始令 $\texttt{ans}$ 为空，那么调用 $\texttt{solve(1, N)}$ 之后，$\texttt{ans}$ 里会存储一个排列。
+
+现在的问题是，给定排列 $P$，问有多少种不同的随机数生成方法可以使这个 $\texttt{ans}$ 中存储的排列恰好为 $P$。
+
+定义两种随机数生成方式是不同的，当且仅当在函数某次调用 $\texttt{rand\_int}$ 时，随机数生成器返回了不同的数。
+
+方案数对 $998244353$ 取模。
+
+## 输入格式
+
+第一行一个正整数 $N$，保证 $N\le 5\times 10^5$。
+
+接下来一行 $N$ 个整数，描述排列 $\{P_i\}$。
+
+## 输出格式
+
+输出一行一个整数，表示答案。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+4
+4 3 1 2
+```
+
+### 输出 #1
+
+```
+2
+```
+
+## 说明/提示
+
+**数据范围：**
+
+$\def\arraystretch{1.21}
+\begin{array}{|c|c|c|}\hline
+\bold{\small{子任务}}&\textbf{score}&\textbf{constraints}\\\hline
+\text{A}&20&N\le5000,P_i=N-i+1\\\hline
+\text{B}&10&B\le10^5,P_i=N-i+1\\\hline
+\text{C}&30&N\le10^5\\\hline
+\text{D}&40&N\le5\times10^5\\\hline
+\end{array}$
