@@ -49,6 +49,10 @@ luoguUVA - https://www.luogu.com.cn/problem/list?type=UVA
 luoguATCODER - https://www.luogu.com.cn/problem/list?type=AT
 luogu - https://www.luogu.com.cn/problem/list
 zmbc - https://csp.zmbc100.com/
+kaibaxinaosai - https://www.csp-js.com.cn/
+0101bc,0101bianchen - https://oj.0101jy.com/
+codehomeoj - http://codehomeoj.com/
+jlwx - http://oj.jlwxcode.cn/
 ```  
 
 ### Included Problem Sources (with RemoteJudge)  
@@ -76,7 +80,11 @@ zmbc - https://csp.zmbc100.com/
 - NOIP
 - GESP
 - IOI
-- zhimabianchen
+- zhimabianchen (zmbc)
+- kaibaxinaosai
+- 0101bianchen (0101bc)
+- codehomeoj
+- jianglaiwuxian (jlwx)
 
 ### Contribute
 
@@ -131,7 +139,11 @@ hydro - https://hydro.ac/
 luoguUVA - https://www.luogu.com.cn/problem/list?type=UVA
 luoguATCODER - https://www.luogu.com.cn/problem/list?type=AT
 luogu - https://www.luogu.com.cn/problem/list
-zmbc - https://csp.zmbc100.com/
+zmbc,zhimabianchen - https://csp.zmbc100.com/
+kaibaxinaosai - https://www.csp-js.com.cn/
+0101bc,0101bianchen - https://oj.0101jy.com/
+codehomeoj - http://codehomeoj.com/
+jlwx - http://oj.jlwxcode.cn/
 ```
 
 以下是我们有的题库（包含RemoteJudge）：
@@ -159,7 +171,11 @@ zmbc - https://csp.zmbc100.com/
 - NOIP
 - GESP
 - IOI
-- zhimabianchen
+- 芝麻编程（zhimabianchen/zmbc）
+- 凯爸信奥赛（kaibaxinaosai）
+- 0101编程（0101bc/0101bianchen）
+- codehomeoj
+- 疆莱无限（jlwx/jianglaiwuxian）
 
 ### 贡献
 
